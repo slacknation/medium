@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <title>Charts and Data</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="./css/normalize.css" media="screen">
-        <link rel='stylesheet' type='text/css' href='./css/font.css'>
-        <link rel="stylesheet" type="text/css" href="./css/stylesheet.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="./css/github-light.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+        <link rel='stylesheet' type='text/css' href='../css/font.css'>
+        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
     </head>
 
     <body>
