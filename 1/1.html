@@ -21,6 +21,8 @@
             var chart4;
             var chart5;
             var chart6;
+            var chart7;
+            var chart8;
             document.addEventListener('DOMContentLoaded', function (event) {
                 d3.json('./chart.json', function (data) {
                     chart = c3.generate({
@@ -157,6 +159,77 @@
                                 tick: {
                                     format: function (d) {
                                         return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                    chart8 = c3.generate({
+                        bindto: '#chart8',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'date',
+                                value: ['btcusd', 'ethusd']
+                            },
+                            types: {
+                                btcusd: 'spline',
+                                ethusd: 'spline'
+                            },
+                            axes: {
+                                btcusd: 'y',
+                                ethusd: 'y2'
+                            },
+                            names: {
+                                btcusd: 'btcusd (left)',
+                                ethusd: 'ether price implied from btcusd (right)'
+                            },
+                            colors: {
+                                btcusd: '#3498DB',
+                                ethusd: '#FF6138'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'btcusd') {
+                                        return accounting.formatMoney(value, '$', 2);
+                                    } else if (id === 'ethusd') {
+                                        return accounting.formatMoney(value, '$', 2);
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                localtime: true,
+                                type: 'timeseries',
+                                tick: {
+                                    count: 5,
+                                    fit: true,
+                                    format: function (x) {
+                                        return moment(x).format('DD-MMM-YY');
+                                    }
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatMoney(d, '$', 2);
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatMoney(d, '$', 2);
                                     }
                                 }
                             }
@@ -494,6 +567,7 @@
             <div id="chart"></div>
             <div id="chart6"></div>
             <div id="chart2"></div>
+            <div id="chart8"></div>
             <div id="chart3"></div>
             <div id="chart4"></div>
             <div id="chart5"></div>
