@@ -1,1 +1,522 @@
-
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Charts and Data</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+        <link rel='stylesheet' type='text/css' href='../css/font.css'>
+        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/c3.css">
+        <script src="../js/d3.js"></script>
+        <script src="../js/c3.js"></script>
+        <script src="../js/moment.js"></script>
+        <script src="../js/accounting.min.js"></script>
+        <script src="../js/dimple.v2.1.6.js"></script>
+        <script>
+            var chart;
+            var chart2;
+            var chart3;
+            var chart4;
+            var chart5;
+            var chart6;
+            document.addEventListener('DOMContentLoaded', function (event) {
+                d3.json('./chart.json', function (data) {
+                    chart = c3.generate({
+                        bindto: '#chart',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'date',
+                                value: ['ether', 'btceth']
+                            },
+                            types: {
+                                btceth: 'line',
+                                ether: 'spline'
+                            },
+                            axes: {
+                                btceth: 'y2',
+                                ether: 'y'
+                            },
+                            names: {
+                                btceth: 'ether per bitcoin rate (right)',
+                                ether: 'ether sold daily (left)'
+                            },
+                            colors: {
+                                btceth: '#FF6138',
+                                ether: '#00A388'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'btceth') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else if (id === 'ether') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                localtime: true,
+                                type: 'timeseries',
+                                tick: {
+                                    count: 5,
+                                    fit: true,
+                                    format: function (x) {
+                                        return moment(x).format('DD-MMM-YY');
+                                    }
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                    chart6 = c3.generate({
+                        bindto: '#chart6',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'date',
+                                value: ['ether', 'etherAverage']
+                            },
+                            types: {
+                                etherAverage: 'spline',
+                                ether: 'spline'
+                            },
+                            axes: {
+                                etherAverage: 'y2',
+                                ether: 'y'
+                            },
+                            names: {
+                                etherAverage: 'average purchase size (right)',
+                                ether: 'ether sold daily (left)'
+                            },
+                            colors: {
+                                etherAverage: '#FF358B',
+                                ether: '#00A388'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'etherAverage') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else if (id === 'ether') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                localtime: true,
+                                type: 'timeseries',
+                                tick: {
+                                    count: 5,
+                                    fit: true,
+                                    format: function (x) {
+                                        return moment(x).format('DD-MMM-YY');
+                                    }
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                    chart2 = c3.generate({
+                        bindto: '#chart2',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'date',
+                                value: ['bitcoinValue', 'bitcoinValueAcc', 'btceth']
+                            },
+                            types: {
+                                btceth: 'line',
+                                bitcoinValueAcc: 'spline',
+                                bitcoinValue: 'spline'
+                            },
+                            axes: {
+                                btceth: 'y2',
+                                bitcoinValueAcc: 'y',
+                                bitcoinValue: 'y'
+                            },
+                            names: {
+                                btceth: 'ether per bitcoin rate (right)',
+                                bitcoinValueAcc: 'accumulated value raised (USD) (left)',
+                                bitcoinValue: 'value raised daily (USD) (left)'
+                            },
+                            colors: {
+                                btceth: '#E74C3C',
+                                bitcoinValueAcc: '#3498DB',
+                                bitcoinValue: '#00A388'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'btceth') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else if (id === 'bitcoinValueAcc') {
+                                        return accounting.formatMoney(value, '$', 0);
+                                    } else if (id === 'bitcoinValue') {
+                                        return accounting.formatMoney(value, '$', 0);
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                localtime: true,
+                                type: 'timeseries',
+                                tick: {
+                                    count: 5,
+                                    fit: true,
+                                    format: function (x) {
+                                        return moment(x).format('DD-MMM-YY');
+                                    }
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatMoney(d, '$', 0);
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                    chart3 = c3.generate({
+                        bindto: '#chart3',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'date',
+                                value: ['ether', 'ethusd']
+                            },
+                            types: {
+                                ether: 'spline',
+                                ethusd: 'spline'
+                            },
+                            axes: {
+                                ether: 'y',
+                                ethusd: 'y2'
+                            },
+                            names: {
+                                ether: 'ether sold daily (left)',
+                                ethusd: 'ether price implied from btcusd (right)'
+                            },
+                            colors: {
+                                ether: '#00A388',
+                                ethusd: '#FF6138'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'ether') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else if (id === 'ethusd') {
+                                        return accounting.formatMoney(value, '$', 2);
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                localtime: true,
+                                type: 'timeseries',
+                                tick: {
+                                    count: 5,
+                                    fit: true,
+                                    format: function (x) {
+                                        return moment(x).format('DD-MMM-YY');
+                                    }
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatMoney(d, '$', 2);
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                });
+                d3.json('./chart2.json', function (data) {
+                    chart4 = c3.generate({
+                        bindto: '#chart4',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'purchaseSizePercentile',
+                                value: ['count', 'etherAccPercentile']
+                            },
+                            types: {
+                                count: 'bar',
+                                etherAccPercentile: 'spline'
+                            },
+                            axes: {
+                                count: 'y',
+                                etherAccPercentile: 'y2'
+                            },
+                            names: {
+                                count: 'count of purchases',
+                                etherAccPercentile: 'total % of ether '
+                            },
+                            colors: {
+                                count: '#00A388',
+                                etherAccPercentile: '#FF6138'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                title: function (x) {
+                                    return  'purchase size <= ' + accounting.formatNumber(x * 10000, 0, ',') + ' ether';
+                                },
+                                value: function (value, ratio, id) {
+                                    if (id === 'count') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else if (id === 'etherAccPercentile') {
+                                        return accounting.formatNumber(value, 2, ',') + ' %';
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                type: 'category',
+                                tick: {
+                                    centered: true,
+                                    values: [-1, 9, 19, 29, 39, 49, 59, 69, 79, 89, 100]
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                max: 99,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',') + ' %';
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                    chart5 = c3.generate({
+                        bindto: '#chart5',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'purchaseSizePercentile',
+                                value: ['countAdjusted', 'etherAccPercentile']
+                            },
+                            types: {
+                                countAdjusted: 'bar',
+                                etherAccPercentile: 'spline'
+                            },
+                            axes: {
+                                countAdjusted: 'y',
+                                etherAccPercentile: 'y2'
+                            },
+                            names: {
+                                countAdjusted: 'count of purchases except first 2',
+                                etherAccPercentile: 'total % of ether '
+                            },
+                            colors: {
+                                countAdjusted: '#00A388',
+                                etherAccPercentile: '#FF6138'
+                            },
+                            labels: {
+                                format: {
+                                    countAdjusted: function (v, id, i, j) {
+                                        if (v > 0 && v < 10) {
+                                            return v;
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                title: function (x) {
+                                    return  'purchase size <= ' + accounting.formatNumber(x * 10000, 0, ',') + ' ether';
+                                },
+                                value: function (value, ratio, id) {
+                                    if (id === 'countAdjusted:') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else if (id === 'etherAccPercentile') {
+                                        return accounting.formatNumber(value, 2, ',') + ' %';
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                type: 'category',
+                                tick: {
+                                    centered: true,
+                                    values: [-1, 9, 19, 29, 39, 49, 59, 69, 79, 89, 100]
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                max: 99,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',') + ' %';
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                });
+                d3.json('./chart3.json', function (data) {
+                    var svg = dimple.newSvg('#chart7', 832, 320);
+                    var myChart = new dimple.chart(svg, data);
+                    myChart.x = 100;
+                    var x = myChart.addTimeAxis('x', 'date', '%Y-%m-%d', '%d-%b-%y');
+                    x.title = null;
+                    var y = myChart.addCategoryAxis('y', 'etherRange');
+                    y.addOrderRule(['10-100', '100-1,000', '1,000-10,000', '10,000-100,000', '100,000-1,000,000']);
+                    var z = myChart.addMeasureAxis('z', 'purchaseCount');
+                    var s = myChart.addSeries(null, dimple.plot.bubble);
+                    myChart.draw();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <section class="page-header">
+            <h1 class="project-name">(function(){})();</h1>
+            <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
+            <a href="https://github.com/slacknation/medium/tree/gh-pages" class="btn">View on GitHub</a>
+            <a href="https://medium.com/@slacknation" class="btn">View on Medium</a>
+        </section>
+        <section class="main-content">
+            <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Overview: Ethereum’s initial public sale of ether</h3>
+            <div id="chart"></div>
+            <div id="chart6"></div>
+            <div id="chart2"></div>
+            <div id="chart3"></div>
+            <div id="chart4"></div>
+            <div id="chart5"></div>
+            <div id="chart7"></div>
+            <footer class="site-footer">
+                <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
+                <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+            </footer>
+        </section>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-73445041-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

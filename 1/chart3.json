@@ -1,0 +1,1498 @@
+[
+  {
+    "day": 1,
+    "time": 1406066400000,
+    "date": "2014-07-22",
+    "etherRange": "10-100",
+    "purchaseCount": 368,
+    "ether": 19311.961
+  },
+  {
+    "day": 1,
+    "time": 1406066400000,
+    "date": "2014-07-22",
+    "etherRange": "100-1,000",
+    "purchaseCount": 729,
+    "ether": 382368.619
+  },
+  {
+    "day": 1,
+    "time": 1406066400000,
+    "date": "2014-07-22",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 877,
+    "ether": 3147181.039
+  },
+  {
+    "day": 1,
+    "time": 1406066400000,
+    "date": "2014-07-22",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 157,
+    "ether": 4567244.902
+  },
+  {
+    "day": 1,
+    "time": 1406066400000,
+    "date": "2014-07-22",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 19,
+    "ether": 5632752.195
+  },
+  {
+    "day": 2,
+    "time": 1406152800000,
+    "date": "2014-07-23",
+    "etherRange": "10-100",
+    "purchaseCount": 49,
+    "ether": 2139.797
+  },
+  {
+    "day": 2,
+    "time": 1406152800000,
+    "date": "2014-07-23",
+    "etherRange": "100-1,000",
+    "purchaseCount": 89,
+    "ether": 44816.3
+  },
+  {
+    "day": 2,
+    "time": 1406152800000,
+    "date": "2014-07-23",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 122,
+    "ether": 377400.243
+  },
+  {
+    "day": 2,
+    "time": 1406152800000,
+    "date": "2014-07-23",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 15,
+    "ether": 585122
+  },
+  {
+    "day": 2,
+    "time": 1406152800000,
+    "date": "2014-07-23",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 200000
+  },
+  {
+    "day": 3,
+    "time": 1406239200000,
+    "date": "2014-07-24",
+    "etherRange": "10-100",
+    "purchaseCount": 30,
+    "ether": 1409.009
+  },
+  {
+    "day": 3,
+    "time": 1406239200000,
+    "date": "2014-07-24",
+    "etherRange": "100-1,000",
+    "purchaseCount": 58,
+    "ether": 27826.227
+  },
+  {
+    "day": 3,
+    "time": 1406239200000,
+    "date": "2014-07-24",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 69,
+    "ether": 227563.501
+  },
+  {
+    "day": 3,
+    "time": 1406239200000,
+    "date": "2014-07-24",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 11,
+    "ether": 255590.564
+  },
+  {
+    "day": 4,
+    "time": 1406325600000,
+    "date": "2014-07-25",
+    "etherRange": "10-100",
+    "purchaseCount": 24,
+    "ether": 694.8
+  },
+  {
+    "day": 4,
+    "time": 1406325600000,
+    "date": "2014-07-25",
+    "etherRange": "100-1,000",
+    "purchaseCount": 50,
+    "ether": 25296.448
+  },
+  {
+    "day": 4,
+    "time": 1406325600000,
+    "date": "2014-07-25",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 55,
+    "ether": 211503.976
+  },
+  {
+    "day": 4,
+    "time": 1406325600000,
+    "date": "2014-07-25",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 9,
+    "ether": 276773.445
+  },
+  {
+    "day": 5,
+    "time": 1406412000000,
+    "date": "2014-07-26",
+    "etherRange": "10-100",
+    "purchaseCount": 31,
+    "ether": 1287.7
+  },
+  {
+    "day": 5,
+    "time": 1406412000000,
+    "date": "2014-07-26",
+    "etherRange": "100-1,000",
+    "purchaseCount": 49,
+    "ether": 27179.098
+  },
+  {
+    "day": 5,
+    "time": 1406412000000,
+    "date": "2014-07-26",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 63,
+    "ether": 206563.703
+  },
+  {
+    "day": 5,
+    "time": 1406412000000,
+    "date": "2014-07-26",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 6,
+    "ether": 214164
+  },
+  {
+    "day": 5,
+    "time": 1406412000000,
+    "date": "2014-07-26",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 203435.8
+  },
+  {
+    "day": 6,
+    "time": 1406498400000,
+    "date": "2014-07-27",
+    "etherRange": "10-100",
+    "purchaseCount": 24,
+    "ether": 1284.8
+  },
+  {
+    "day": 6,
+    "time": 1406498400000,
+    "date": "2014-07-27",
+    "etherRange": "100-1,000",
+    "purchaseCount": 54,
+    "ether": 27054.342
+  },
+  {
+    "day": 6,
+    "time": 1406498400000,
+    "date": "2014-07-27",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 57,
+    "ether": 203198.171
+  },
+  {
+    "day": 6,
+    "time": 1406498400000,
+    "date": "2014-07-27",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 10,
+    "ether": 221443.785
+  },
+  {
+    "day": 7,
+    "time": 1406584800000,
+    "date": "2014-07-28",
+    "etherRange": "10-100",
+    "purchaseCount": 26,
+    "ether": 1426.676
+  },
+  {
+    "day": 7,
+    "time": 1406584800000,
+    "date": "2014-07-28",
+    "etherRange": "100-1,000",
+    "purchaseCount": 45,
+    "ether": 25691.21
+  },
+  {
+    "day": 7,
+    "time": 1406584800000,
+    "date": "2014-07-28",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 79,
+    "ether": 305169.002
+  },
+  {
+    "day": 7,
+    "time": 1406584800000,
+    "date": "2014-07-28",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 16,
+    "ether": 478305.128
+  },
+  {
+    "day": 7,
+    "time": 1406584800000,
+    "date": "2014-07-28",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 120000
+  },
+  {
+    "day": 8,
+    "time": 1406671200000,
+    "date": "2014-07-29",
+    "etherRange": "10-100",
+    "purchaseCount": 26,
+    "ether": 1239.199
+  },
+  {
+    "day": 8,
+    "time": 1406671200000,
+    "date": "2014-07-29",
+    "etherRange": "100-1,000",
+    "purchaseCount": 47,
+    "ether": 26814.249
+  },
+  {
+    "day": 8,
+    "time": 1406671200000,
+    "date": "2014-07-29",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 70,
+    "ether": 252144.321
+  },
+  {
+    "day": 8,
+    "time": 1406671200000,
+    "date": "2014-07-29",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 10,
+    "ether": 285359.445
+  },
+  {
+    "day": 8,
+    "time": 1406671200000,
+    "date": "2014-07-29",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 2,
+    "ether": 546837.2
+  },
+  {
+    "day": 9,
+    "time": 1406757600000,
+    "date": "2014-07-30",
+    "etherRange": "10-100",
+    "purchaseCount": 19,
+    "ether": 753.328
+  },
+  {
+    "day": 9,
+    "time": 1406757600000,
+    "date": "2014-07-30",
+    "etherRange": "100-1,000",
+    "purchaseCount": 71,
+    "ether": 34930.575
+  },
+  {
+    "day": 9,
+    "time": 1406757600000,
+    "date": "2014-07-30",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 119,
+    "ether": 420046.572
+  },
+  {
+    "day": 9,
+    "time": 1406757600000,
+    "date": "2014-07-30",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 16,
+    "ether": 450222
+  },
+  {
+    "day": 10,
+    "time": 1406844000000,
+    "date": "2014-07-31",
+    "etherRange": "10-100",
+    "purchaseCount": 33,
+    "ether": 1716.34
+  },
+  {
+    "day": 10,
+    "time": 1406844000000,
+    "date": "2014-07-31",
+    "etherRange": "100-1,000",
+    "purchaseCount": 38,
+    "ether": 17389.226
+  },
+  {
+    "day": 10,
+    "time": 1406844000000,
+    "date": "2014-07-31",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 63,
+    "ether": 242044.115
+  },
+  {
+    "day": 10,
+    "time": 1406844000000,
+    "date": "2014-07-31",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 11,
+    "ether": 334763.824
+  },
+  {
+    "day": 10,
+    "time": 1406844000000,
+    "date": "2014-07-31",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 200000
+  },
+  {
+    "day": 11,
+    "time": 1406930400000,
+    "date": "2014-08-01",
+    "etherRange": "10-100",
+    "purchaseCount": 17,
+    "ether": 843.84
+  },
+  {
+    "day": 11,
+    "time": 1406930400000,
+    "date": "2014-08-01",
+    "etherRange": "100-1,000",
+    "purchaseCount": 76,
+    "ether": 37177.659
+  },
+  {
+    "day": 11,
+    "time": 1406930400000,
+    "date": "2014-08-01",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 78,
+    "ether": 302599.208
+  },
+  {
+    "day": 11,
+    "time": 1406930400000,
+    "date": "2014-08-01",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 15,
+    "ether": 424318
+  },
+  {
+    "day": 11,
+    "time": 1406930400000,
+    "date": "2014-08-01",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 5,
+    "ether": 780020
+  },
+  {
+    "day": 12,
+    "time": 1407016800000,
+    "date": "2014-08-02",
+    "etherRange": "10-100",
+    "purchaseCount": 28,
+    "ether": 1696.445
+  },
+  {
+    "day": 12,
+    "time": 1407016800000,
+    "date": "2014-08-02",
+    "etherRange": "100-1,000",
+    "purchaseCount": 125,
+    "ether": 84288.963
+  },
+  {
+    "day": 12,
+    "time": 1407016800000,
+    "date": "2014-08-02",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 231,
+    "ether": 857672.128
+  },
+  {
+    "day": 12,
+    "time": 1407016800000,
+    "date": "2014-08-02",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 52,
+    "ether": 1628286.347
+  },
+  {
+    "day": 12,
+    "time": 1407016800000,
+    "date": "2014-08-02",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 2,
+    "ether": 372326.253
+  },
+  {
+    "day": 13,
+    "time": 1407103200000,
+    "date": "2014-08-03",
+    "etherRange": "10-100",
+    "purchaseCount": 65,
+    "ether": 2803.291
+  },
+  {
+    "day": 13,
+    "time": 1407103200000,
+    "date": "2014-08-03",
+    "etherRange": "100-1,000",
+    "purchaseCount": 363,
+    "ether": 225036.345
+  },
+  {
+    "day": 13,
+    "time": 1407103200000,
+    "date": "2014-08-03",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 600,
+    "ether": 2253764.601
+  },
+  {
+    "day": 13,
+    "time": 1407103200000,
+    "date": "2014-08-03",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 178,
+    "ether": 6367456.85
+  },
+  {
+    "day": 13,
+    "time": 1407103200000,
+    "date": "2014-08-03",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 30,
+    "ether": 9552777.89
+  },
+  {
+    "day": 14,
+    "time": 1407189600000,
+    "date": "2014-08-04",
+    "etherRange": "10-100",
+    "purchaseCount": 60,
+    "ether": 2841.655
+  },
+  {
+    "day": 14,
+    "time": 1407189600000,
+    "date": "2014-08-04",
+    "etherRange": "100-1,000",
+    "purchaseCount": 192,
+    "ether": 89143.313
+  },
+  {
+    "day": 14,
+    "time": 1407189600000,
+    "date": "2014-08-04",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 357,
+    "ether": 1108025.293
+  },
+  {
+    "day": 14,
+    "time": 1407189600000,
+    "date": "2014-08-04",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 43,
+    "ether": 1326175.422
+  },
+  {
+    "day": 14,
+    "time": 1407189600000,
+    "date": "2014-08-04",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 8,
+    "ether": 1484079.8
+  },
+  {
+    "day": 15,
+    "time": 1407276000000,
+    "date": "2014-08-05",
+    "etherRange": "10-100",
+    "purchaseCount": 34,
+    "ether": 1751.432
+  },
+  {
+    "day": 15,
+    "time": 1407276000000,
+    "date": "2014-08-05",
+    "etherRange": "100-1,000",
+    "purchaseCount": 74,
+    "ether": 36569.674
+  },
+  {
+    "day": 15,
+    "time": 1407276000000,
+    "date": "2014-08-05",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 122,
+    "ether": 394383.096
+  },
+  {
+    "day": 15,
+    "time": 1407276000000,
+    "date": "2014-08-05",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 23,
+    "ether": 590761.518
+  },
+  {
+    "day": 15,
+    "time": 1407276000000,
+    "date": "2014-08-05",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 3,
+    "ether": 1008362.53
+  },
+  {
+    "day": 16,
+    "time": 1407362400000,
+    "date": "2014-08-06",
+    "etherRange": "10-100",
+    "purchaseCount": 22,
+    "ether": 887.947
+  },
+  {
+    "day": 16,
+    "time": 1407362400000,
+    "date": "2014-08-06",
+    "etherRange": "100-1,000",
+    "purchaseCount": 60,
+    "ether": 27048.02
+  },
+  {
+    "day": 16,
+    "time": 1407362400000,
+    "date": "2014-08-06",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 113,
+    "ether": 397358.332
+  },
+  {
+    "day": 16,
+    "time": 1407362400000,
+    "date": "2014-08-06",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 9,
+    "ether": 207502.675
+  },
+  {
+    "day": 17,
+    "time": 1407448800000,
+    "date": "2014-08-07",
+    "etherRange": "10-100",
+    "purchaseCount": 17,
+    "ether": 851.798
+  },
+  {
+    "day": 17,
+    "time": 1407448800000,
+    "date": "2014-08-07",
+    "etherRange": "100-1,000",
+    "purchaseCount": 52,
+    "ether": 23285.123
+  },
+  {
+    "day": 17,
+    "time": 1407448800000,
+    "date": "2014-08-07",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 59,
+    "ether": 213252.379
+  },
+  {
+    "day": 17,
+    "time": 1407448800000,
+    "date": "2014-08-07",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 3,
+    "ether": 59594.418
+  },
+  {
+    "day": 17,
+    "time": 1407448800000,
+    "date": "2014-08-07",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 400440
+  },
+  {
+    "day": 18,
+    "time": 1407535200000,
+    "date": "2014-08-08",
+    "etherRange": "10-100",
+    "purchaseCount": 17,
+    "ether": 838.235
+  },
+  {
+    "day": 18,
+    "time": 1407535200000,
+    "date": "2014-08-08",
+    "etherRange": "100-1,000",
+    "purchaseCount": 33,
+    "ether": 18061.177
+  },
+  {
+    "day": 18,
+    "time": 1407535200000,
+    "date": "2014-08-08",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 39,
+    "ether": 142457.843
+  },
+  {
+    "day": 18,
+    "time": 1407535200000,
+    "date": "2014-08-08",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 7,
+    "ether": 178815.478
+  },
+  {
+    "day": 19,
+    "time": 1407621600000,
+    "date": "2014-08-09",
+    "etherRange": "10-100",
+    "purchaseCount": 57,
+    "ether": 1200.42
+  },
+  {
+    "day": 19,
+    "time": 1407621600000,
+    "date": "2014-08-09",
+    "etherRange": "100-1,000",
+    "purchaseCount": 37,
+    "ether": 19114.486
+  },
+  {
+    "day": 19,
+    "time": 1407621600000,
+    "date": "2014-08-09",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 68,
+    "ether": 179271.419
+  },
+  {
+    "day": 19,
+    "time": 1407621600000,
+    "date": "2014-08-09",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 10,
+    "ether": 287869.036
+  },
+  {
+    "day": 20,
+    "time": 1407708000000,
+    "date": "2014-08-10",
+    "etherRange": "10-100",
+    "purchaseCount": 10,
+    "ether": 497.453
+  },
+  {
+    "day": 20,
+    "time": 1407708000000,
+    "date": "2014-08-10",
+    "etherRange": "100-1,000",
+    "purchaseCount": 28,
+    "ether": 12318.467
+  },
+  {
+    "day": 20,
+    "time": 1407708000000,
+    "date": "2014-08-10",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 76,
+    "ether": 210901.248
+  },
+  {
+    "day": 20,
+    "time": 1407708000000,
+    "date": "2014-08-10",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 15,
+    "ether": 345825.419
+  },
+  {
+    "day": 20,
+    "time": 1407708000000,
+    "date": "2014-08-10",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 152150
+  },
+  {
+    "day": 21,
+    "time": 1407794400000,
+    "date": "2014-08-11",
+    "etherRange": "10-100",
+    "purchaseCount": 24,
+    "ether": 1076.818
+  },
+  {
+    "day": 21,
+    "time": 1407794400000,
+    "date": "2014-08-11",
+    "etherRange": "100-1,000",
+    "purchaseCount": 37,
+    "ether": 16026.064
+  },
+  {
+    "day": 21,
+    "time": 1407794400000,
+    "date": "2014-08-11",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 54,
+    "ether": 145267.9
+  },
+  {
+    "day": 21,
+    "time": 1407794400000,
+    "date": "2014-08-11",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 7,
+    "ether": 191312
+  },
+  {
+    "day": 21,
+    "time": 1407794400000,
+    "date": "2014-08-11",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 112640
+  },
+  {
+    "day": 22,
+    "time": 1407880800000,
+    "date": "2014-08-12",
+    "etherRange": "10-100",
+    "purchaseCount": 17,
+    "ether": 784.589
+  },
+  {
+    "day": 22,
+    "time": 1407880800000,
+    "date": "2014-08-12",
+    "etherRange": "100-1,000",
+    "purchaseCount": 43,
+    "ether": 22021.923
+  },
+  {
+    "day": 22,
+    "time": 1407880800000,
+    "date": "2014-08-12",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 51,
+    "ether": 136453.952
+  },
+  {
+    "day": 22,
+    "time": 1407880800000,
+    "date": "2014-08-12",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 16,
+    "ether": 399812.346
+  },
+  {
+    "day": 23,
+    "time": 1407967200000,
+    "date": "2014-08-13",
+    "etherRange": "10-100",
+    "purchaseCount": 12,
+    "ether": 737.97
+  },
+  {
+    "day": 23,
+    "time": 1407967200000,
+    "date": "2014-08-13",
+    "etherRange": "100-1,000",
+    "purchaseCount": 40,
+    "ether": 18480.344
+  },
+  {
+    "day": 23,
+    "time": 1407967200000,
+    "date": "2014-08-13",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 54,
+    "ether": 133821.856
+  },
+  {
+    "day": 23,
+    "time": 1407967200000,
+    "date": "2014-08-13",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 7,
+    "ether": 115487.97
+  },
+  {
+    "day": 24,
+    "time": 1408053600000,
+    "date": "2014-08-14",
+    "etherRange": "10-100",
+    "purchaseCount": 12,
+    "ether": 601.525
+  },
+  {
+    "day": 24,
+    "time": 1408053600000,
+    "date": "2014-08-14",
+    "etherRange": "100-1,000",
+    "purchaseCount": 29,
+    "ether": 13123.983
+  },
+  {
+    "day": 24,
+    "time": 1408053600000,
+    "date": "2014-08-14",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 39,
+    "ether": 106863.924
+  },
+  {
+    "day": 24,
+    "time": 1408053600000,
+    "date": "2014-08-14",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 12,
+    "ether": 348970.047
+  },
+  {
+    "day": 25,
+    "time": 1408140000000,
+    "date": "2014-08-15",
+    "etherRange": "10-100",
+    "purchaseCount": 8,
+    "ether": 327.769
+  },
+  {
+    "day": 25,
+    "time": 1408140000000,
+    "date": "2014-08-15",
+    "etherRange": "100-1,000",
+    "purchaseCount": 27,
+    "ether": 10744.938
+  },
+  {
+    "day": 25,
+    "time": 1408140000000,
+    "date": "2014-08-15",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 32,
+    "ether": 103253.448
+  },
+  {
+    "day": 25,
+    "time": 1408140000000,
+    "date": "2014-08-15",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 2,
+    "ether": 113867.951
+  },
+  {
+    "day": 26,
+    "time": 1408226400000,
+    "date": "2014-08-16",
+    "etherRange": "10-100",
+    "purchaseCount": 10,
+    "ether": 435.478
+  },
+  {
+    "day": 26,
+    "time": 1408226400000,
+    "date": "2014-08-16",
+    "etherRange": "100-1,000",
+    "purchaseCount": 34,
+    "ether": 13729.117
+  },
+  {
+    "day": 26,
+    "time": 1408226400000,
+    "date": "2014-08-16",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 30,
+    "ether": 93601.873
+  },
+  {
+    "day": 26,
+    "time": 1408226400000,
+    "date": "2014-08-16",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 17,
+    "ether": 434056.682
+  },
+  {
+    "day": 27,
+    "time": 1408312800000,
+    "date": "2014-08-17",
+    "etherRange": "10-100",
+    "purchaseCount": 11,
+    "ether": 501.719
+  },
+  {
+    "day": 27,
+    "time": 1408312800000,
+    "date": "2014-08-17",
+    "etherRange": "100-1,000",
+    "purchaseCount": 36,
+    "ether": 13550.597
+  },
+  {
+    "day": 27,
+    "time": 1408312800000,
+    "date": "2014-08-17",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 43,
+    "ether": 145073.094
+  },
+  {
+    "day": 27,
+    "time": 1408312800000,
+    "date": "2014-08-17",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 4,
+    "ether": 146671.242
+  },
+  {
+    "day": 27,
+    "time": 1408312800000,
+    "date": "2014-08-17",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 395000
+  },
+  {
+    "day": 28,
+    "time": 1408399200000,
+    "date": "2014-08-18",
+    "etherRange": "10-100",
+    "purchaseCount": 6,
+    "ether": 408.277
+  },
+  {
+    "day": 28,
+    "time": 1408399200000,
+    "date": "2014-08-18",
+    "etherRange": "100-1,000",
+    "purchaseCount": 29,
+    "ether": 12406.578
+  },
+  {
+    "day": 28,
+    "time": 1408399200000,
+    "date": "2014-08-18",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 43,
+    "ether": 121219.61
+  },
+  {
+    "day": 28,
+    "time": 1408399200000,
+    "date": "2014-08-18",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 5,
+    "ether": 77032.432
+  },
+  {
+    "day": 28,
+    "time": 1408399200000,
+    "date": "2014-08-18",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 143731.5
+  },
+  {
+    "day": 29,
+    "time": 1408485600000,
+    "date": "2014-08-19",
+    "etherRange": "10-100",
+    "purchaseCount": 12,
+    "ether": 499.12
+  },
+  {
+    "day": 29,
+    "time": 1408485600000,
+    "date": "2014-08-19",
+    "etherRange": "100-1,000",
+    "purchaseCount": 47,
+    "ether": 15617.731
+  },
+  {
+    "day": 29,
+    "time": 1408485600000,
+    "date": "2014-08-19",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 28,
+    "ether": 77065.122
+  },
+  {
+    "day": 29,
+    "time": 1408485600000,
+    "date": "2014-08-19",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 1,
+    "ether": 15200
+  },
+  {
+    "day": 30,
+    "time": 1408572000000,
+    "date": "2014-08-20",
+    "etherRange": "10-100",
+    "purchaseCount": 8,
+    "ether": 388.964
+  },
+  {
+    "day": 30,
+    "time": 1408572000000,
+    "date": "2014-08-20",
+    "etherRange": "100-1,000",
+    "purchaseCount": 23,
+    "ether": 7192.677
+  },
+  {
+    "day": 30,
+    "time": 1408572000000,
+    "date": "2014-08-20",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 37,
+    "ether": 85397.901
+  },
+  {
+    "day": 30,
+    "time": 1408572000000,
+    "date": "2014-08-20",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 3,
+    "ether": 48167.462
+  },
+  {
+    "day": 31,
+    "time": 1408658400000,
+    "date": "2014-08-21",
+    "etherRange": "10-100",
+    "purchaseCount": 5,
+    "ether": 177.536
+  },
+  {
+    "day": 31,
+    "time": 1408658400000,
+    "date": "2014-08-21",
+    "etherRange": "100-1,000",
+    "purchaseCount": 15,
+    "ether": 4842.206
+  },
+  {
+    "day": 31,
+    "time": 1408658400000,
+    "date": "2014-08-21",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 16,
+    "ether": 42515.458
+  },
+  {
+    "day": 32,
+    "time": 1408744800000,
+    "date": "2014-08-22",
+    "etherRange": "10-100",
+    "purchaseCount": 10,
+    "ether": 406.263
+  },
+  {
+    "day": 32,
+    "time": 1408744800000,
+    "date": "2014-08-22",
+    "etherRange": "100-1,000",
+    "purchaseCount": 27,
+    "ether": 8969.529
+  },
+  {
+    "day": 32,
+    "time": 1408744800000,
+    "date": "2014-08-22",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 18,
+    "ether": 32497.627
+  },
+  {
+    "day": 33,
+    "time": 1408831200000,
+    "date": "2014-08-23",
+    "etherRange": "10-100",
+    "purchaseCount": 5,
+    "ether": 239.323
+  },
+  {
+    "day": 33,
+    "time": 1408831200000,
+    "date": "2014-08-23",
+    "etherRange": "100-1,000",
+    "purchaseCount": 28,
+    "ether": 10017.608
+  },
+  {
+    "day": 33,
+    "time": 1408831200000,
+    "date": "2014-08-23",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 49,
+    "ether": 116636.381
+  },
+  {
+    "day": 33,
+    "time": 1408831200000,
+    "date": "2014-08-23",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 3,
+    "ether": 42000
+  },
+  {
+    "day": 33,
+    "time": 1408831200000,
+    "date": "2014-08-23",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 137200
+  },
+  {
+    "day": 34,
+    "time": 1408917600000,
+    "date": "2014-08-24",
+    "etherRange": "10-100",
+    "purchaseCount": 8,
+    "ether": 191.551
+  },
+  {
+    "day": 34,
+    "time": 1408917600000,
+    "date": "2014-08-24",
+    "etherRange": "100-1,000",
+    "purchaseCount": 26,
+    "ether": 9853.066
+  },
+  {
+    "day": 34,
+    "time": 1408917600000,
+    "date": "2014-08-24",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 21,
+    "ether": 51110.042
+  },
+  {
+    "day": 34,
+    "time": 1408917600000,
+    "date": "2014-08-24",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 1,
+    "ether": 19180
+  },
+  {
+    "day": 34,
+    "time": 1408917600000,
+    "date": "2014-08-24",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 2,
+    "ether": 245230
+  },
+  {
+    "day": 35,
+    "time": 1409004000000,
+    "date": "2014-08-25",
+    "etherRange": "10-100",
+    "purchaseCount": 10,
+    "ether": 271.506
+  },
+  {
+    "day": 35,
+    "time": 1409004000000,
+    "date": "2014-08-25",
+    "etherRange": "100-1,000",
+    "purchaseCount": 21,
+    "ether": 8102.194
+  },
+  {
+    "day": 35,
+    "time": 1409004000000,
+    "date": "2014-08-25",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 20,
+    "ether": 57876.19
+  },
+  {
+    "day": 35,
+    "time": 1409004000000,
+    "date": "2014-08-25",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 4,
+    "ether": 89611.255
+  },
+  {
+    "day": 35,
+    "time": 1409004000000,
+    "date": "2014-08-25",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 107200
+  },
+  {
+    "day": 36,
+    "time": 1409090400000,
+    "date": "2014-08-26",
+    "etherRange": "10-100",
+    "purchaseCount": 12,
+    "ether": 385.567
+  },
+  {
+    "day": 36,
+    "time": 1409090400000,
+    "date": "2014-08-26",
+    "etherRange": "100-1,000",
+    "purchaseCount": 16,
+    "ether": 4897.547
+  },
+  {
+    "day": 36,
+    "time": 1409090400000,
+    "date": "2014-08-26",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 10,
+    "ether": 22706.671
+  },
+  {
+    "day": 36,
+    "time": 1409090400000,
+    "date": "2014-08-26",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 3,
+    "ether": 53480
+  },
+  {
+    "day": 37,
+    "time": 1409176800000,
+    "date": "2014-08-27",
+    "etherRange": "10-100",
+    "purchaseCount": 8,
+    "ether": 292.669
+  },
+  {
+    "day": 37,
+    "time": 1409176800000,
+    "date": "2014-08-27",
+    "etherRange": "100-1,000",
+    "purchaseCount": 19,
+    "ether": 6436.752
+  },
+  {
+    "day": 37,
+    "time": 1409176800000,
+    "date": "2014-08-27",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 36,
+    "ether": 96864.825
+  },
+  {
+    "day": 37,
+    "time": 1409176800000,
+    "date": "2014-08-27",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 4,
+    "ether": 73765.918
+  },
+  {
+    "day": 38,
+    "time": 1409263200000,
+    "date": "2014-08-28",
+    "etherRange": "10-100",
+    "purchaseCount": 6,
+    "ether": 233.306
+  },
+  {
+    "day": 38,
+    "time": 1409263200000,
+    "date": "2014-08-28",
+    "etherRange": "100-1,000",
+    "purchaseCount": 21,
+    "ether": 7564.782
+  },
+  {
+    "day": 38,
+    "time": 1409263200000,
+    "date": "2014-08-28",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 20,
+    "ether": 65191.718
+  },
+  {
+    "day": 38,
+    "time": 1409263200000,
+    "date": "2014-08-28",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 2,
+    "ether": 37862.235
+  },
+  {
+    "day": 38,
+    "time": 1409263200000,
+    "date": "2014-08-28",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 2,
+    "ether": 1065214.663
+  },
+  {
+    "day": 39,
+    "time": 1409349600000,
+    "date": "2014-08-29",
+    "etherRange": "10-100",
+    "purchaseCount": 5,
+    "ether": 164.182
+  },
+  {
+    "day": 39,
+    "time": 1409349600000,
+    "date": "2014-08-29",
+    "etherRange": "100-1,000",
+    "purchaseCount": 14,
+    "ether": 4896.466
+  },
+  {
+    "day": 39,
+    "time": 1409349600000,
+    "date": "2014-08-29",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 15,
+    "ether": 52917.759
+  },
+  {
+    "day": 39,
+    "time": 1409349600000,
+    "date": "2014-08-29",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 4,
+    "ether": 126952.161
+  },
+  {
+    "day": 39,
+    "time": 1409349600000,
+    "date": "2014-08-29",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 133700
+  },
+  {
+    "day": 40,
+    "time": 1409436000000,
+    "date": "2014-08-30",
+    "etherRange": "10-100",
+    "purchaseCount": 13,
+    "ether": 507.518
+  },
+  {
+    "day": 40,
+    "time": 1409436000000,
+    "date": "2014-08-30",
+    "etherRange": "100-1,000",
+    "purchaseCount": 30,
+    "ether": 12187.337
+  },
+  {
+    "day": 40,
+    "time": 1409436000000,
+    "date": "2014-08-30",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 34,
+    "ether": 85585.708
+  },
+  {
+    "day": 40,
+    "time": 1409436000000,
+    "date": "2014-08-30",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 4,
+    "ether": 133587.692
+  },
+  {
+    "day": 41,
+    "time": 1409522400000,
+    "date": "2014-08-31",
+    "etherRange": "10-100",
+    "purchaseCount": 25,
+    "ether": 669.295
+  },
+  {
+    "day": 41,
+    "time": 1409522400000,
+    "date": "2014-08-31",
+    "etherRange": "100-1,000",
+    "purchaseCount": 67,
+    "ether": 28358.226
+  },
+  {
+    "day": 41,
+    "time": 1409522400000,
+    "date": "2014-08-31",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 84,
+    "ether": 260485.965
+  },
+  {
+    "day": 41,
+    "time": 1409522400000,
+    "date": "2014-08-31",
+    "etherRange": "10,000-100,000",
+    "purchaseCount": 8,
+    "ether": 216345.318
+  },
+  {
+    "day": 41,
+    "time": 1409522400000,
+    "date": "2014-08-31",
+    "etherRange": "100,000-1,000,000",
+    "purchaseCount": 1,
+    "ether": 141722
+  },
+  {
+    "day": 42,
+    "time": 1409608800000,
+    "date": "2014-09-01",
+    "etherRange": "10-100",
+    "purchaseCount": 1,
+    "ether": 50.003
+  },
+  {
+    "day": 42,
+    "time": 1409608800000,
+    "date": "2014-09-01",
+    "etherRange": "100-1,000",
+    "purchaseCount": 1,
+    "ether": 554.988
+  },
+  {
+    "day": 42,
+    "time": 1409608800000,
+    "date": "2014-09-01",
+    "etherRange": "1,000-10,000",
+    "purchaseCount": 2,
+    "ether": 4011
+  }
+]
