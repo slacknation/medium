@@ -21,6 +21,8 @@
             var chart4;
             var chart5;
             var chart6;
+            var chart7;
+            var chart8;
             document.addEventListener('DOMContentLoaded', function (event) {
                 d3.json('./chart.json', function (data) {
                     chart = c3.generate({
@@ -157,6 +159,77 @@
                                 tick: {
                                     format: function (d) {
                                         return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        }
+                    });
+                    chart8 = c3.generate({
+                        bindto: '#chart8',
+                        data: {
+                            json: data,
+                            keys: {
+                                x: 'date',
+                                value: ['btcusd', 'ethusd']
+                            },
+                            types: {
+                                btcusd: 'spline',
+                                ethusd: 'spline'
+                            },
+                            axes: {
+                                btcusd: 'y',
+                                ethusd: 'y2'
+                            },
+                            names: {
+                                btcusd: 'btcusd (left)',
+                                ethusd: 'ether price implied from btcusd (right)'
+                            },
+                            colors: {
+                                btcusd: '#3498DB',
+                                ethusd: '#FF6138'
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'btcusd') {
+                                        return accounting.formatMoney(value, '$', 2);
+                                    } else if (id === 'ethusd') {
+                                        return accounting.formatMoney(value, '$', 2);
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                localtime: true,
+                                type: 'timeseries',
+                                tick: {
+                                    count: 5,
+                                    fit: true,
+                                    format: function (x) {
+                                        return moment(x).format('DD-MMM-YY');
+                                    }
+                                }
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatMoney(d, '$', 2);
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatMoney(d, '$', 2);
                                     }
                                 }
                             }
@@ -486,14 +559,15 @@
         <section class="page-header">
             <h1 class="project-name">(function(){})();</h1>
             <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
-            <a href="https://github.com/slacknation/medium/tree/gh-pages" class="btn">View on GitHub</a>
-            <a href="https://medium.com/@slacknation" class="btn">View on Medium</a>
+            <a href="https://github.com/slacknation/medium/tree/gh-pages/1" class="btn">View on GitHub</a>
+            <a href="https://medium.com/@slacknation/overview-ethereum-s-initial-public-sale-563c05e95501" class="btn">View on Medium</a>
         </section>
         <section class="main-content">
-            <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Overview: Ethereum’s initial public sale of ether</h3>
+            <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Overview: Ethereum’s initial public sale</h3>
             <div id="chart"></div>
             <div id="chart6"></div>
             <div id="chart2"></div>
+            <div id="chart8"></div>
             <div id="chart3"></div>
             <div id="chart4"></div>
             <div id="chart5"></div>
