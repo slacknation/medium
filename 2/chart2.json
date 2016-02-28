@@ -1,0 +1,27 @@
+[
+  {
+    "category": "10-100",
+    "ethAccessed": 12174.543,
+    "ethNotAccessed": 41655.977
+  },
+  {
+    "category": "100-1,000",
+    "ethAccessed": 529543.121,
+    "ethNotAccessed": 924397.51
+  },
+  {
+    "category": "1,000-10,000",
+    "ethAccessed": 5560613.971,
+    "ethNotAccessed": 8088526.96
+  },
+  {
+    "category": "10,000-100,000",
+    "ethAccessed": 9895462.613,
+    "ethNotAccessed": 11919511.934
+  },
+  {
+    "category": "100,000-1,000,000",
+    "ethAccessed": 13318442.785,
+    "ethNotAccessed": 9818176.846
+  }
+]
