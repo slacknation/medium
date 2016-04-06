@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Charts and Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
+    <script src="../js/d3.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+    <script src="../js/accounting.min.js"></script>
+    <script>
+        var chart;
+        var chart2;
+        var chart3;
+        var users = [];
+        var accounts = [];
+        var volume = [];
+        var users2First = 0;
+        var accounts2First = 0;
+        var volume2First = 0;
+        var users2 = [];
+        var accounts2 = [];
+        var volume2 = [];
+        var users3 = [];
+        var accounts3 = [];
+        var volume3 = [];
+        var day = 60 * 60 * 24 * 1000;
+        var janFirst = 1451606400000;
+        var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
+        document.addEventListener('DOMContentLoaded', function(event) {
+            d3.json('./chart.json', function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (i === 0) {
+                        users.push([data[i].time, data[i].usersOnline]);
+                        if (data[i].accounts > 0) {
+                            accounts.push([data[i].time, data[i].accounts]);
+                        }
+                        volume.push([data[i].time, data[i].dayVolumeBtc]);
+                    } else if (data[i].time >= users[users.length - 1][0] + day) {
+                        users.push([data[i].time, data[i].usersOnline]);
+                        if (data[i].accounts > 0) {
+                            accounts.push([data[i].time, data[i].accounts]);
+                        }
+                        volume.push([data[i].time, data[i].dayVolumeBtc]);
+                    }
+                    if (data[i].time >= janFirst) {
+                        if (users2.length === 0) {
+                            users2First = data[i].usersOnline;
+                            accounts2First = data[i].accounts;
+                            volume2First = data[i].dayVolumeBtc;
+                            users2.push([data[i].time, 0]);
+                            accounts2.push([data[i].time, 0]);
+                            volume2.push([data[i].time, 0]);
+                        } else if (data[i].time >= users2[users2.length - 1][0] + day) {
+                            users2.push([data[i].time, (data[i].usersOnline / users2First - 1) * 100]);
+                            if (data[i].accounts > 0) {
+                                accounts2.push([data[i].time, (data[i].accounts / accounts2First - 1) * 100]);
+                            }
+                            volume2.push([data[i].time, (data[i].dayVolumeBtc / volume2First - 1) * 100]);
+                        }
+                    }
+                    if (data.length - i <= 168) {
+                        users3.push([data[i].time, data[i].usersOnline]);
+                        accounts3.push([data[i].time, data[i].accounts - data[i - 1].accounts]);
+                        volume3.push([data[i].time, data[i].dayVolumeBtc]);
+                    }
+                }
+                $('#chart').highcharts({
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        gridLineWidth: 0,
+                        type: 'datetime'
+                    },
+                    yAxis: [{
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            style: {
+                                color: color[0]
+                            }
+                        },
+                        opposite: true
+                    }, { // Secondary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        opposite: true
+                    }, { // Tertiary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            style: {
+                                color: color[2]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'vertical',
+                        floating: false,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    tooltip: {
+                        shared: true
+                    },
+                    series: [{
+                        name: 'users online',
+                        type: 'spline',
+                        color: color[0],
+                        data: users,
+                        marker: {
+                            enabled: true,
+                            radius: 3
+                        }
+                    }, {
+                        yAxis: 1,
+                        name: 'total accounts',
+                        type: 'spline',
+                        color: color[1],
+                        data: accounts,
+                        marker: {
+                            enabled: true,
+                            radius: 3
+                        }
+                    }, {
+                        yAxis: 2,
+                        name: '24hr btc volume',
+                        type: 'spline',
+                        color: color[2],
+                        data: volume,
+                        marker: {
+                            enabled: true,
+                            radius: 3
+                        },
+                        tooltip: {
+                            valueDecimals: 0
+                        }
+                    }]
+                });
+                $('#chart2').highcharts({
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        gridLineWidth: 0,
+                        type: 'datetime'
+                    },
+                    yAxis: [{
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            format: '{value}%',
+                            style: {
+                                color: color[0]
+                            }
+                        },
+                        opposite: true
+                    }, { // Secondary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            format: '{value}%',
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        opposite: true
+                    }, { // Tertiary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            format: '{value:,.0f} %',
+                            style: {
+                                color: color[2]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'vertical',
+                        floating: false,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    tooltip: {
+                        shared: true
+                    },
+                    series: [{
+                        name: 'users online',
+                        type: 'spline',
+                        color: color[0],
+                        data: users2,
+                        marker: {
+                            enabled: true,
+                            radius: 3
+                        },
+                        tooltip: {
+                            valueDecimals: 1,
+                            valueSuffix: '%'
+                        }
+                    }, {
+                        yAxis: 1,
+                        name: 'total accounts',
+                        type: 'spline',
+                        color: color[1],
+                        data: accounts2,
+                        marker: {
+                            enabled: true,
+                            radius: 3
+                        },
+                        tooltip: {
+                            valueDecimals: 1,
+                            valueSuffix: '%'
+                        }
+                    }, {
+                        yAxis: 2,
+                        name: '24hr btc volume',
+                        type: 'spline',
+                        color: color[2],
+                        data: volume2,
+                        marker: {
+                            enabled: true,
+                            radius: 3
+                        },
+                        tooltip: {
+                            valueDecimals: 1,
+                            valueSuffix: '%'
+                        }
+                    }]
+                });
+                $('#chart3').highcharts({
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        gridLineWidth: 0,
+                        type: 'datetime',
+                        plotLines: [{
+                            color: 'black',
+                            width: 0.3,
+                            value: 1459558800000,
+                            label: {
+                                text: 'Shanghai 9am UTC +8',
+                                verticalAlign: 'top',
+                                textAlign: 'left'
+                            }
+                        }, {
+                            color: 'black',
+                            width: 0.3,
+                            value: 1459584000000,
+                            label: {
+                                text: 'London 9am UTC +1',
+                                verticalAlign: 'top',
+                                textAlign: 'left'
+                            }
+                        }, {
+                            color: 'black',
+                            width: 0.3,
+                            value: 1459602000000,
+                            label: {
+                                text: 'New York 9am UTC -4',
+                                verticalAlign: 'top',
+                                textAlign: 'left'
+                            }
+                        }]
+                    },
+                    yAxis: [{
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            style: {
+                                color: color[0]
+                            }
+                        },
+                        opposite: true
+                    }, { // Secondary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        opposite: true
+                    }, { // Tertiary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: null
+                        },
+                        labels: {
+                            style: {
+                                color: color[2]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        layout: 'vertical',
+                        floating: false,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    tooltip: {
+                        shared: true
+                    },
+                    series: [{
+                        name: 'users online',
+                        type: 'spline',
+                        color: color[0],
+                        data: users3
+                    }, {
+                        yAxis: 1,
+                        name: 'new accounts',
+                        type: 'spline',
+                        color: color[1],
+                        data: accounts3
+                    }, {
+                        yAxis: 2,
+                        name: '24hr btc volume',
+                        type: 'spline',
+                        color: color[2],
+                        data: volume3,
+                        tooltip: {
+                            valueDecimals: 0
+                        }
+                    }]
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">(function(){})();</h1>
+        <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
+        <a href="https://github.com/slacknation/medium/tree/gh-pages/5" class="btn">View on GitHub</a>
+        <a href="https://medium.com/@slacknation/250-users-online-growth-for-poloniex-ytd-519203e1836e" class="btn">View on Medium</a>
+    </section>
+    <section class="main-content">
+        <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>5. 250% users online growth for Poloniex YTD</h3>
+        <div id="chart"></div>
+        <div id="chart2"></div>
+        <div id="chart3"></div>
+        <div id="chart4"></div>
+        <footer class="site-footer">
+            <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        </footer>
+    </section>
+    <script>
+        //            (function (i, s, o, g, r, a, m) {
+        //                i['GoogleAnalyticsObject'] = r;
+        //                i[r] = i[r] || function () {
+        //                    (i[r].q = i[r].q || []).push(arguments)
+        //                }, i[r].l = 1 * new Date();
+        //                a = s.createElement(o),
+        //                        m = s.getElementsByTagName(o)[0];
+        //                a.async = 1;
+        //                a.src = g;
+        //                m.parentNode.insertBefore(a, m)
+        //            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        //            ga('create', 'UA-73445041-1', 'auto');
+        //            ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>

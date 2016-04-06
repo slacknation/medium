@@ -1,0 +1,1626 @@
+[
+  {
+    "time": 1434067200000,
+    "date": "2015-06-12",
+    "usersOnline": 740,
+    "accounts": 78554,
+    "dayVolumeBtc": 490.308
+  },
+  {
+    "time": 1437004800000,
+    "date": "2015-07-16",
+    "usersOnline": 678,
+    "accounts": 81059,
+    "dayVolumeBtc": 602.075
+  },
+  {
+    "time": 1439164800000,
+    "date": "2015-08-10",
+    "usersOnline": 970,
+    "accounts": 83419,
+    "dayVolumeBtc": 1962.125
+  },
+  {
+    "time": 1442016000000,
+    "date": "2015-09-12",
+    "usersOnline": 1181,
+    "accounts": 87650,
+    "dayVolumeBtc": 2508.116
+  },
+  {
+    "time": 1444521600000,
+    "date": "2015-10-11",
+    "usersOnline": 942,
+    "accounts": 90015,
+    "dayVolumeBtc": 1264.462
+  },
+  {
+    "time": 1446854400000,
+    "date": "2015-11-07",
+    "usersOnline": 1232,
+    "accounts": 92973,
+    "dayVolumeBtc": 2714.154
+  },
+  {
+    "time": 1452038400000,
+    "date": "2016-01-06",
+    "usersOnline": 1276,
+    "accounts": 100217,
+    "dayVolumeBtc": 891.638
+  },
+  {
+    "time": 1452211200000,
+    "date": "2016-01-08",
+    "usersOnline": 1600,
+    "accounts": 100635,
+    "dayVolumeBtc": 1760.465
+  },
+  {
+    "time": 1452556800000,
+    "date": "2016-01-12",
+    "usersOnline": 1889,
+    "accounts": 101334,
+    "dayVolumeBtc": 4499.568
+  },
+  {
+    "time": 1452816000000,
+    "date": "2016-01-15",
+    "usersOnline": 2009,
+    "accounts": 101961,
+    "dayVolumeBtc": 5112.457
+  },
+  {
+    "time": 1452902400000,
+    "date": "2016-01-16",
+    "usersOnline": 2090,
+    "accounts": 102337,
+    "dayVolumeBtc": 7400.369
+  },
+  {
+    "time": 1453075200000,
+    "date": "2016-01-18",
+    "usersOnline": 1806,
+    "accounts": 102666,
+    "dayVolumeBtc": 5634.031
+  },
+  {
+    "time": 1453334400000,
+    "date": "2016-01-21",
+    "usersOnline": 2142,
+    "accounts": 103652,
+    "dayVolumeBtc": 4684.407
+  },
+  {
+    "time": 1455408000000,
+    "date": "2016-02-14",
+    "usersOnline": 3465,
+    "accounts": 113897,
+    "dayVolumeBtc": 45155.006
+  },
+  {
+    "time": 1455926400000,
+    "date": "2016-02-20",
+    "usersOnline": 2888,
+    "accounts": -1,
+    "dayVolumeBtc": 11357.499
+  },
+  {
+    "time": 1457049600000,
+    "date": "2016-03-04",
+    "usersOnline": 3894,
+    "accounts": -1,
+    "dayVolumeBtc": 79525.729
+  },
+  {
+    "time": 1457568000000,
+    "date": "2016-03-10",
+    "usersOnline": 5789,
+    "accounts": -1,
+    "dayVolumeBtc": 65896.752
+  },
+  {
+    "time": 1458000000000,
+    "date": "2016-03-15",
+    "usersOnline": 5153,
+    "accounts": -1,
+    "dayVolumeBtc": 65035.747
+  },
+  {
+    "time": 1458086400000,
+    "date": "2016-03-16",
+    "usersOnline": 5204,
+    "accounts": -1,
+    "dayVolumeBtc": 40326.015
+  },
+  {
+    "time": 1458432000000,
+    "date": "2016-03-20",
+    "usersOnline": 4412,
+    "accounts": -1,
+    "dayVolumeBtc": 36760.756
+  },
+  {
+    "time": 1458604800000,
+    "date": "2016-03-22",
+    "usersOnline": 5588,
+    "accounts": 138036,
+    "dayVolumeBtc": 40856.317
+  },
+  {
+    "time": 1458864000000,
+    "date": "2016-03-25",
+    "usersOnline": 4359,
+    "accounts": 139413,
+    "dayVolumeBtc": 42883.105
+  },
+  {
+    "time": 1459197015590,
+    "date": "2016-03-28 20:30",
+    "usersOnline": 5883,
+    "accounts": 141523,
+    "dayVolumeBtc": 39801.887
+  },
+  {
+    "time": 1459200615742,
+    "date": "2016-03-28 21:30",
+    "usersOnline": 5355,
+    "accounts": 141561,
+    "dayVolumeBtc": 38763.064
+  },
+  {
+    "time": 1459204275345,
+    "date": "2016-03-28 22:31",
+    "usersOnline": 4920,
+    "accounts": 141591,
+    "dayVolumeBtc": 37657.236
+  },
+  {
+    "time": 1459207875582,
+    "date": "2016-03-28 23:31",
+    "usersOnline": 4687,
+    "accounts": 141613,
+    "dayVolumeBtc": 37155.831
+  },
+  {
+    "time": 1459211535421,
+    "date": "2016-03-29 00:32",
+    "usersOnline": 4535,
+    "accounts": 141638,
+    "dayVolumeBtc": 37369.732
+  },
+  {
+    "time": 1459215135541,
+    "date": "2016-03-29 01:32",
+    "usersOnline": 4331,
+    "accounts": 141657,
+    "dayVolumeBtc": 37652.817
+  },
+  {
+    "time": 1459218735573,
+    "date": "2016-03-29 02:32",
+    "usersOnline": 4299,
+    "accounts": 141687,
+    "dayVolumeBtc": 37081.989
+  },
+  {
+    "time": 1459222455566,
+    "date": "2016-03-29 03:34",
+    "usersOnline": 4264,
+    "accounts": 141718,
+    "dayVolumeBtc": 32674.404
+  },
+  {
+    "time": 1459226115469,
+    "date": "2016-03-29 04:35",
+    "usersOnline": 4192,
+    "accounts": 141737,
+    "dayVolumeBtc": 29684.384
+  },
+  {
+    "time": 1459229715631,
+    "date": "2016-03-29 05:35",
+    "usersOnline": 4265,
+    "accounts": 141762,
+    "dayVolumeBtc": 28899.791
+  },
+  {
+    "time": 1459240575622,
+    "date": "2016-03-29 08:36",
+    "usersOnline": 4758,
+    "accounts": 141838,
+    "dayVolumeBtc": 27802.123
+  },
+  {
+    "time": 1459244235482,
+    "date": "2016-03-29 09:37",
+    "usersOnline": 4915,
+    "accounts": 141865,
+    "dayVolumeBtc": 27464.423
+  },
+  {
+    "time": 1459247895324,
+    "date": "2016-03-29 10:38",
+    "usersOnline": 4995,
+    "accounts": 141896,
+    "dayVolumeBtc": 26997.04
+  },
+  {
+    "time": 1459251495396,
+    "date": "2016-03-29 11:38",
+    "usersOnline": 5325,
+    "accounts": 141925,
+    "dayVolumeBtc": 28984.634
+  },
+  {
+    "time": 1459255095407,
+    "date": "2016-03-29 12:38",
+    "usersOnline": 5766,
+    "accounts": 141958,
+    "dayVolumeBtc": 31780.32
+  },
+  {
+    "time": 1459258755380,
+    "date": "2016-03-29 13:39",
+    "usersOnline": 5945,
+    "accounts": 141998,
+    "dayVolumeBtc": 33886.505
+  },
+  {
+    "time": 1459262415380,
+    "date": "2016-03-29 14:40",
+    "usersOnline": 6000,
+    "accounts": 142031,
+    "dayVolumeBtc": 33935.765
+  },
+  {
+    "time": 1459266016284,
+    "date": "2016-03-29 15:40",
+    "usersOnline": 5983,
+    "accounts": 142062,
+    "dayVolumeBtc": 35021.297
+  },
+  {
+    "time": 1459269616522,
+    "date": "2016-03-29 16:40",
+    "usersOnline": 6030,
+    "accounts": 142091,
+    "dayVolumeBtc": 34477.304
+  },
+  {
+    "time": 1459273216549,
+    "date": "2016-03-29 17:40",
+    "usersOnline": 5856,
+    "accounts": 142117,
+    "dayVolumeBtc": 32693.888
+  },
+  {
+    "time": 1459276816573,
+    "date": "2016-03-29 18:40",
+    "usersOnline": 5900,
+    "accounts": 142150,
+    "dayVolumeBtc": 32497.655
+  },
+  {
+    "time": 1459280419308,
+    "date": "2016-03-29 19:40",
+    "usersOnline": 5887,
+    "accounts": 142184,
+    "dayVolumeBtc": 32684.055
+  },
+  {
+    "time": 1459284019533,
+    "date": "2016-03-29 20:40",
+    "usersOnline": 5570,
+    "accounts": 142211,
+    "dayVolumeBtc": 31339.477
+  },
+  {
+    "time": 1459287679149,
+    "date": "2016-03-29 21:41",
+    "usersOnline": 5161,
+    "accounts": 142242,
+    "dayVolumeBtc": 31450.081
+  },
+  {
+    "time": 1459291279462,
+    "date": "2016-03-29 22:41",
+    "usersOnline": 4762,
+    "accounts": 142276,
+    "dayVolumeBtc": 31389.436
+  },
+  {
+    "time": 1459294939570,
+    "date": "2016-03-29 23:42",
+    "usersOnline": 4514,
+    "accounts": 142298,
+    "dayVolumeBtc": 31087.882
+  },
+  {
+    "time": 1459298599465,
+    "date": "2016-03-30 00:43",
+    "usersOnline": 4289,
+    "accounts": 142312,
+    "dayVolumeBtc": 30926.491
+  },
+  {
+    "time": 1459302259378,
+    "date": "2016-03-30 01:44",
+    "usersOnline": 4247,
+    "accounts": 142335,
+    "dayVolumeBtc": 30592.295
+  },
+  {
+    "time": 1459305859617,
+    "date": "2016-03-30 02:44",
+    "usersOnline": 4178,
+    "accounts": 142354,
+    "dayVolumeBtc": 30715.649
+  },
+  {
+    "time": 1459309519570,
+    "date": "2016-03-30 03:45",
+    "usersOnline": 4202,
+    "accounts": 142380,
+    "dayVolumeBtc": 30932.151
+  },
+  {
+    "time": 1459313179494,
+    "date": "2016-03-30 04:46",
+    "usersOnline": 4115,
+    "accounts": 142404,
+    "dayVolumeBtc": 31348.246
+  },
+  {
+    "time": 1459316779620,
+    "date": "2016-03-30 05:46",
+    "usersOnline": 4287,
+    "accounts": 142421,
+    "dayVolumeBtc": 31524.914
+  },
+  {
+    "time": 1459320439319,
+    "date": "2016-03-30 06:47",
+    "usersOnline": 4557,
+    "accounts": 142439,
+    "dayVolumeBtc": 34022.363
+  },
+  {
+    "time": 1459324099308,
+    "date": "2016-03-30 07:48",
+    "usersOnline": 4841,
+    "accounts": 142458,
+    "dayVolumeBtc": 35772.331
+  },
+  {
+    "time": 1459327699659,
+    "date": "2016-03-30 08:48",
+    "usersOnline": 5002,
+    "accounts": 142482,
+    "dayVolumeBtc": 36275.68
+  },
+  {
+    "time": 1459331359464,
+    "date": "2016-03-30 09:49",
+    "usersOnline": 4992,
+    "accounts": 142501,
+    "dayVolumeBtc": 36227.359
+  },
+  {
+    "time": 1459335019148,
+    "date": "2016-03-30 10:50",
+    "usersOnline": 5169,
+    "accounts": 142521,
+    "dayVolumeBtc": 37017.823
+  },
+  {
+    "time": 1459338619483,
+    "date": "2016-03-30 11:50",
+    "usersOnline": 5343,
+    "accounts": 142537,
+    "dayVolumeBtc": 35062.589
+  },
+  {
+    "time": 1459342279395,
+    "date": "2016-03-30 12:51",
+    "usersOnline": 5657,
+    "accounts": 142559,
+    "dayVolumeBtc": 33312.367
+  },
+  {
+    "time": 1459345939800,
+    "date": "2016-03-30 13:52",
+    "usersOnline": 5807,
+    "accounts": 142590,
+    "dayVolumeBtc": 31873.962
+  },
+  {
+    "time": 1459349599498,
+    "date": "2016-03-30 14:53",
+    "usersOnline": 5898,
+    "accounts": 142620,
+    "dayVolumeBtc": 31617.711
+  },
+  {
+    "time": 1459353199513,
+    "date": "2016-03-30 15:53",
+    "usersOnline": 5851,
+    "accounts": 142659,
+    "dayVolumeBtc": 30627.93
+  },
+  {
+    "time": 1459356859313,
+    "date": "2016-03-30 16:54",
+    "usersOnline": 5658,
+    "accounts": 142689,
+    "dayVolumeBtc": 29951.351
+  },
+  {
+    "time": 1459360459388,
+    "date": "2016-03-30 17:54",
+    "usersOnline": 5668,
+    "accounts": 142711,
+    "dayVolumeBtc": 30825.576
+  },
+  {
+    "time": 1459364059406,
+    "date": "2016-03-30 18:54",
+    "usersOnline": 5892,
+    "accounts": 142748,
+    "dayVolumeBtc": 32426.598
+  },
+  {
+    "time": 1459367719686,
+    "date": "2016-03-30 19:55",
+    "usersOnline": 5792,
+    "accounts": 142775,
+    "dayVolumeBtc": 32129.679
+  },
+  {
+    "time": 1459371379157,
+    "date": "2016-03-30 20:56",
+    "usersOnline": 5505,
+    "accounts": 142808,
+    "dayVolumeBtc": 33609.625
+  },
+  {
+    "time": 1459374979178,
+    "date": "2016-03-30 21:56",
+    "usersOnline": 5039,
+    "accounts": 142827,
+    "dayVolumeBtc": 33928.67
+  },
+  {
+    "time": 1459378579505,
+    "date": "2016-03-30 22:56",
+    "usersOnline": 4611,
+    "accounts": 142847,
+    "dayVolumeBtc": 34295.328
+  },
+  {
+    "time": 1459382239287,
+    "date": "2016-03-30 23:57",
+    "usersOnline": 4423,
+    "accounts": 142869,
+    "dayVolumeBtc": 34298.669
+  },
+  {
+    "time": 1459385839465,
+    "date": "2016-03-31 00:57",
+    "usersOnline": 4362,
+    "accounts": 142894,
+    "dayVolumeBtc": 34607.649
+  },
+  {
+    "time": 1459389499433,
+    "date": "2016-03-31 01:58",
+    "usersOnline": 4234,
+    "accounts": 142910,
+    "dayVolumeBtc": 34615.824
+  },
+  {
+    "time": 1459393099506,
+    "date": "2016-03-31 02:58",
+    "usersOnline": 4150,
+    "accounts": 142929,
+    "dayVolumeBtc": 34567.329
+  },
+  {
+    "time": 1459396759262,
+    "date": "2016-03-31 03:59",
+    "usersOnline": 4121,
+    "accounts": 142945,
+    "dayVolumeBtc": 34448.652
+  },
+  {
+    "time": 1459400359292,
+    "date": "2016-03-31 04:59",
+    "usersOnline": 4151,
+    "accounts": 142964,
+    "dayVolumeBtc": 33982.864
+  },
+  {
+    "time": 1459404019621,
+    "date": "2016-03-31 06:00",
+    "usersOnline": 4241,
+    "accounts": 142977,
+    "dayVolumeBtc": 33904.33
+  },
+  {
+    "time": 1459407679620,
+    "date": "2016-03-31 07:01",
+    "usersOnline": 4368,
+    "accounts": 142988,
+    "dayVolumeBtc": 30816.228
+  },
+  {
+    "time": 1459411279624,
+    "date": "2016-03-31 08:01",
+    "usersOnline": 4538,
+    "accounts": 143001,
+    "dayVolumeBtc": 29189.063
+  },
+  {
+    "time": 1459414939392,
+    "date": "2016-03-31 09:02",
+    "usersOnline": 4682,
+    "accounts": 143027,
+    "dayVolumeBtc": 28696.042
+  },
+  {
+    "time": 1459418599296,
+    "date": "2016-03-31 10:03",
+    "usersOnline": 4759,
+    "accounts": 143043,
+    "dayVolumeBtc": 28662.338
+  },
+  {
+    "time": 1459422199624,
+    "date": "2016-03-31 11:03",
+    "usersOnline": 4838,
+    "accounts": 143069,
+    "dayVolumeBtc": 27566.63
+  },
+  {
+    "time": 1459425859352,
+    "date": "2016-03-31 12:04",
+    "usersOnline": 5052,
+    "accounts": 143089,
+    "dayVolumeBtc": 28303.117
+  },
+  {
+    "time": 1459429459384,
+    "date": "2016-03-31 13:04",
+    "usersOnline": 5235,
+    "accounts": 143118,
+    "dayVolumeBtc": 27320.285
+  },
+  {
+    "time": 1459433119286,
+    "date": "2016-03-31 14:05",
+    "usersOnline": 5346,
+    "accounts": 143149,
+    "dayVolumeBtc": 26525.502
+  },
+  {
+    "time": 1459436779472,
+    "date": "2016-03-31 15:06",
+    "usersOnline": 5379,
+    "accounts": 143191,
+    "dayVolumeBtc": 25687.374
+  },
+  {
+    "time": 1459440439449,
+    "date": "2016-03-31 16:07",
+    "usersOnline": 5370,
+    "accounts": 143218,
+    "dayVolumeBtc": 24200.592
+  },
+  {
+    "time": 1459444040661,
+    "date": "2016-03-31 17:07",
+    "usersOnline": 5509,
+    "accounts": 143234,
+    "dayVolumeBtc": 25074.318
+  },
+  {
+    "time": 1459447700485,
+    "date": "2016-03-31 18:08",
+    "usersOnline": 5459,
+    "accounts": 143270,
+    "dayVolumeBtc": 24658.828
+  },
+  {
+    "time": 1459451300565,
+    "date": "2016-03-31 19:08",
+    "usersOnline": 5357,
+    "accounts": 143292,
+    "dayVolumeBtc": 23397.68
+  },
+  {
+    "time": 1459454960421,
+    "date": "2016-03-31 20:09",
+    "usersOnline": 5209,
+    "accounts": 143323,
+    "dayVolumeBtc": 23066.552
+  },
+  {
+    "time": 1459458620439,
+    "date": "2016-03-31 21:10",
+    "usersOnline": 4961,
+    "accounts": 143358,
+    "dayVolumeBtc": 23550.265
+  },
+  {
+    "time": 1459462280313,
+    "date": "2016-03-31 22:11",
+    "usersOnline": 4627,
+    "accounts": 143378,
+    "dayVolumeBtc": 24073.206
+  },
+  {
+    "time": 1459465880553,
+    "date": "2016-03-31 23:11",
+    "usersOnline": 4317,
+    "accounts": 143392,
+    "dayVolumeBtc": 23819.311
+  },
+  {
+    "time": 1459469540641,
+    "date": "2016-04-01 00:12",
+    "usersOnline": 4079,
+    "accounts": 143408,
+    "dayVolumeBtc": 23731.125
+  },
+  {
+    "time": 1459473140646,
+    "date": "2016-04-01 01:12",
+    "usersOnline": 4025,
+    "accounts": 143427,
+    "dayVolumeBtc": 23476.88
+  },
+  {
+    "time": 1459476800648,
+    "date": "2016-04-01 02:13",
+    "usersOnline": 3959,
+    "accounts": 143437,
+    "dayVolumeBtc": 23211.939
+  },
+  {
+    "time": 1459480460325,
+    "date": "2016-04-01 03:14",
+    "usersOnline": 3926,
+    "accounts": 143452,
+    "dayVolumeBtc": 23084.938
+  },
+  {
+    "time": 1459484120304,
+    "date": "2016-04-01 04:15",
+    "usersOnline": 3981,
+    "accounts": 143466,
+    "dayVolumeBtc": 24832.706
+  },
+  {
+    "time": 1459487720431,
+    "date": "2016-04-01 05:15",
+    "usersOnline": 4033,
+    "accounts": 143480,
+    "dayVolumeBtc": 25426.397
+  },
+  {
+    "time": 1459491380603,
+    "date": "2016-04-01 06:16",
+    "usersOnline": 4163,
+    "accounts": 143494,
+    "dayVolumeBtc": 25564.618
+  },
+  {
+    "time": 1459494980643,
+    "date": "2016-04-01 07:16",
+    "usersOnline": 4323,
+    "accounts": 143511,
+    "dayVolumeBtc": 25931.324
+  },
+  {
+    "time": 1459498640394,
+    "date": "2016-04-01 08:17",
+    "usersOnline": 4517,
+    "accounts": 143538,
+    "dayVolumeBtc": 26065.199
+  },
+  {
+    "time": 1459502240555,
+    "date": "2016-04-01 09:17",
+    "usersOnline": 4665,
+    "accounts": 143559,
+    "dayVolumeBtc": 26140.582
+  },
+  {
+    "time": 1459505900415,
+    "date": "2016-04-01 10:18",
+    "usersOnline": 4731,
+    "accounts": 143575,
+    "dayVolumeBtc": 26129.388
+  },
+  {
+    "time": 1459509560624,
+    "date": "2016-04-01 11:19",
+    "usersOnline": 4817,
+    "accounts": 143595,
+    "dayVolumeBtc": 26326.725
+  },
+  {
+    "time": 1459513220515,
+    "date": "2016-04-01 12:20",
+    "usersOnline": 4982,
+    "accounts": 143622,
+    "dayVolumeBtc": 26337.647
+  },
+  {
+    "time": 1459516820539,
+    "date": "2016-04-01 13:20",
+    "usersOnline": 5062,
+    "accounts": 143644,
+    "dayVolumeBtc": 26638.175
+  },
+  {
+    "time": 1459520480115,
+    "date": "2016-04-01 14:21",
+    "usersOnline": 5121,
+    "accounts": 143665,
+    "dayVolumeBtc": 26543.722
+  },
+  {
+    "time": 1459524080227,
+    "date": "2016-04-01 15:21",
+    "usersOnline": 5095,
+    "accounts": 143687,
+    "dayVolumeBtc": 26309.417
+  },
+  {
+    "time": 1459527680564,
+    "date": "2016-04-01 16:21",
+    "usersOnline": 4986,
+    "accounts": 143706,
+    "dayVolumeBtc": 26638.68
+  },
+  {
+    "time": 1459531340619,
+    "date": "2016-04-01 17:22",
+    "usersOnline": 5004,
+    "accounts": 143735,
+    "dayVolumeBtc": 24800.902
+  },
+  {
+    "time": 1459535000115,
+    "date": "2016-04-01 18:23",
+    "usersOnline": 5045,
+    "accounts": 143759,
+    "dayVolumeBtc": 25906.002
+  },
+  {
+    "time": 1459538600463,
+    "date": "2016-04-01 19:23",
+    "usersOnline": 5011,
+    "accounts": 143778,
+    "dayVolumeBtc": 24885.649
+  },
+  {
+    "time": 1459542260638,
+    "date": "2016-04-01 20:24",
+    "usersOnline": 4811,
+    "accounts": 143804,
+    "dayVolumeBtc": 24341.826
+  },
+  {
+    "time": 1459545920148,
+    "date": "2016-04-01 21:25",
+    "usersOnline": 4608,
+    "accounts": 143817,
+    "dayVolumeBtc": 21606.789
+  },
+  {
+    "time": 1459549520438,
+    "date": "2016-04-01 22:25",
+    "usersOnline": 4392,
+    "accounts": 143835,
+    "dayVolumeBtc": 20906.082
+  },
+  {
+    "time": 1459553180252,
+    "date": "2016-04-01 23:26",
+    "usersOnline": 4195,
+    "accounts": 143853,
+    "dayVolumeBtc": 20435.402
+  },
+  {
+    "time": 1459556780393,
+    "date": "2016-04-02 00:26",
+    "usersOnline": 4091,
+    "accounts": 143870,
+    "dayVolumeBtc": 21091.994
+  },
+  {
+    "time": 1459560440606,
+    "date": "2016-04-02 01:27",
+    "usersOnline": 4120,
+    "accounts": 143886,
+    "dayVolumeBtc": 22001.462
+  },
+  {
+    "time": 1459564100185,
+    "date": "2016-04-02 02:28",
+    "usersOnline": 4050,
+    "accounts": 143901,
+    "dayVolumeBtc": 22294.398
+  },
+  {
+    "time": 1459567700656,
+    "date": "2016-04-02 03:28",
+    "usersOnline": 3997,
+    "accounts": 143909,
+    "dayVolumeBtc": 22451.046
+  },
+  {
+    "time": 1459571360211,
+    "date": "2016-04-02 04:29",
+    "usersOnline": 3920,
+    "accounts": 143921,
+    "dayVolumeBtc": 20389.034
+  },
+  {
+    "time": 1459574960490,
+    "date": "2016-04-02 05:29",
+    "usersOnline": 3978,
+    "accounts": 143934,
+    "dayVolumeBtc": 20496.584
+  },
+  {
+    "time": 1459578620127,
+    "date": "2016-04-02 06:30",
+    "usersOnline": 4105,
+    "accounts": 143948,
+    "dayVolumeBtc": 20289.88
+  },
+  {
+    "time": 1459582220545,
+    "date": "2016-04-02 07:30",
+    "usersOnline": 4172,
+    "accounts": 143964,
+    "dayVolumeBtc": 20169.842
+  },
+  {
+    "time": 1459585880141,
+    "date": "2016-04-02 08:31",
+    "usersOnline": 4323,
+    "accounts": 143979,
+    "dayVolumeBtc": 20310.555
+  },
+  {
+    "time": 1459589480272,
+    "date": "2016-04-02 09:31",
+    "usersOnline": 4468,
+    "accounts": 143994,
+    "dayVolumeBtc": 20204.91
+  },
+  {
+    "time": 1459593140382,
+    "date": "2016-04-02 10:32",
+    "usersOnline": 4514,
+    "accounts": 144012,
+    "dayVolumeBtc": 19794.595
+  },
+  {
+    "time": 1459596800197,
+    "date": "2016-04-02 11:33",
+    "usersOnline": 4595,
+    "accounts": 144027,
+    "dayVolumeBtc": 18294.978
+  },
+  {
+    "time": 1459600400694,
+    "date": "2016-04-02 12:33",
+    "usersOnline": 4748,
+    "accounts": 144042,
+    "dayVolumeBtc": 17540.142
+  },
+  {
+    "time": 1459604000710,
+    "date": "2016-04-02 13:33",
+    "usersOnline": 5024,
+    "accounts": 144069,
+    "dayVolumeBtc": 17589.858
+  },
+  {
+    "time": 1459607660419,
+    "date": "2016-04-02 14:34",
+    "usersOnline": 5097,
+    "accounts": 144092,
+    "dayVolumeBtc": 17700.941
+  },
+  {
+    "time": 1459611262007,
+    "date": "2016-04-02 15:34",
+    "usersOnline": 5149,
+    "accounts": 144111,
+    "dayVolumeBtc": 17385.001
+  },
+  {
+    "time": 1459614921222,
+    "date": "2016-04-02 16:35",
+    "usersOnline": 5114,
+    "accounts": 144129,
+    "dayVolumeBtc": 17162.205
+  },
+  {
+    "time": 1459618521235,
+    "date": "2016-04-02 17:35",
+    "usersOnline": 5118,
+    "accounts": 144151,
+    "dayVolumeBtc": 17071.712
+  },
+  {
+    "time": 1459622121451,
+    "date": "2016-04-02 18:35",
+    "usersOnline": 4958,
+    "accounts": 144165,
+    "dayVolumeBtc": 15016.355
+  },
+  {
+    "time": 1459625721507,
+    "date": "2016-04-02 19:35",
+    "usersOnline": 4969,
+    "accounts": 144183,
+    "dayVolumeBtc": 15098.498
+  },
+  {
+    "time": 1459629561189,
+    "date": "2016-04-02 20:39",
+    "usersOnline": 4857,
+    "accounts": 144196,
+    "dayVolumeBtc": 15144.271
+  },
+  {
+    "time": 1459633221475,
+    "date": "2016-04-02 21:40",
+    "usersOnline": 4661,
+    "accounts": 144216,
+    "dayVolumeBtc": 15220.451
+  },
+  {
+    "time": 1459636881300,
+    "date": "2016-04-02 22:41",
+    "usersOnline": 4401,
+    "accounts": 144224,
+    "dayVolumeBtc": 15370.104
+  },
+  {
+    "time": 1459640481350,
+    "date": "2016-04-02 23:41",
+    "usersOnline": 4217,
+    "accounts": 144239,
+    "dayVolumeBtc": 15368.505
+  },
+  {
+    "time": 1459644081585,
+    "date": "2016-04-03 00:41",
+    "usersOnline": 4060,
+    "accounts": 144251,
+    "dayVolumeBtc": 14355.6
+  },
+  {
+    "time": 1459647681687,
+    "date": "2016-04-03 01:41",
+    "usersOnline": 3885,
+    "accounts": 144264,
+    "dayVolumeBtc": 13171.632
+  },
+  {
+    "time": 1459651341317,
+    "date": "2016-04-03 02:42",
+    "usersOnline": 3805,
+    "accounts": 144278,
+    "dayVolumeBtc": 12582.175
+  },
+  {
+    "time": 1459655001552,
+    "date": "2016-04-03 03:43",
+    "usersOnline": 3774,
+    "accounts": 144292,
+    "dayVolumeBtc": 12281.726
+  },
+  {
+    "time": 1459658661568,
+    "date": "2016-04-03 04:44",
+    "usersOnline": 3723,
+    "accounts": 144309,
+    "dayVolumeBtc": 11581.518
+  },
+  {
+    "time": 1459662321406,
+    "date": "2016-04-03 05:45",
+    "usersOnline": 3849,
+    "accounts": 144327,
+    "dayVolumeBtc": 11293.558
+  },
+  {
+    "time": 1459665921423,
+    "date": "2016-04-03 06:45",
+    "usersOnline": 3929,
+    "accounts": 144343,
+    "dayVolumeBtc": 11017.074
+  },
+  {
+    "time": 1459669581643,
+    "date": "2016-04-03 07:46",
+    "usersOnline": 4072,
+    "accounts": 144364,
+    "dayVolumeBtc": 10828.776
+  },
+  {
+    "time": 1459673241491,
+    "date": "2016-04-03 08:47",
+    "usersOnline": 4284,
+    "accounts": 144377,
+    "dayVolumeBtc": 10624.541
+  },
+  {
+    "time": 1459676842090,
+    "date": "2016-04-03 09:47",
+    "usersOnline": 4542,
+    "accounts": 144394,
+    "dayVolumeBtc": 10978.503
+  },
+  {
+    "time": 1459680502393,
+    "date": "2016-04-03 10:48",
+    "usersOnline": 4640,
+    "accounts": 144409,
+    "dayVolumeBtc": 11733.042
+  },
+  {
+    "time": 1459684162585,
+    "date": "2016-04-03 11:49",
+    "usersOnline": 4751,
+    "accounts": 144437,
+    "dayVolumeBtc": 13701.017
+  },
+  {
+    "time": 1459687822350,
+    "date": "2016-04-03 12:50",
+    "usersOnline": 4769,
+    "accounts": 144455,
+    "dayVolumeBtc": 13473.496
+  },
+  {
+    "time": 1459691482392,
+    "date": "2016-04-03 13:51",
+    "usersOnline": 4918,
+    "accounts": 144480,
+    "dayVolumeBtc": 13669.603
+  },
+  {
+    "time": 1459695142732,
+    "date": "2016-04-03 14:52",
+    "usersOnline": 5104,
+    "accounts": 144504,
+    "dayVolumeBtc": 13606.817
+  },
+  {
+    "time": 1459698802144,
+    "date": "2016-04-03 15:53",
+    "usersOnline": 5098,
+    "accounts": 144533,
+    "dayVolumeBtc": 13410.624
+  },
+  {
+    "time": 1459702402373,
+    "date": "2016-04-03 16:53",
+    "usersOnline": 5054,
+    "accounts": 144568,
+    "dayVolumeBtc": 13513.514
+  },
+  {
+    "time": 1459706002654,
+    "date": "2016-04-03 17:53",
+    "usersOnline": 5054,
+    "accounts": 144587,
+    "dayVolumeBtc": 13535.18
+  },
+  {
+    "time": 1459709662476,
+    "date": "2016-04-03 18:54",
+    "usersOnline": 5080,
+    "accounts": 144615,
+    "dayVolumeBtc": 13466.289
+  },
+  {
+    "time": 1459713322314,
+    "date": "2016-04-03 19:55",
+    "usersOnline": 4966,
+    "accounts": 144636,
+    "dayVolumeBtc": 13112.992
+  },
+  {
+    "time": 1459716982413,
+    "date": "2016-04-03 20:56",
+    "usersOnline": 4754,
+    "accounts": 144661,
+    "dayVolumeBtc": 12893.888
+  },
+  {
+    "time": 1459720642663,
+    "date": "2016-04-03 21:57",
+    "usersOnline": 4476,
+    "accounts": 144683,
+    "dayVolumeBtc": 12645.611
+  },
+  {
+    "time": 1459724302519,
+    "date": "2016-04-03 22:58",
+    "usersOnline": 4165,
+    "accounts": 144695,
+    "dayVolumeBtc": 12497.043
+  },
+  {
+    "time": 1459727962388,
+    "date": "2016-04-03 23:59",
+    "usersOnline": 3962,
+    "accounts": 144708,
+    "dayVolumeBtc": 12551.144
+  },
+  {
+    "time": 1459731563338,
+    "date": "2016-04-04 00:59",
+    "usersOnline": 3909,
+    "accounts": 144723,
+    "dayVolumeBtc": 12704.815
+  },
+  {
+    "time": 1459735223375,
+    "date": "2016-04-04 02:00",
+    "usersOnline": 3838,
+    "accounts": 144739,
+    "dayVolumeBtc": 12753.807
+  },
+  {
+    "time": 1459738883533,
+    "date": "2016-04-04 03:01",
+    "usersOnline": 3794,
+    "accounts": 144753,
+    "dayVolumeBtc": 12994.152
+  },
+  {
+    "time": 1459742483583,
+    "date": "2016-04-04 04:01",
+    "usersOnline": 3787,
+    "accounts": 144761,
+    "dayVolumeBtc": 12964.661
+  },
+  {
+    "time": 1459746143373,
+    "date": "2016-04-04 05:02",
+    "usersOnline": 3838,
+    "accounts": 144776,
+    "dayVolumeBtc": 13043.892
+  },
+  {
+    "time": 1459749743380,
+    "date": "2016-04-04 06:02",
+    "usersOnline": 4014,
+    "accounts": 144787,
+    "dayVolumeBtc": 13088.21
+  },
+  {
+    "time": 1459753343588,
+    "date": "2016-04-04 07:02",
+    "usersOnline": 4193,
+    "accounts": 144798,
+    "dayVolumeBtc": 13279.387
+  },
+  {
+    "time": 1459757003239,
+    "date": "2016-04-04 08:03",
+    "usersOnline": 4371,
+    "accounts": 144814,
+    "dayVolumeBtc": 13335.598
+  },
+  {
+    "time": 1459760603437,
+    "date": "2016-04-04 09:03",
+    "usersOnline": 4527,
+    "accounts": 144832,
+    "dayVolumeBtc": 13151.95
+  },
+  {
+    "time": 1459764263788,
+    "date": "2016-04-04 10:04",
+    "usersOnline": 4604,
+    "accounts": 144850,
+    "dayVolumeBtc": 12971.945
+  },
+  {
+    "time": 1459767864747,
+    "date": "2016-04-04 11:04",
+    "usersOnline": 4749,
+    "accounts": 144867,
+    "dayVolumeBtc": 13517.354
+  },
+  {
+    "time": 1459771524519,
+    "date": "2016-04-04 12:05",
+    "usersOnline": 4928,
+    "accounts": 144892,
+    "dayVolumeBtc": 12226.597
+  },
+  {
+    "time": 1459775184241,
+    "date": "2016-04-04 13:06",
+    "usersOnline": 5151,
+    "accounts": 144907,
+    "dayVolumeBtc": 12560.536
+  },
+  {
+    "time": 1459778784509,
+    "date": "2016-04-04 14:06",
+    "usersOnline": 5280,
+    "accounts": 144932,
+    "dayVolumeBtc": 12840.142
+  },
+  {
+    "time": 1459782384553,
+    "date": "2016-04-04 15:06",
+    "usersOnline": 5247,
+    "accounts": 144958,
+    "dayVolumeBtc": 13089.764
+  },
+  {
+    "time": 1459786044398,
+    "date": "2016-04-04 16:07",
+    "usersOnline": 5267,
+    "accounts": 144986,
+    "dayVolumeBtc": 13612.229
+  },
+  {
+    "time": 1459789704641,
+    "date": "2016-04-04 17:08",
+    "usersOnline": 5268,
+    "accounts": 145013,
+    "dayVolumeBtc": 13889.416
+  },
+  {
+    "time": 1459793364122,
+    "date": "2016-04-04 18:09",
+    "usersOnline": 5222,
+    "accounts": 145045,
+    "dayVolumeBtc": 14021.372
+  },
+  {
+    "time": 1459796964223,
+    "date": "2016-04-04 19:09",
+    "usersOnline": 5227,
+    "accounts": 145060,
+    "dayVolumeBtc": 14231.184
+  },
+  {
+    "time": 1459800564735,
+    "date": "2016-04-04 20:09",
+    "usersOnline": 5024,
+    "accounts": 145088,
+    "dayVolumeBtc": 14438.82
+  },
+  {
+    "time": 1459804166296,
+    "date": "2016-04-04 21:09",
+    "usersOnline": 4747,
+    "accounts": 145113,
+    "dayVolumeBtc": 14427.567
+  },
+  {
+    "time": 1459807766307,
+    "date": "2016-04-04 22:09",
+    "usersOnline": 4306,
+    "accounts": 145133,
+    "dayVolumeBtc": 14452.395
+  },
+  {
+    "time": 1459811426613,
+    "date": "2016-04-04 23:10",
+    "usersOnline": 4116,
+    "accounts": 145152,
+    "dayVolumeBtc": 14872.253
+  },
+  {
+    "time": 1459815086601,
+    "date": "2016-04-05 00:11",
+    "usersOnline": 3937,
+    "accounts": 145165,
+    "dayVolumeBtc": 14656.241
+  },
+  {
+    "time": 1459818746593,
+    "date": "2016-04-05 01:12",
+    "usersOnline": 3908,
+    "accounts": 145176,
+    "dayVolumeBtc": 15007.982
+  },
+  {
+    "time": 1459822346621,
+    "date": "2016-04-05 02:12",
+    "usersOnline": 3866,
+    "accounts": 145188,
+    "dayVolumeBtc": 15412.177
+  },
+  {
+    "time": 1459825946652,
+    "date": "2016-04-05 03:12",
+    "usersOnline": 3867,
+    "accounts": 145205,
+    "dayVolumeBtc": 15568.841
+  },
+  {
+    "time": 1459829606527,
+    "date": "2016-04-05 04:13",
+    "usersOnline": 3984,
+    "accounts": 145217,
+    "dayVolumeBtc": 19071.732
+  },
+  {
+    "time": 1459833266273,
+    "date": "2016-04-05 05:14",
+    "usersOnline": 4019,
+    "accounts": 145227,
+    "dayVolumeBtc": 20375.384
+  },
+  {
+    "time": 1459836866277,
+    "date": "2016-04-05 06:14",
+    "usersOnline": 4173,
+    "accounts": 145241,
+    "dayVolumeBtc": 21648.676
+  },
+  {
+    "time": 1459840526646,
+    "date": "2016-04-05 07:15",
+    "usersOnline": 4339,
+    "accounts": 145261,
+    "dayVolumeBtc": 22211.898
+  },
+  {
+    "time": 1459844186087,
+    "date": "2016-04-05 08:16",
+    "usersOnline": 4518,
+    "accounts": 145274,
+    "dayVolumeBtc": 22789.6
+  },
+  {
+    "time": 1459847786192,
+    "date": "2016-04-05 09:16",
+    "usersOnline": 4653,
+    "accounts": 145293,
+    "dayVolumeBtc": 23101.69
+  },
+  {
+    "time": 1459851386616,
+    "date": "2016-04-05 10:16",
+    "usersOnline": 4678,
+    "accounts": 145309,
+    "dayVolumeBtc": 22581.409
+  },
+  {
+    "time": 1459855046570,
+    "date": "2016-04-05 11:17",
+    "usersOnline": 4771,
+    "accounts": 145324,
+    "dayVolumeBtc": 21480.769
+  },
+  {
+    "time": 1459858706777,
+    "date": "2016-04-05 12:18",
+    "usersOnline": 4869,
+    "accounts": 145340,
+    "dayVolumeBtc": 21484.881
+  },
+  {
+    "time": 1459862366159,
+    "date": "2016-04-05 13:19",
+    "usersOnline": 4989,
+    "accounts": 145363,
+    "dayVolumeBtc": 20860.858
+  },
+  {
+    "time": 1459865966169,
+    "date": "2016-04-05 14:19",
+    "usersOnline": 5003,
+    "accounts": 145384,
+    "dayVolumeBtc": 20141.304
+  },
+  {
+    "time": 1459869566647,
+    "date": "2016-04-05 15:19",
+    "usersOnline": 5018,
+    "accounts": 145406,
+    "dayVolumeBtc": 19667.593
+  },
+  {
+    "time": 1459873167351,
+    "date": "2016-04-05 16:19",
+    "usersOnline": 4996,
+    "accounts": 145434,
+    "dayVolumeBtc": 19207.038
+  },
+  {
+    "time": 1459876827651,
+    "date": "2016-04-05 17:20",
+    "usersOnline": 5030,
+    "accounts": 145457,
+    "dayVolumeBtc": 18763.196
+  },
+  {
+    "time": 1459880487440,
+    "date": "2016-04-05 18:21",
+    "usersOnline": 5214,
+    "accounts": 145485,
+    "dayVolumeBtc": 22050.862
+  },
+  {
+    "time": 1459884147403,
+    "date": "2016-04-05 19:22",
+    "usersOnline": 5195,
+    "accounts": 145498,
+    "dayVolumeBtc": 23224.814
+  },
+  {
+    "time": 1459887807184,
+    "date": "2016-04-05 20:23",
+    "usersOnline": 4908,
+    "accounts": 145514,
+    "dayVolumeBtc": 23337.208
+  },
+  {
+    "time": 1459891407721,
+    "date": "2016-04-05 21:23",
+    "usersOnline": 4679,
+    "accounts": 145541,
+    "dayVolumeBtc": 24372.168
+  },
+  {
+    "time": 1459895067443,
+    "date": "2016-04-05 22:24",
+    "usersOnline": 4526,
+    "accounts": 145564,
+    "dayVolumeBtc": 27672.126
+  },
+  {
+    "time": 1459898667592,
+    "date": "2016-04-05 23:24",
+    "usersOnline": 4141,
+    "accounts": 145580,
+    "dayVolumeBtc": 29105.444
+  },
+  {
+    "time": 1459902327635,
+    "date": "2016-04-06 00:25",
+    "usersOnline": 3968,
+    "accounts": 145593,
+    "dayVolumeBtc": 29328.003
+  },
+  {
+    "time": 1459905987325,
+    "date": "2016-04-06 01:26",
+    "usersOnline": 3905,
+    "accounts": 145608,
+    "dayVolumeBtc": 29216.594
+  },
+  {
+    "time": 1459909605167,
+    "date": "2016-04-06 02:26",
+    "usersOnline": 3905,
+    "accounts": 145618,
+    "dayVolumeBtc": 29343.286
+  },
+  {
+    "time": 1459913205514,
+    "date": "2016-04-06 03:26",
+    "usersOnline": 3894,
+    "accounts": 145630,
+    "dayVolumeBtc": 29403.905
+  },
+  {
+    "time": 1459916805602,
+    "date": "2016-04-06 04:26",
+    "usersOnline": 3924,
+    "accounts": 145640,
+    "dayVolumeBtc": 25418.147
+  },
+  {
+    "time": 1459920465470,
+    "date": "2016-04-06 05:27",
+    "usersOnline": 4047,
+    "accounts": 145651,
+    "dayVolumeBtc": 25068.138
+  },
+  {
+    "time": 1459924125348,
+    "date": "2016-04-06 06:28",
+    "usersOnline": 4146,
+    "accounts": 145660,
+    "dayVolumeBtc": 24576.723
+  },
+  {
+    "time": 1459927785163,
+    "date": "2016-04-06 07:29",
+    "usersOnline": 4313,
+    "accounts": 145677,
+    "dayVolumeBtc": 25584.652
+  },
+  {
+    "time": 1459931385525,
+    "date": "2016-04-06 08:29",
+    "usersOnline": 4407,
+    "accounts": 145694,
+    "dayVolumeBtc": 25489.834
+  },
+  {
+    "time": 1459935045315,
+    "date": "2016-04-06 09:30",
+    "usersOnline": 4592,
+    "accounts": 145708,
+    "dayVolumeBtc": 27519.088
+  },
+  {
+    "time": 1459938645339,
+    "date": "2016-04-06 10:30",
+    "usersOnline": 4729,
+    "accounts": 145734,
+    "dayVolumeBtc": 29863.737
+  },
+  {
+    "time": 1459942245594,
+    "date": "2016-04-06 11:30",
+    "usersOnline": 4765,
+    "accounts": 145756,
+    "dayVolumeBtc": 30573.732
+  },
+  {
+    "time": 1459945905467,
+    "date": "2016-04-06 12:31",
+    "usersOnline": 4827,
+    "accounts": 145777,
+    "dayVolumeBtc": 30544.608
+  },
+  {
+    "time": 1459949565543,
+    "date": "2016-04-06 13:32",
+    "usersOnline": 4942,
+    "accounts": 145798,
+    "dayVolumeBtc": 30570.333
+  },
+  {
+    "time": 1459953225536,
+    "date": "2016-04-06 14:33",
+    "usersOnline": 5022,
+    "accounts": 145814,
+    "dayVolumeBtc": 31179.455
+  },
+  {
+    "time": 1459956825620,
+    "date": "2016-04-06 15:33",
+    "usersOnline": 4985,
+    "accounts": 145834,
+    "dayVolumeBtc": 31251.333
+  },
+  {
+    "time": 1459960485190,
+    "date": "2016-04-06 16:34",
+    "usersOnline": 5011,
+    "accounts": 145857,
+    "dayVolumeBtc": 31441.337
+  },
+  {
+    "time": 1459964085932,
+    "date": "2016-04-06 17:34",
+    "usersOnline": 5043,
+    "accounts": 145879,
+    "dayVolumeBtc": 29943.745
+  }
+]
