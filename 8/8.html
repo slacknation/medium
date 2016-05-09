@@ -11,9 +11,9 @@
     <script src="../js/d3.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/highcharts.js"></script>
+    <script src="../js/accounting.min.js"></script>
     <script>
         var chart;
-        var chart2;
         var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
         document.addEventListener('DOMContentLoaded', function(event) {
             Highcharts.setOptions({
@@ -22,8 +22,86 @@
                 }
             });
             d3.json('http://dao-slacknation.rhcloud.com/json', function(data) {
-                console.log('json' + ' :' + JSON.stringify(data[0], undefined, 2));
-
+                d3.json('http://dao-slacknation.rhcloud.com/json2', function(data2) {
+                    var change = [];
+                    var today = [];
+                    document.getElementsByTagName('h3')[0].innerHTML =
+                        '<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. DAO balance = ' + accounting.formatNumber(
+                            data2.ethBalance, 0, ',') + ' ether';
+                    for (var i = 1; i < data.length; i++) {
+                        if ('ethBalance' in data[i] && data[i].ethBalance > 0) {
+                            change.push([data[i].time * 1000, data[i].ethChange]);
+                        } else {
+                            change.push([data[i].time * 1000, 0]);
+                        }
+                    }
+                    today.push([data2.time * 1000, data2.ethChange]);
+                    $('#chart').highcharts({
+                        title: {
+                            text: null
+                        },
+                        xAxis: {
+                            type: 'datetime',
+                            tickInterval: 24 * 3600 * 1000 * 5,
+                            plotLines: [{
+                                color: 'black',
+                                width: 0.3,
+                                value: new Date(2016, 4, 14).getTime(),
+                                label: {
+                                    text: 'First price increase',
+                                    verticalAlign: 'top',
+                                    textAlign: 'left'
+                                }
+                            }]
+                        },
+                        yAxis: [{ // Primary yAxis
+                            gridLineWidth: 0,
+                            lineWidth: 1,
+                            tickWidth: 1,
+                            title: {
+                                text: 'ether',
+                                style: {
+                                    color: color[0]
+                                }
+                            },
+                            labels: {
+                                style: {
+                                    color: color[0]
+                                }
+                            }
+                        }],
+                        tooltip: {
+                            shared: true,
+                            borderColor: '#000000',
+                            followPointer: true
+                        },
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            floating: false,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                        },
+                        series: [{
+                            name: 'ether added',
+                            type: 'column',
+                            color: color[0],
+                            data: change,
+                            tooltip: {
+                                valueDecimals: 0
+                            },
+                            stacking: 'normal'
+                        }, {
+                            name: 'ether added today so far',
+                            type: 'column',
+                            color: color[1],
+                            data: today,
+                            tooltip: {
+                                valueDecimals: 0
+                            },
+                            stacking: 'normal'
+                        }]
+                    });
+                });
             });
         });
 
@@ -38,7 +116,7 @@
         <!-- <a href="https://medium.com/@slacknation/" class="btn">View on Medium</a> -->
     </section>
     <section class="main-content">
-        <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. </h3>
+        <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. DAO balance = </h3>
         <div id="chart"></div>
         <div id="chart2"></div>
         <footer class="site-footer">
