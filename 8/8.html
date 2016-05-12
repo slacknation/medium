@@ -36,6 +36,8 @@
                     }
                     if (i < data[0].length - 1) {
                         price.push([data[0][i].timeStart * 1000, data[0][i + 1].price]);
+                    } else {
+                        price.push([data[0][i].timeStart * 1000, data[0][i].price]);                        
                     }
                 }
                 today.push([data[1].time * 1000, data[1].ethChange]);
