@@ -26,8 +26,8 @@
                 var today = [];
                 var price = [];
                 document.getElementsByTagName('h3')[0].innerHTML =
-                    '<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. DAO balance = ' + accounting.formatNumber(
-                        data[1].ethBalance, 0, ',') + ' ether';
+                    '<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. DAO balance = ' + accounting.formatNumber(data[
+                        1].ethBalance, 0, ',') + ' + ' + accounting.formatNumber(data[1].ethBalance2, 0, ',') + ' = ' + accounting.formatNumber(data[1].ethBalance + data[1].ethBalance2, 0, ',') + ' ether';
                 for (var i = 1; i < data[0].length; i++) {
                     if (data[0][i].ethBalance > 0) {
                         change.push([data[0][i].timeStart * 1000, data[0][i].ethChange]);
