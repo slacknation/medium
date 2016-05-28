@@ -1,0 +1,652 @@
+[
+  {
+    "time": 1421848800,
+    "btcusd": 213.5,
+    "btcusd_percent": 0
+  },
+  {
+    "time": 1421856000,
+    "btcusd": 215.3,
+    "btcusd_percent": 0.843091334894619
+  },
+  {
+    "time": 1421863200,
+    "btcusd": 216.5,
+    "btcusd_percent": 1.4051522248243575
+  },
+  {
+    "time": 1421870400,
+    "btcusd": 227.3,
+    "btcusd_percent": 6.463700234192049
+  },
+  {
+    "time": 1421877600,
+    "btcusd": 228.08,
+    "btcusd_percent": 6.829039812646376
+  },
+  {
+    "time": 1421884800,
+    "btcusd": 233.72,
+    "btcusd_percent": 9.470725995316155
+  },
+  {
+    "time": 1421892000,
+    "btcusd": 232.07,
+    "btcusd_percent": 8.697892271662756
+  },
+  {
+    "time": 1421899200,
+    "btcusd": 234.39,
+    "btcusd_percent": 9.784543325526919
+  },
+  {
+    "time": 1421906400,
+    "btcusd": 231.51,
+    "btcusd_percent": 8.435597189695553
+  },
+  {
+    "time": 1421913600,
+    "btcusd": 232.1,
+    "btcusd_percent": 8.711943793911004
+  },
+  {
+    "time": 1421920800,
+    "btcusd": 232.54,
+    "btcusd_percent": 8.918032786885233
+  },
+  {
+    "time": 1421928000,
+    "btcusd": 237.69,
+    "btcusd_percent": 11.330210772833716
+  },
+  {
+    "time": 1421935200,
+    "btcusd": 233.4,
+    "btcusd_percent": 9.320843091334897
+  },
+  {
+    "time": 1421942400,
+    "btcusd": 235.9,
+    "btcusd_percent": 10.491803278688527
+  },
+  {
+    "time": 1421949600,
+    "btcusd": 234.1,
+    "btcusd_percent": 9.64871194379391
+  },
+  {
+    "time": 1421956800,
+    "btcusd": 232,
+    "btcusd_percent": 8.665105386416872
+  },
+  {
+    "time": 1421964000,
+    "btcusd": 234.7,
+    "btcusd_percent": 9.929742388758767
+  },
+  {
+    "time": 1421971200,
+    "btcusd": 227.1,
+    "btcusd_percent": 6.370023419203741
+  },
+  {
+    "time": 1421978400,
+    "btcusd": 227.4,
+    "btcusd_percent": 6.510538641686181
+  },
+  {
+    "time": 1421985600,
+    "btcusd": 227.64,
+    "btcusd_percent": 6.622950819672124
+  },
+  {
+    "time": 1421992800,
+    "btcusd": 228.39,
+    "btcusd_percent": 6.974238875878225
+  },
+  {
+    "time": 1422000000,
+    "btcusd": 226.93,
+    "btcusd_percent": 6.290398126463703
+  },
+  {
+    "time": 1422007200,
+    "btcusd": 226.63,
+    "btcusd_percent": 6.149882903981263
+  },
+  {
+    "time": 1422014400,
+    "btcusd": 230.79,
+    "btcusd_percent": 8.098360655737702
+  },
+  {
+    "time": 1422021600,
+    "btcusd": 231.82,
+    "btcusd_percent": 8.580796252927403
+  },
+  {
+    "time": 1422028800,
+    "btcusd": 233.05,
+    "btcusd_percent": 9.15690866510539
+  },
+  {
+    "time": 1422036000,
+    "btcusd": 233.01,
+    "btcusd_percent": 9.138173302107733
+  },
+  {
+    "time": 1422043200,
+    "btcusd": 234.81,
+    "btcusd_percent": 9.98126463700235
+  },
+  {
+    "time": 1422050400,
+    "btcusd": 233.12,
+    "btcusd_percent": 9.189695550351296
+  },
+  {
+    "time": 1422057600,
+    "btcusd": 231.47,
+    "btcusd_percent": 8.416861826697897
+  },
+  {
+    "time": 1422064800,
+    "btcusd": 231.98,
+    "btcusd_percent": 8.655737704918032
+  },
+  {
+    "time": 1422072000,
+    "btcusd": 234.94,
+    "btcusd_percent": 10.042154566744731
+  },
+  {
+    "time": 1422079200,
+    "btcusd": 232.4,
+    "btcusd_percent": 8.852459016393443
+  },
+  {
+    "time": 1422086400,
+    "btcusd": 233.2,
+    "btcusd_percent": 9.227166276346587
+  },
+  {
+    "time": 1422093600,
+    "btcusd": 236.61,
+    "btcusd_percent": 10.82435597189697
+  },
+  {
+    "time": 1422100800,
+    "btcusd": 236.14,
+    "btcusd_percent": 10.60421545667447
+  },
+  {
+    "time": 1422108000,
+    "btcusd": 243.23,
+    "btcusd_percent": 13.92505854800936
+  },
+  {
+    "time": 1422115200,
+    "btcusd": 246.35,
+    "btcusd_percent": 15.38641686182669
+  },
+  {
+    "time": 1422122400,
+    "btcusd": 246.25,
+    "btcusd_percent": 15.339578454332559
+  },
+  {
+    "time": 1422129600,
+    "btcusd": 245.31,
+    "btcusd_percent": 14.899297423887582
+  },
+  {
+    "time": 1422136800,
+    "btcusd": 248.66,
+    "btcusd_percent": 16.468384074941444
+  },
+  {
+    "time": 1422144000,
+    "btcusd": 256.02,
+    "btcusd_percent": 19.915690866510527
+  },
+  {
+    "time": 1422151200,
+    "btcusd": 253.01,
+    "btcusd_percent": 18.50585480093676
+  },
+  {
+    "time": 1422158400,
+    "btcusd": 252.61,
+    "btcusd_percent": 18.31850117096019
+  },
+  {
+    "time": 1422165600,
+    "btcusd": 248.47,
+    "btcusd_percent": 16.379391100702566
+  },
+  {
+    "time": 1422172800,
+    "btcusd": 247.2,
+    "btcusd_percent": 15.784543325526922
+  },
+  {
+    "time": 1422180000,
+    "btcusd": 246.29,
+    "btcusd_percent": 15.358313817330217
+  },
+  {
+    "time": 1422187200,
+    "btcusd": 248.01,
+    "btcusd_percent": 16.1639344262295
+  },
+  {
+    "time": 1422194400,
+    "btcusd": 248.29,
+    "btcusd_percent": 16.29508196721312
+  },
+  {
+    "time": 1422201600,
+    "btcusd": 247.31,
+    "btcusd_percent": 15.836065573770487
+  },
+  {
+    "time": 1422208800,
+    "btcusd": 249.3,
+    "btcusd_percent": 16.768149882903984
+  },
+  {
+    "time": 1422216000,
+    "btcusd": 251.49,
+    "btcusd_percent": 17.793911007025763
+  },
+  {
+    "time": 1422223200,
+    "btcusd": 254.73,
+    "btcusd_percent": 19.311475409836063
+  },
+  {
+    "time": 1422230400,
+    "btcusd": 270.02,
+    "btcusd_percent": 26.473067915690862
+  },
+  {
+    "time": 1422237600,
+    "btcusd": 288,
+    "btcusd_percent": 34.89461358313817
+  },
+  {
+    "time": 1422244800,
+    "btcusd": 287.03,
+    "btcusd_percent": 34.44028103044494
+  },
+  {
+    "time": 1422252000,
+    "btcusd": 309.12,
+    "btcusd_percent": 44.786885245901644
+  },
+  {
+    "time": 1422259200,
+    "btcusd": 302.04,
+    "btcusd_percent": 41.47072599531616
+  },
+  {
+    "time": 1422266400,
+    "btcusd": 298.3,
+    "btcusd_percent": 39.71896955503513
+  },
+  {
+    "time": 1422273600,
+    "btcusd": 302.17,
+    "btcusd_percent": 41.53161592505856
+  },
+  {
+    "time": 1422280800,
+    "btcusd": 270.64,
+    "btcusd_percent": 26.763466042154562
+  },
+  {
+    "time": 1422288000,
+    "btcusd": 270.85,
+    "btcusd_percent": 26.861826697892276
+  },
+  {
+    "time": 1422295200,
+    "btcusd": 267.11,
+    "btcusd_percent": 25.110070257611248
+  },
+  {
+    "time": 1422302400,
+    "btcusd": 275,
+    "btcusd_percent": 28.805620608899307
+  },
+  {
+    "time": 1422309600,
+    "btcusd": 276.01,
+    "btcusd_percent": 29.27868852459017
+  },
+  {
+    "time": 1422316800,
+    "btcusd": 257.8,
+    "btcusd_percent": 20.749414519906328
+  },
+  {
+    "time": 1422324000,
+    "btcusd": 261.63,
+    "btcusd_percent": 22.54332552693208
+  },
+  {
+    "time": 1422331200,
+    "btcusd": 260.65,
+    "btcusd_percent": 22.084309133489445
+  },
+  {
+    "time": 1422338400,
+    "btcusd": 261.8,
+    "btcusd_percent": 22.622950819672138
+  },
+  {
+    "time": 1422345600,
+    "btcusd": 259.52,
+    "btcusd_percent": 21.55503512880561
+  },
+  {
+    "time": 1422352800,
+    "btcusd": 256.43,
+    "btcusd_percent": 20.10772833723653
+  },
+  {
+    "time": 1422360000,
+    "btcusd": 267.77,
+    "btcusd_percent": 25.419203747072583
+  },
+  {
+    "time": 1422367200,
+    "btcusd": 262.7,
+    "btcusd_percent": 23.04449648711944
+  },
+  {
+    "time": 1422374400,
+    "btcusd": 265.4,
+    "btcusd_percent": 24.309133489461352
+  },
+  {
+    "time": 1422381600,
+    "btcusd": 265.7,
+    "btcusd_percent": 24.449648711943794
+  },
+  {
+    "time": 1422388800,
+    "btcusd": 262.66,
+    "btcusd_percent": 23.0257611241218
+  },
+  {
+    "time": 1422396000,
+    "btcusd": 265.09,
+    "btcusd_percent": 24.163934426229506
+  },
+  {
+    "time": 1422403200,
+    "btcusd": 265.8,
+    "btcusd_percent": 24.496487119437948
+  },
+  {
+    "time": 1422410400,
+    "btcusd": 259.7,
+    "btcusd_percent": 21.63934426229508
+  },
+  {
+    "time": 1422417600,
+    "btcusd": 258.11,
+    "btcusd_percent": 20.894613583138177
+  },
+  {
+    "time": 1422424800,
+    "btcusd": 257.68,
+    "btcusd_percent": 20.69320843091336
+  },
+  {
+    "time": 1422432000,
+    "btcusd": 262.75,
+    "btcusd_percent": 23.067915690866503
+  },
+  {
+    "time": 1422439200,
+    "btcusd": 259.58,
+    "btcusd_percent": 21.583138173302107
+  },
+  {
+    "time": 1422446400,
+    "btcusd": 254.61,
+    "btcusd_percent": 19.255269320843095
+  },
+  {
+    "time": 1422453600,
+    "btcusd": 255.53,
+    "btcusd_percent": 19.686182669789233
+  },
+  {
+    "time": 1422460800,
+    "btcusd": 256.45,
+    "btcusd_percent": 20.117096018735346
+  },
+  {
+    "time": 1422468000,
+    "btcusd": 238.65,
+    "btcusd_percent": 11.77985948477751
+  },
+  {
+    "time": 1422475200,
+    "btcusd": 234.7,
+    "btcusd_percent": 9.929742388758767
+  },
+  {
+    "time": 1422482400,
+    "btcusd": 234.5,
+    "btcusd_percent": 9.836065573770503
+  },
+  {
+    "time": 1422489600,
+    "btcusd": 236.18,
+    "btcusd_percent": 10.622950819672127
+  },
+  {
+    "time": 1422496800,
+    "btcusd": 236.22,
+    "btcusd_percent": 10.641686182669785
+  },
+  {
+    "time": 1422504000,
+    "btcusd": 231.6,
+    "btcusd_percent": 8.477751756440277
+  },
+  {
+    "time": 1422511200,
+    "btcusd": 233.1,
+    "btcusd_percent": 9.180327868852455
+  },
+  {
+    "time": 1422518400,
+    "btcusd": 232.21,
+    "btcusd_percent": 8.763466042154565
+  },
+  {
+    "time": 1422525600,
+    "btcusd": 224.03,
+    "btcusd_percent": 4.9320843091335
+  },
+  {
+    "time": 1422532800,
+    "btcusd": 224.8,
+    "btcusd_percent": 5.292740046838418
+  },
+  {
+    "time": 1422540000,
+    "btcusd": 231.44,
+    "btcusd_percent": 8.402810304449648
+  },
+  {
+    "time": 1422547200,
+    "btcusd": 230.23,
+    "btcusd_percent": 7.836065573770479
+  },
+  {
+    "time": 1422554400,
+    "btcusd": 235,
+    "btcusd_percent": 10.070257611241207
+  },
+  {
+    "time": 1422561600,
+    "btcusd": 234.2,
+    "btcusd_percent": 9.695550351288041
+  },
+  {
+    "time": 1422568800,
+    "btcusd": 233.01,
+    "btcusd_percent": 9.138173302107733
+  },
+  {
+    "time": 1422576000,
+    "btcusd": 233.89,
+    "btcusd_percent": 9.550351288056191
+  },
+  {
+    "time": 1422583200,
+    "btcusd": 233.36,
+    "btcusd_percent": 9.302107728337239
+  },
+  {
+    "time": 1422590400,
+    "btcusd": 239.91,
+    "btcusd_percent": 12.370023419203747
+  },
+  {
+    "time": 1422597600,
+    "btcusd": 236.58,
+    "btcusd_percent": 10.810304449648722
+  },
+  {
+    "time": 1422604800,
+    "btcusd": 232.98,
+    "btcusd_percent": 9.124121779859484
+  },
+  {
+    "time": 1422612000,
+    "btcusd": 231.85,
+    "btcusd_percent": 8.594847775175651
+  },
+  {
+    "time": 1422619200,
+    "btcusd": 231.79,
+    "btcusd_percent": 8.566744730679154
+  },
+  {
+    "time": 1422626400,
+    "btcusd": 228.5,
+    "btcusd_percent": 7.025761124121788
+  },
+  {
+    "time": 1422633600,
+    "btcusd": 229.63,
+    "btcusd_percent": 7.555035128805621
+  },
+  {
+    "time": 1422640800,
+    "btcusd": 228.16,
+    "btcusd_percent": 6.86651053864169
+  },
+  {
+    "time": 1422648000,
+    "btcusd": 226.89,
+    "btcusd_percent": 6.271662763466046
+  },
+  {
+    "time": 1422655200,
+    "btcusd": 226.44,
+    "btcusd_percent": 6.060889929742386
+  },
+  {
+    "time": 1422662400,
+    "btcusd": 227.37,
+    "btcusd_percent": 6.4964871194379326
+  },
+  {
+    "time": 1422669600,
+    "btcusd": 226.08,
+    "btcusd_percent": 5.892271662763471
+  },
+  {
+    "time": 1422676800,
+    "btcusd": 226.3,
+    "btcusd_percent": 5.995316159250597
+  },
+  {
+    "time": 1422684000,
+    "btcusd": 232.17,
+    "btcusd_percent": 8.744730679156909
+  },
+  {
+    "time": 1422691200,
+    "btcusd": 232.34,
+    "btcusd_percent": 8.824355971896946
+  },
+  {
+    "time": 1422698400,
+    "btcusd": 228.54,
+    "btcusd_percent": 7.044496487119445
+  },
+  {
+    "time": 1422705600,
+    "btcusd": 229.57,
+    "btcusd_percent": 7.526932084309124
+  },
+  {
+    "time": 1422712800,
+    "btcusd": 230.63,
+    "btcusd_percent": 8.023419203747073
+  },
+  {
+    "time": 1422720000,
+    "btcusd": 229,
+    "btcusd_percent": 7.259953161592514
+  },
+  {
+    "time": 1422727200,
+    "btcusd": 227.62,
+    "btcusd_percent": 6.613583138173307
+  },
+  {
+    "time": 1422734400,
+    "btcusd": 222.51,
+    "btcusd_percent": 4.220140515222481
+  },
+  {
+    "time": 1422741600,
+    "btcusd": 215.8,
+    "btcusd_percent": 1.0772833723653452
+  },
+  {
+    "time": 1422748800,
+    "btcusd": 217.33,
+    "btcusd_percent": 1.7939110070257724
+  },
+  {
+    "time": 1422756000,
+    "btcusd": 216.88,
+    "btcusd_percent": 1.5831381733021122
+  },
+  {
+    "time": 1422763200,
+    "btcusd": 215.82,
+    "btcusd_percent": 1.0866510538641627
+  },
+  {
+    "time": 1422770400,
+    "btcusd": 217.48,
+    "btcusd_percent": 1.8641686182669703
+  },
+  {
+    "time": 1422777600,
+    "btcusd": 212.33,
+    "btcusd_percent": -0.5480093676814901
+  }
+]
