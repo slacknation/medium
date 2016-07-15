@@ -10,9 +10,9 @@
     <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
     <!-- <script src="../js/d3.js"></script> -->
     <script src="../js/jquery.min.js"></script>
-    <!-- <script src="../js/highcharts.js"></script>
-    <script src="../js/accounting.min.js"></script> -->
-    <script src="../js/countdown.min.js"></script>
+    <!-- <script src="../js/highcharts.js"></script> -->
+    <script src="../js/accounting.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
     <script>
         var chart;
         var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
@@ -139,7 +139,7 @@
             //         }]
             //     });
             // });
-            $('#clock').countdown(1469010742000)
+            $('#clock').countdown(1469012184901)
                 .on('update.countdown', function(event) {
                     var format = '%H:%M:%S';
                     if (event.offset.days > 0) {
@@ -154,6 +154,14 @@
                     $(this).html('hard forked!')
                         .parent().addClass('disabled');
                 });
+            var totalTokens = 11538165.987024672;
+            var refundEther = 12072877.539112678;
+            $('#refundAdd').html('0xbf4ed7b27f1d666546e30d74d50d173d20bca754');
+            $('#refundRate').html('1 eth to 100 dao tokens');
+            $('#totalTokens').html(accounting.formatNumber(totalTokens * 100));
+            $('#refundEther').html(accounting.formatNumber(refundEther));
+            $('#etherTrustee').html(accounting.formatNumber(refundEther - totalTokens));
+            $('#trusteeAdd').html('0xda4a4626d3e16e094de3225a751aab7128e96526');
         });
 
     </script>
@@ -168,13 +176,13 @@
     </section>
     <section class="main-content">
         <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>11. The DAO hardfork</h3>
-        <div>hard fork block: <span style="color:#159957;font-size:20px;">1,920,000 <span id="clock" class="countdown" style="color:red;"></span></div>
-        <div>refund address: <span style="color:#159957;font-size:20px;">0xbf4ed7b27f1d666546e30d74d50d173d20bca754</span></div>
-        <div>refund rate: <span style="color:#159957;font-size:20px;">1 eth to 100 dao tokens</span></div>
-        <div>tokens eligible for refund: <span style="color:#159957;font-size:20px;">1,153,816,598</span></div>
-        <div>total ether for refund: <span style="color:#159957;font-size:20px;">12,072,872</span></div>
-        <div>leftover ether for trustee: <span style="color:#159957;font-size:20px;">534,706</span></div>
-        <div>trustee address: <span style="color:#159957;font-size:20px;">0xda4a4626d3e16e094de3225a751aab7128e96526</span></div>
+        <div>hard fork block: <span style="color:#159957;font-size:20px;" id=forkBlock>1,920,000 <span id="clock" class="countdown" style="color:red;"></span></div>
+        <div>refund address: <span style="color:#159957;font-size:20px;" id="refundAdd">...</span></div>
+        <div>refund rate: <span style="color:#159957;font-size:20px;" id="refundRate">...</span></div>
+        <div>tokens eligible for refund: <span style="color:#159957;font-size:20px;" id="totalTokens">...</span></div>
+        <div>total ether for refund: <span style="color:#159957;font-size:20px;" id="refundEther">...</span></div>
+        <div>leftover ether for trustee: <span style="color:#159957;font-size:20px;" id="etherTrustee">...</span></div>
+        <div>trustee address: <span style="color:#159957;font-size:20px;" id="trusteeAdd">...</span></div>
         <a href="https://github.com/ethereum/go-ethereum/pull/2814/files">The above information can be found in the client code.</a></div>
         <!-- <div>chart showing % change for daoInExchanges, ethInExchanges, ethInRefund, ethusd, btcusd</div>
         <div id="chart"></div>
@@ -185,19 +193,19 @@
         </footer>
     </section>
     <script>
-                    (function (i, s, o, g, r, a, m) {
-                        i['GoogleAnalyticsObject'] = r;
-                        i[r] = i[r] || function () {
-                            (i[r].q = i[r].q || []).push(arguments)
-                        }, i[r].l = 1 * new Date();
-                        a = s.createElement(o),
-                                m = s.getElementsByTagName(o)[0];
-                        a.async = 1;
-                        a.src = g;
-                        m.parentNode.insertBefore(a, m)
-                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-                    ga('create', 'UA-73445041-1', 'auto');
-                    ga('send', 'pageview');
+        //            (function (i, s, o, g, r, a, m) {
+        //                i['GoogleAnalyticsObject'] = r;
+        //                i[r] = i[r] || function () {
+        //                    (i[r].q = i[r].q || []).push(arguments)
+        //                }, i[r].l = 1 * new Date();
+        //                a = s.createElement(o),
+        //                        m = s.getElementsByTagName(o)[0];
+        //                a.async = 1;
+        //                a.src = g;
+        //                m.parentNode.insertBefore(a, m)
+        //            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        //            ga('create', 'UA-73445041-1', 'auto');
+        //            ga('send', 'pageview');
 
     </script>
 </body>
