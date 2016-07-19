@@ -8,160 +8,145 @@
     <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
-    <!-- <script src="../js/d3.js"></script> -->
+    <script src="../js/d3.js"></script>
     <script src="../js/jquery.min.js"></script>
-    <!-- <script src="../js/highcharts.js"></script> -->
+    <script src="../js/highcharts.js"></script>
     <script src="../js/accounting.min.js"></script>
     <script src="../js/countdown.min.js"></script>
     <script>
         var chart;
         var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
+        var forkBlock = 1920000;
         document.addEventListener('DOMContentLoaded', function(event) {
-            // Highcharts.setOptions({
-            //     global: {
-            //         useUTC: false
-            //     },
-            //     lang: {
-            //         thousandsSep: ','
-            //     }
-            // });
-            // d3.json('', function(data) {
-            //     var startIndex = -1;
-            //     var btcusd = [];
-            //     var ethusd = [];
-            //     var daoeth = [];
-            //     var daoTotal = [];
-            //     var ethTotal = [];
-            //     for (var i = 0; i < data.length; i++) {
-            //         if (data[i].daousd > 0 && data[i].blockTime > 0) {
-            //             if (startIndex < 0) {
-            //                 startIndex = i;
-            //                 btcusd.push([data[i].time, 0]);
-            //                 ethusd.push([data[i].time, 0]);
-            //                 daoeth.push([data[i].time, 0]);
-            //                 daoTotal.push([data[i].time, 0]);
-            //                 ethTotal.push([data[i].time, 0]);
-            //             } else {
-            //                 btcusd.push([data[i].time, (data[i].btcusd / data[startIndex].btcusd - 1) * 100]);
-            //                 ethusd.push([data[i].time, (data[i].ethusd / data[startIndex].ethusd - 1) * 100]);
-            //                 daoeth.push([data[i].time, (data[i].daoeth / data[startIndex].daoeth - 1) * 100]);
-            //                 daoTotal.push([data[i].time, (data[i].daoTotal / data[startIndex].daoTotal - 1) * 100]);
-            //                 ethTotal.push([data[i].time, (data[i].ethTotal / data[startIndex].ethTotal - 1) * 100]);
-            //             }
-            //         }
-            //     }
-            //     $('#chart').highcharts({
-            //         credits: false,
-            //         chart: {
-            //
-            //         },
-            //         title: {
-            //             text: null
-            //         },
-            //         xAxis: {
-            //             type: 'datetime'
-            //         },
-            //         yAxis: [{
-            //             gridLineWidth: 0.8,
-            //             lineWidth: 1,
-            //             tickWidth: 1,
-            //             title: {
-            //                 text: 'percentage'
-            //             },
-            //             opposite: true
-            //         }],
-            //         tooltip: {
-            //             shared: true,
-            //             borderColor: '#000000',
-            //             followPointer: true
-            //         },
-            //         legend: {
-            //             align: 'center',
-            //             verticalAlign: 'bottom',
-            //             floating: false,
-            //             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-            //         },
-            //         series: [{
-            //             name: 'btcusd',
-            //             type: 'spline',
-            //             color: color[0],
-            //             data: btcusd,
-            //             tooltip: {
-            //                 valueDecimals: 2
-            //             },
-            //             marker: {
-            //                 enabled: false
-            //             }
-            //         }, {
-            //             name: 'ethusd',
-            //             type: 'spline',
-            //             color: color[1],
-            //             data: ethusd,
-            //             tooltip: {
-            //                 valueDecimals: 2
-            //             },
-            //             marker: {
-            //                 enabled: false
-            //             }
-            //         }, {
-            //             name: 'daoeth',
-            //             type: 'spline',
-            //             color: color[2],
-            //             data: daoeth,
-            //             tooltip: {
-            //                 valueDecimals: 2
-            //             },
-            //             marker: {
-            //                 enabled: false
-            //             }
-            //         }, {
-            //             name: 'daoInExchanges',
-            //             type: 'spline',
-            //             color: color[3],
-            //             data: daoTotal,
-            //             tooltip: {
-            //                 valueDecimals: 2
-            //             },
-            //             marker: {
-            //                 enabled: false
-            //             }
-            //         }, {
-            //             name: 'ethInExchanges',
-            //             type: 'spline',
-            //             color: color[4],
-            //             data: ethTotal,
-            //             tooltip: {
-            //                 valueDecimals: 2
-            //             },
-            //             marker: {
-            //                 enabled: false
-            //             }
-            //         }]
-            //     });
-            // });
-            $('#clock').countdown(1469019161436)
-                .on('update.countdown', function(event) {
-                    var format = '%H:%M:%S';
-                    if (event.offset.days > 0) {
-                        format = '%-d day%!d ' + format;
+            Highcharts.setOptions({
+                global: {
+                    useUTC: false
+                },
+                lang: {
+                    thousandsSep: ','
+                }
+            });
+            d3.json('https://daofork-slacknation.rhcloud.com/getChart1', function(data) {
+                $('#clock')
+                .countdown((forkBlock - data[data.length - 1].block) * 14 * 1000 + data[data.length - 1].time)
+                    .on('update.countdown', function(event) {
+                        var format = '%H:%M:%S';
+                        if (event.offset.days > 0) {
+                            format = '%-d day%!d ' + format;
+                        }
+                        if (event.offset.weeks > 0) {
+                            format = '%-w week%!w ' + format;
+                        }
+                        $(this).html(event.strftime(format));
+                    })
+                    .on('finish.countdown', function(event) {
+                        $(this).html('hard forked!')
+                    });
+                updateInfo(data);
+                var ethusd = [];
+                var ethInRefund = [];
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].ethusd > 0 && data[i].blockTime > 0) {
+                        ethusd.push([data[i].time, data[i].ethusd]);
+                        if (data[i].startEthInRefund > 0) {
+                            ethInRefund.push([data[i].time, (data[i].ethInRefund / data[i].startEthInRefund - 1) * 100]);
+                        }
                     }
-                    if (event.offset.weeks > 0) {
-                        format = '%-w week%!w ' + format;
-                    }
-                    $(this).html(event.strftime(format));
-                })
-                .on('finish.countdown', function(event) {
-                    $(this).html('hard forked!')
-                        .parent().addClass('disabled');
+                }
+                $('#chart').highcharts({
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        type: 'datetime'
+                    },
+                    yAxis: [{
+                        gridLineWidth: 0.8,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'ethusd',
+                            style: {
+                                color: color[0]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: color[0]
+                            }
+                        },
+                        opposite: true
+                    }, {
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: '%',
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        opposite: true
+                    }],
+                    tooltip: {
+                        shared: true,
+                        borderColor: '#000000',
+                        followPointer: true
+                    },
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        floating: false,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    series: [{
+                        name: 'ethusd',
+                        type: 'spline',
+                        color: color[0],
+                        data: ethusd,
+                        tooltip: {
+                            valueDecimals: 2
+                        },
+                        marker: {
+                            enabled: false
+                        }
+                    }, {
+                        yAxis: 1,
+                        name: '% ether not withdrawn',
+                        type: 'spline',
+                        color: color[1],
+                        data: ethInRefund,
+                        tooltip: {
+                            valueDecimals: 2
+                        },
+                        marker: {
+                            enabled: false
+                        }
+                    }]
                 });
+            });
+
             var totalTokens = 11538165.987024672;
             var refundEther = 12017609.683529673;
             $('#refundAdd').html('0xbf4ed7b27f1d666546e30d74d50d173d20bca754');
             $('#refundRate').html('1 eth to 100 dao tokens');
-            $('#totalTokens').html(accounting.formatNumber(totalTokens * 100));
-            $('#refundEther').html(accounting.formatNumber(refundEther));
-            $('#etherTrustee').html(accounting.formatNumber(refundEther - totalTokens));
+            $('#tokensEligible').html('tokens eligible for refund: <span style="color:#159957;font-size:20px;">' + accounting.formatNumber(totalTokens) + '</span>');
+            $('#refundEther').html('total ether for refund: <span style="color:#159957;font-size:20px;">' + accounting.formatNumber(refundEther) + '</span>');
+            $('#leftTrustee').html('leftover ether for trustee: <span style="color:#159957;font-size:20px;">' + accounting.formatNumber(refundEther - totalTokens) + '</span>');
             $('#trusteeAdd').html('0xda4a4626d3e16e094de3225a751aab7128e96526');
+
+            function updateInfo(data) {
+                if (data[data.length - 1].startEthInRefund > 0) {
+                    $('#tokensEligible').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].startEthInRefund) + '</span> ether in refund at 1,920,000');
+                    $('#refundEther').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].ethInRefund) + '</span> ether in refund');
+                    $('#ethRefunded').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].startEthInRefund - data[data.length - 1].ethInRefund) + '</span> ether withdrawn');
+                    $('#leftTrustee').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].ethInTrust) + '</span> ether in trustee');
+                }
+            }
         });
 
     </script>
@@ -179,14 +164,12 @@
         <div>hard fork block: <span style="color:#159957;font-size:20px;" id=forkBlock>1,920,000 <span id="clock" class="countdown" style="color:red;"></span></div>
         <div>refund address: <span style="color:#159957;font-size:20px;" id="refundAdd">...</span></div>
         <div>refund rate: <span style="color:#159957;font-size:20px;" id="refundRate">...</span></div>
-        <div>tokens eligible for refund: <span style="color:#159957;font-size:20px;" id="totalTokens">...</span></div>
-        <div>total ether for refund: <span style="color:#159957;font-size:20px;" id="refundEther">...</span></div>
-        <div>leftover ether for trustee: <span style="color:#159957;font-size:20px;" id="etherTrustee">...</span></div>
         <div>trustee address: <span style="color:#159957;font-size:20px;" id="trusteeAdd">...</span></div>
-        <a href="https://github.com/ethereum/go-ethereum/pull/2814/files">The above information can be found in the client code.</a></div>
-        <!-- <div>chart showing % change for daoInExchanges, ethInExchanges, ethInRefund, ethusd, btcusd</div>
+        <div id="tokensEligible"></div>
+        <div id="refundEther"></div>
+        <div id="ethRefunded"></div>
+        <div id="leftTrustee"></div>
         <div id="chart"></div>
-        <div id="chart2"></div> -->
         <footer class="site-footer">
             <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
             <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
