@@ -143,7 +143,7 @@
                 $('#addAccount').addClass('tick');
                 $('#ethBalance').html(accounting.formatNumber(web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'), 2, ','));
                 $('#daoBalance').html(accounting.formatNumber(web3.fromWei(daoInstance.balanceOf.call(web3.eth.accounts[0]), 'ether') * 100, 2, ','));
-                if (daoInstance.allowance.call(web3.eth.accounts[0], refundAddress).gte(web3.toWei(10000000, 'ether'))) {
+                if (daoInstance.allowance.call(web3.eth.accounts[0], refundAddress).gte(web3.toWei(9000000, 'ether'))) {
                     $('#approveWith').addClass('tick');
                 } else {
                     $('#approveWith').removeClass('tick');
