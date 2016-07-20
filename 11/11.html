@@ -134,7 +134,7 @@
             var totalTokens = 11538165.987024672;
             var refundEther = 12002069.68534444;
             $('#refundAdd').html('0xbf4ed7b27f1d666546e30d74d50d173d20bca754');
-            $('#refundRate').html('1 eth to 100 dao tokens');
+            $('#refundRate').html('1 eth per 100 dao tokens');
             $('#tokensEligible').html('tokens eligible for refund: <span style="color:#159957;font-size:20px;">' + accounting.formatNumber(totalTokens * 100) + '</span>');
             $('#refundEther').html('total ether for refund: <span style="color:#159957;font-size:20px;">' + accounting.formatNumber(refundEther) + '</span>');
             $('#leftTrustee').html('leftover ether for trustee: <span style="color:#159957;font-size:20px;">' + accounting.formatNumber(refundEther - totalTokens) + '</span>');
