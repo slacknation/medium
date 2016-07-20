@@ -119,7 +119,6 @@
                 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
             } else if (typeof web3 == 'undefined' && typeof Web3 == 'undefined') {
                 // If there is neither then this isn't an ethereum browser
-
                 return;
             }
             $('#checkWeb3').addClass('tick');
@@ -152,6 +151,8 @@
                 if ($('#approveWith').hasClass('tick')) {
                     if (daoInstance.balanceOf.call(web3.eth.accounts[0]).toNumber() < 1) {
                         $('#refundEther').addClass('tick');
+                    } else {
+                        $('#refundEther').removeClass('tick');
                     }
                 } else {
                     $('#refundEther').removeClass('tick');
