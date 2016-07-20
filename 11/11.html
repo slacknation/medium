@@ -126,7 +126,7 @@
 
             function updateInfo(data) {
                 if (data[data.length - 1].startEthInRefund > 0) {
-                    $('#tokensEligible').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].startEthInRefund) + '</span> ether in refund at 1,920,000');
+                    $('#tokensEligible').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].startEthInRefund) + '</span> ether in refund at block 1,920,000');
                     $('#refundEther').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].ethInRefund) + '</span> ether in refund');
                     $('#ethRefunded').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].startEthInRefund - data[data.length - 1].ethInRefund) + '</span> ether withdrawn');
                     $('#leftTrustee').html('<span style="color:#159957;font-size:20px;">' + accounting.formatNumber(data[data.length - 1].ethInTrust) + '</span> ether in trustee');
