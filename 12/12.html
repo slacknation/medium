@@ -40,9 +40,9 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/accounting.min.js"></script>
     <script>
-        var refundAddress = '0xbf4ed7b27f1d666546e30d74d50d173d20bca754';
-        var daoAddress = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
-        var refundAbi = [{
+        const refundAddress = '0xbf4ed7b27f1d666546e30d74d50d173d20bca754';
+        const daoAddress = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
+        const refundAbi = [{
             "constant": false,
             "inputs": [],
             "name": "withdraw",
@@ -58,7 +58,7 @@
             }],
             "type": "function"
         }];
-        var daoAbi = [{
+        const daoAbi = [{
             "constant": true,
             "inputs": [{
                 "name": "_owner",
