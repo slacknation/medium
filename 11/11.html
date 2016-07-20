@@ -49,7 +49,7 @@
                     if (data[i].ethusd > 0 && data[i].blockTime > 0) {
                         ethusd.push([data[i].time, data[i].ethusd]);
                         if (data[i].startEthInRefund > 0) {
-                            ethInRefund.push([data[i].time, (data[i].ethInRefund / data[i].startEthInRefund - 1) * 100]);
+                            ethInRefund.push([data[i].time, data[i].ethInRefund / data[i].startEthInRefund * 100]);
                         }
                     }
                 }
