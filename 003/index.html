@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Charts and Data</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../css/c3.css">
+        <script src="../js/d3.js"></script>
+        <script src="../js/c3.js"></script>
+        <script src="../js/accounting.min.js"></script>
+        <script>
+            var chart;
+            var chart2;
+            var chart3;
+            var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
+            document.addEventListener('DOMContentLoaded', function (event) {
+                d3.json('./ethbtc.json', function (data) {
+                    chart = c3.generate({
+                        bindto: '#chart',
+                        data: {
+                            json: data,
+                            keys: {
+                                value: ['price', 'amount']
+                            },
+                            types: {
+                                price: 'spline',
+                                amount: 'bar'
+                            },
+                            axes: {
+                                price: 'y',
+                                amount: 'y2'
+                            },
+                            names: {
+                                price: 'price (left)',
+                                amount: 'volume (right)'
+                            },
+                            colors: {
+                                price: color[0],
+                                amount: color[1]
+                            },
+                            labels: {
+                                format: {
+                                    price: function (v, id, i, j) {
+                                        if (i === 44) {
+                                            return accounting.formatNumber((v / 0.0336 - 1) * 100, 0, ',') + '% above Kraken';
+                                        } else if (i === 27 || i === 51) {
+                                            return accounting.formatNumber((v / 0.0336 - 1) * 100, 0, ',') + '%';
+                                        }
+                                    },
+                                    amount: function (v, id, i, j) {
+                                        if (v >= 500) {
+                                            return accounting.formatNumber(v, 0, ',');
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        tooltip: {
+                            grouped: true,
+                            format: {
+                                value: function (value, ratio, id) {
+                                    if (id === 'price') {
+                                        return accounting.formatNumber(value, 4, ',');
+                                    } else if (id === 'amount') {
+                                        return accounting.formatNumber(value, 0, ',');
+                                    } else {
+                                        return value;
+                                    }
+                                }
+                            }
+                        },
+                        axis: {
+                            x: {
+                                type: 'indexed'
+                            },
+                            y: {
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 4, ',');
+                                    }
+                                }
+                            },
+                            y2: {
+                                show: true,
+                                tick: {
+                                    format: function (d) {
+                                        return accounting.formatNumber(d, 0, ',');
+                                    }
+                                }
+                            }
+                        },
+                        point: {
+                            show: false
+                        },
+                        grid: {
+                            y: {
+                                lines: [
+                                    {value: 0.0336, text: 'Kraken High (0.0336)'}
+                                ]
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <section class="page-header">
+            <h1 class="project-name">(function(){})();</h1>
+            <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
+            <a href="https://github.com/slacknation/medium/tree/gh-pages/3" class="btn">View on GitHub</a>
+            <a href="https://medium.com/@slacknation/first-10-mins-fomo-when-bitfinex-started-trading-eth-742d043731e0" class="btn">View on Medium</a>
+        </section>
+        <section class="main-content">
+            <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>
+                </a>3. First 10 mins FOMO when Bitfinex started trading ETH</h3>
+            <div id="chart"></div>
+            <footer class="site-footer">
+                <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
+                <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+            </footer>
+        </section>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-73445041-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

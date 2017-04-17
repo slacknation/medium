@@ -1,0 +1,128 @@
+[
+  {
+    "address": "0x6c57430aac511421c811871fe5375874d0d2742a",
+    "eth": "54825.9964",
+    "usd with multiplier": "844699.3500",
+    "usd": "649768.7308",
+    "percentage": "0.1181",
+    "fund source": "presale",
+    "details": "bought 200k ether at presale"
+  },
+  {
+    "address": "0x8b2e1ffe9d446c5c92bd9214fda6b2cc9c9e9575",
+    "eth": "48000.0000",
+    "usd with multiplier": "741633.1000",
+    "usd": "570487.0000",
+    "percentage": "0.1037",
+    "fund source": "exchange",
+    "details": "poloniex withdrawals spread over 40 days before crowdsale"
+  },
+  {
+    "address": "0x1728039ce0d18a799c081c5c7fa2090dd365a8d0",
+    "eth": "42954.0000",
+    "usd with multiplier": "661706.3700",
+    "usd": "509004.9000",
+    "percentage": "0.0925",
+    "fund source": "exchange",
+    "details": "kraken withdrawals concentrated around 13 days before crowdsale"
+  },
+  {
+    "address": "0x198ef1ec325a96cc354c7266a038be8b5c558f67",
+    "eth": "25002.0000",
+    "usd with multiplier": "388406.0700",
+    "usd": "298773.9000",
+    "percentage": "0.0543",
+    "fund source": "presale",
+    "details": "bought 900k ether at presale"
+  },
+  {
+    "address": "0x738db714c08b8a32a29e0e68af00215079aa9c5c",
+    "eth": "22930.0000",
+    "usd with multiplier": "357708.0000",
+    "usd": "275160.0000",
+    "percentage": "0.0500",
+    "fund source": "miner",
+    "details": "solo mined at least 320k ether"
+  },
+  {
+    "address": "0x7280cad72a01480e38ed679cb7c6f64e0c7140c7",
+    "eth": "12381.4452",
+    "usd with multiplier": "188003.3100",
+    "usd": "144617.9308",
+    "percentage": "0.0263",
+    "fund source": "exchange",
+    "details": "poloniex withdrawals during crowdsale"
+  },
+  {
+    "address": "0x713b61b15c217ae935540b07842c8f44e6cd243b",
+    "eth": "12000.9941",
+    "usd with multiplier": "180844.8600",
+    "usd": "139111.4308",
+    "percentage": "0.0253",
+    "fund source": "exchange",
+    "details": "poloniex withdrawals 28, 49, 111 days before crowdsale"
+  },
+  {
+    "address": "0x63ba789d0a124faf01c092796af528e5ff9e0ae5",
+    "eth": "10800.0000",
+    "usd with multiplier": "166409.0500",
+    "usd": "128006.9615",
+    "percentage": "0.0233",
+    "fund source": "exchange",
+    "details": "kraken withdrawals 13 days before and also during crowdsale"
+  },
+  {
+    "address": "0xe10c540088113fa6ec00b4b2c8824f8796e96ec4",
+    "eth": "10000.0000",
+    "usd with multiplier": "154635.0000",
+    "usd": "118950.0000",
+    "percentage": "0.0216",
+    "fund source": "presale",
+    "details": "bought 236k ether at presale"
+  },
+  {
+    "address": "0x60e16961ad6138d2fb3e556fc284d9c2fff41486",
+    "eth": "8500.0000",
+    "usd with multiplier": "129837.5000",
+    "usd": "99875.0000",
+    "percentage": "0.0182",
+    "fund source": "presale",
+    "details": "bought 1,000k ether at presale"
+  },
+  {
+    "address": "0x993cf3a3ab2e107f347e8c335d97bae484fcbcf5",
+    "eth": "7999.0000",
+    "usd with multiplier": "121872.7600",
+    "usd": "93748.2769",
+    "percentage": "0.0170",
+    "fund source": "exchange",
+    "details": "kraken withdrawals 18 days before crowdsale"
+  },
+  {
+    "address": "0x90f03154b866b6b47c7b2d4e34dbab85c75b8790",
+    "eth": "6500.0000",
+    "usd with multiplier": "99034.0000",
+    "usd": "76180.0000",
+    "percentage": "0.0139",
+    "fund source": "exchange",
+    "details": "kraken withdrawals 233 days before crowdsale"
+  },
+  {
+    "address": "0xd9ae01860a3b246ea36e9e83e607583f01d9655b",
+    "eth": "5000.9972",
+    "usd with multiplier": "77690.4600",
+    "usd": "59761.8923",
+    "percentage": "0.0109",
+    "fund source": "presale",
+    "details": "bought 338k ether at presale"
+  },
+  {
+    "address": "0x3003208e77edf3b088b122b5de3a6fc8c8ef679d",
+    "eth": "4999.9994",
+    "usd with multiplier": "76634.9800",
+    "usd": "58949.9846",
+    "percentage": "0.0107",
+    "fund source": "presale",
+    "details": "bought 16k ether at presale"
+  }
+]

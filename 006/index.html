@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Charts and Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
+    <script src="../js/d3.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+    <script>
+        var chart;
+        var chart2;
+        var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
+        document.addEventListener('DOMContentLoaded', function(event) {
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            });
+            d3.json('./chart.json', function(data) {
+                var totalEther = [];
+                var inflow = [];
+                var outflow = [];
+                var ethusd = [];
+                for (var i = 0; i < data.length; i++) {
+                    totalEther.push([data[i].time * 1000, data[i].totalEther]);
+                    if ('ethusd' in data[i]) {
+                        ethusd.push([data[i].time * 1000, data[i].ethusd]);
+                    }
+                    if (data[i].totalChange > 0) {
+                        inflow.push([data[i].time * 1000, data[i].totalChange]);
+                    } else if (data[i].totalChange < 0) {
+                        outflow.push([data[i].time * 1000, -data[i].totalChange]);
+                    }
+                }
+                $('#chart').highcharts({
+                    chart: {
+                        alignTicks: false
+                    },
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        type: 'datetime',
+                        plotLines: [{
+                            color: 'black',
+                            width: 0.3,
+                            value: new Date(2016, 2, 14).getTime(),
+                            label: {
+                                text: 'Homestead',
+                                verticalAlign: 'top',
+                                textAlign: 'left'
+                            }
+                        }]
+                    },
+                    yAxis: [{ // Primary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'ether',
+                            style: {
+                                color: color[3]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: color[3]
+                            }
+                        },
+                        opposite: true
+                    }, { // Secondary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'ether out flow',
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        opposite: true
+                    }, { // Tertiary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'ethusd',
+                            style: {
+                                color: color[2]
+                            }
+                        },
+                        labels: {
+                            format: '$ {value}',
+                            style: {
+                                color: color[2]
+                            }
+                        }
+                    }],
+                    tooltip: {
+                        shared: true,
+                        borderColor: '#000000',
+                        followPointer: true
+                    },
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        floating: false,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    series: [{
+                        name: 'holdings',
+                        type: 'spline',
+                        color: color[3],
+                        data: totalEther,
+                        tooltip: {
+                            valueDecimals: 0
+                        }
+                    }, {
+                        name: 'in flow',
+                        type: 'column',
+                        color: color[0],
+                        data: inflow,
+                        marker: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            valueDecimals: 0
+                        }
+                    }, {
+                        yAxis: 1,
+                        name: 'out flow',
+                        type: 'column',
+                        color: color[1],
+                        data: outflow,
+                        marker: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            valueDecimals: 0
+                        },
+                    }, {
+                        yAxis: 2,
+                        name: 'ethusd',
+                        type: 'spline',
+                        color: color[2],
+                        data: ethusd,
+                        marker: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            valueDecimals: 2,
+                            valuePrefix: '$ '
+                        }
+                    }]
+                });
+                var totalEtherUSD = [];
+                var inflowUSD = [];
+                var outflowUSD = [];
+                for (var i = 0; i < data.length; i++) {
+                    if ('ethusd' in data[i]) {
+                        totalEtherUSD.push([data[i].time * 1000, data[i].totalEther * data[i].ethusd]);
+                        if (data[i].totalChange > 0) {
+                            inflowUSD.push([data[i].time * 1000, data[i].totalChange * data[i].ethusd]);
+                        } else if (data[i].totalChange < 0) {
+                            outflowUSD.push([data[i].time * 1000, -data[i].totalChange * data[i].ethusd]);
+                        }
+                    } else {
+                        totalEtherUSD.push([data[i].time * 1000, data[i].totalEther * 0]);
+                        if (data[i].totalChange > 0) {
+                            inflowUSD.push([data[i].time * 1000, data[i].totalChange * 0]);
+                        } else if (data[i].totalChange < 0) {
+                            outflowUSD.push([data[i].time * 1000, -data[i].totalChange * 0]);
+                        }
+                    }
+                }
+                $('#chart2').highcharts({
+                    chart: {
+                        alignTicks: false
+                    },
+                    title: {
+                        text: null
+                    },
+                    xAxis: {
+                        type: 'datetime',
+                        plotLines: [{
+                            color: 'black',
+                            width: 0.3,
+                            value: new Date(2016, 2, 14).getTime(),
+                            label: {
+                                text: 'Homestead',
+                                verticalAlign: 'top',
+                                textAlign: 'left'
+                            }
+                        }]
+                    },
+                    yAxis: [{ // Primary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'USD',
+                            style: {
+                                color: color[3]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: color[3]
+                            }
+                        },
+                        opposite: true
+                    }, { // Secondary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'USD out flow',
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        labels: {
+                            style: {
+                                color: color[1]
+                            }
+                        },
+                        opposite: true
+                    }, { // Tertiary yAxis
+                        gridLineWidth: 0,
+                        lineWidth: 1,
+                        tickWidth: 1,
+                        title: {
+                            text: 'ethusd',
+                            style: {
+                                color: color[2]
+                            }
+                        },
+                        labels: {
+                            format: '$ {value}',
+                            style: {
+                                color: color[2]
+                            }
+                        }
+                    }],
+                    tooltip: {
+                        shared: true,
+                        borderColor: '#000000',
+                        followPointer: true
+                    },
+                    legend: {
+                        align: 'center',
+                        verticalAlign: 'bottom',
+                        floating: false,
+                        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    },
+                    series: [{
+                        name: 'holdings',
+                        type: 'spline',
+                        color: color[3],
+                        data: totalEtherUSD,
+                        tooltip: {
+                            valueDecimals: 0
+                        }
+                    }, {
+                        name: 'in flow',
+                        type: 'column',
+                        color: color[0],
+                        data: inflowUSD,
+                        marker: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            valueDecimals: 0
+                        }
+                    }, {
+                        yAxis: 1,
+                        name: 'out flow',
+                        type: 'column',
+                        color: color[1],
+                        data: outflowUSD,
+                        marker: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            valueDecimals: 0
+                        },
+                    }, {
+                        yAxis: 2,
+                        name: 'ethusd',
+                        type: 'spline',
+                        color: color[2],
+                        data: ethusd,
+                        marker: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            valueDecimals: 2,
+                            valuePrefix: '$ '
+                        }
+                    }]
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">(function(){})();</h1>
+        <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
+        <a href="https://github.com/slacknation/medium/tree/gh-pages/6" class="btn">View on GitHub</a>
+        <a href="https://medium.com/@slacknation/vitaliks-ether-holdings-timeline-e6f5aa1dd4ea" class="btn">View on Medium</a>
+    </section>
+    <section class="main-content">
+        <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>
+            </a>6. Vitalik's ether holdings timeline</h3>
+        <div id="chart"></div>
+        <div id="chart2"></div>
+        <footer class="site-footer">
+            <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        </footer>
+    </section>
+    <script>
+                    (function (i, s, o, g, r, a, m) {
+                        i['GoogleAnalyticsObject'] = r;
+                        i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                        a = s.createElement(o),
+                                m = s.getElementsByTagName(o)[0];
+                        a.async = 1;
+                        a.src = g;
+                        m.parentNode.insertBefore(a, m)
+                    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                    ga('create', 'UA-73445041-1', 'auto');
+                    ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>

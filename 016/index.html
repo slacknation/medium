@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Charts and Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+    <script src="../js/web3.min.js"></script>
+    <script>
+        var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
+        var abi = [{"constant":true,"inputs":[],"name":"MAX_TOKENS_SOLD","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"endTime","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_ceiling","type":"uint256"},{"name":"_priceFactor","type":"uint256"}],"name":"changeSettings","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"calcTokenPrice","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"startBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"wallet","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"gnosisToken","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"bids","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"_gnosisToken","type":"address"}],"name":"setup","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"startAuction","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"WAITING_PERIOD","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"ceiling","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"}],"name":"bid","outputs":[{"name":"amount","type":"uint256"}],"payable":true,"type":"function"},{"constant":true,"inputs":[],"name":"totalReceived","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"finalPrice","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"stage","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"updateStage","outputs":[{"name":"","type":"uint8"}],"payable":false,"type":"function"},{"constant":false,"inputs":[],"name":"calcCurrentTokenPrice","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"calcStopPrice","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"}],"name":"claimTokens","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"priceFactor","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"inputs":[{"name":"_wallet","type":"address"},{"name":"_ceiling","type":"uint256"},{"name":"_priceFactor","type":"uint256"}],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"sender","type":"address"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"BidSubmission","type":"event"}];
+        var web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/'));
+
+        document.addEventListener('DOMContentLoaded', function(event) {
+            Highcharts.setOptions({
+                lang: {
+                    thousandsSep: ','
+                }
+            });
+            var ethusd = 0;
+            var augurMarketCap = 0;
+            var marketCap = [];
+            var token = [];
+            var pace = [];
+            var marketCap2 = [];
+            var token2 = [];
+            var pace2 = [];
+            var paceEndX;
+            var paceEndY;
+            var multiple;
+            var augur;
+            var contractVar = {
+                blockNumber: -1,
+                calcTokenPrice: -1,
+                startBlock: -1,
+                ceiling: -1,
+                totalReceived: -1,
+                finalPrice: -1,
+                stage: -1,
+                priceFactor: -1
+            };
+            var MyContract = web3.eth.contract(abi);
+            var contractInstance = MyContract.at('0x01bE2862387d46eF9A7c2145ee74961d62Aa4154');
+
+            function getSync() {
+                web3.eth.getBlockNumber(function(error, data) {
+                    if (!error) {
+                        for (var key in contractVar) {
+                            contractVar[key] = -1;
+                        }
+                        contractVar.blockNumber = data;
+                        contractInstance.calcTokenPrice.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                contractVar.calcTokenPrice = web3.fromWei(data, 'ether').toNumber();
+                                checkSync();
+                            }
+                        });
+                        contractInstance.startBlock.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                contractVar.startBlock = data.toNumber();
+                                checkSync();
+                            }
+                        });
+                        contractInstance.ceiling.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                contractVar.ceiling = web3.fromWei(data, 'ether').toNumber();
+                                checkSync();
+                            }
+                        });
+                        contractInstance.totalReceived.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                contractVar.totalReceived = web3.fromWei(data, 'ether').toNumber();
+                                checkSync();
+                            }
+                        });
+                        contractInstance.finalPrice.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                contractVar.finalPrice = web3.fromWei(data, 'ether').toNumber();
+                                checkSync();
+                            }
+                        });
+                        contractInstance.stage.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                if (data.toNumber() === 0) {
+                                    contractVar.stage = 'AuctionDeployed';
+                                } else if (data.toNumber() === 1) {
+                                    contractVar.stage = 'AuctionStarted';
+                                } else if (data.toNumber() === 2) {
+                                    contractVar.stage = 'AuctionEnded';
+                                } else if (data.toNumber() === 3) {
+                                    contractVar.stage = 'TradingStarted';
+                                }
+                                checkSync();
+                            }
+                        });
+                        contractInstance.priceFactor.call(contractVar.blockNumber, function(error, data) {
+                            if (!error) {
+                                contractVar.priceFactor = data.toNumber();
+                                checkSync();
+                            }
+                        });
+                    }
+                });
+            }
+            getSync();
+            setInterval(function() {
+                getSync();
+            }, 40000);
+
+            function checkSync() {
+                var check = true;
+                for (var key in contractVar) {
+                    if (contractVar[key] === -1) {
+                        check = false;
+                    }
+                }
+                if (check) {
+                    $('#chart').highcharts().xAxis[0].removePlotLine('p2');
+                    $('#chart').highcharts().xAxis[0].addPlotLine({
+                        color: 'black',
+                        width: 0.3,
+                        value: contractVar.blockNumber - contractVar.startBlock,
+                        label: {
+                            text: '&nbsp;&nbsp;&nbsp;current block',
+                            useHTML: true,
+                        },
+                        id: 'p2'
+                    });
+                    $('#chart2').highcharts().xAxis[0].removePlotLine('p2');
+                    $('#chart2').highcharts().xAxis[0].addPlotLine({
+                        color: 'black',
+                        width: 0.3,
+                        value: contractVar.blockNumber - contractVar.startBlock,
+                        label: {
+                            text: '&nbsp;&nbsp;&nbsp;current block',
+                            useHTML: true,
+                        },
+                        id: 'p2'
+                    });
+                    $.get('https://coinmarketcap-nexuist.rhcloud.com/api/eth/price', function(data) {
+                        ethusd = parseFloat(data.usd);
+                        if (ethusd > 1) {
+                            $.get('https://coinmarketcap-nexuist.rhcloud.com/api/rep/market_cap', function(data) {
+                                augurMarketCap = parseFloat(data.usd) / 1000000;
+                                augur = contractVar.priceFactor * ethusd * 10 / augurMarketCap - 7500;
+                                $('#chart').highcharts().xAxis[0].removePlotLine('p1');
+                                $('#chart').highcharts().xAxis[0].addPlotLine({
+                                    color: 'black',
+                                    width: 0.3,
+                                    value: augur,
+                                    label: {
+                                        text: 'Augur market cap',
+                                        rotation: 0
+                                    },
+                                    id: 'p1'
+                                });
+                                $('#chart2').highcharts().xAxis[0].removePlotLine('p1');
+                                $('#chart2').highcharts().xAxis[0].addPlotLine({
+                                    color: 'black',
+                                    width: 0.3,
+                                    value: augur,
+                                    label: {
+                                        text: 'Augur market cap',
+                                        rotation: 0
+                                    },
+                                    id: 'p1'
+                                });
+                            });
+                            buildChart();
+                            $('#chart').highcharts().series[0].setData(marketCap);
+                            $('#chart2').highcharts().series[0].setData(marketCap2);
+                            $('#chart').highcharts().series[1].setData(token);
+                            $('#chart2').highcharts().series[1].setData(token2);
+                            $('#chart').highcharts().series[2].setData(pace);
+                            $('#chart2').highcharts().series[2].setData(pace2);
+                            $('#chart').highcharts().hideLoading();
+                            $('#chart2').highcharts().hideLoading();
+                        }
+                    });
+                }
+            }
+
+            function buildChart() {
+                marketCap = [];
+                token = [];
+                pace = [];
+                marketCap2 = [];
+                token2 = [];
+                pace2 = [];
+                paceEndX = contractVar.ceiling / (contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock));
+                paceEndY = gnoeth(paceEndX) * ethusd * 10;
+                $('#stage').html(contractVar.stage);
+                $('#timeNow').html(contractVar.blockNumber - contractVar.startBlock);
+                $('#ethPerBlock').html((contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock)).toFixed(2));
+                $('#paceEndX').html((paceEndX - (contractVar.blockNumber - contractVar.startBlock)).toFixed(2));
+                $('#paceEndY').html(paceEndY.toFixed(2));
+                multiple = 1000;
+                for (var i = 0; i < 180; i++) {
+                    marketCap.push([i * multiple, gnoeth(i * multiple) * ethusd * 10]);
+                    if (contractVar.ceiling / gnoeth(i * multiple) / 100000 > 90) {
+                        token.push([i * multiple, 90]);
+                    } else {
+                        token.push([i * multiple, contractVar.ceiling / gnoeth(i * multiple) / 100000]);
+                    }
+                    if (gnoeth(i * multiple) * ethusd * 10 > paceEndY) {
+                        pace.push([i * multiple, i * multiple * paceEndY / paceEndX]);
+                    } else {
+                        pace.push([paceEndX, paceEndY]);
+                    }
+                }
+                multiple = 200;
+                for (var i = 0; i < 90; i++) {
+                    marketCap2.push([i * multiple, gnoeth(i * multiple) * ethusd * 10]);
+                    token2.push([i * multiple, contractVar.ceiling / gnoeth(i * multiple) / 100000]);
+                    if (gnoeth(i * multiple) * ethusd * 10 > paceEndY) {
+                        pace2.push([i * multiple, i * multiple * paceEndY / paceEndX]);
+                    } else {
+                        pace2.push([paceEndX, paceEndY]);
+                    }
+                }
+            }
+
+            function gnoeth(block) {
+                return contractVar.priceFactor / (7500 + block);
+            }
+
+            $('#chart').highcharts({
+                chart: {
+                    alignTicks: false
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    labels: {
+                        enabled: false
+                    },
+                    tickWidth: 0,
+                    title: {
+                        text: '30 days'
+                    }
+                },
+                yAxis: [{ // Primary yAxis
+                    gridLineWidth: 0,
+                    lineWidth: 1,
+                    tickWidth: 1,
+                    title: {
+                        text: 'market cap (million USD)',
+                        style: {
+                            color: color[2]
+                        }
+                    },
+                    labels: {
+                        style: {
+                            color: color[2]
+                        }
+                    }
+                }, { // Secondary yAxis
+                    gridLineWidth: 0,
+                    lineWidth: 1,
+                    tickWidth: 1,
+                    title: {
+                        text: '% GNO sold',
+                        style: {
+                            color: color[0]
+                        }
+                    },
+                    labels: {
+                        style: {
+                            color: color[0]
+                        }
+                    },
+                    opposite: true
+                }],
+                tooltip: {
+                    shared: true,
+                    borderColor: '#000000',
+                    followPointer: true
+                },
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    floating: false,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                },
+                series: [{
+                    name: 'market cap (million USD)',
+                    type: 'spline',
+                    color: color[2],
+                    data: [],
+                    tooltip: {
+                        valueDecimals: 2
+                    },
+                    marker: {
+                        enabled: false
+                    }
+                }, {
+                    yAxis: 1,
+                    name: '% GNO sold',
+                    type: 'spline',
+                    color: color[0],
+                    data: token,
+                    tooltip: {
+                        valueDecimals: 2
+                    },
+                    marker: {
+                        enabled: false
+                    }
+                }, {
+                    name: 'current pace (million USD)',
+                    type: 'spline',
+                    color: color[1],
+                    data: [],
+                    marker: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                }]
+            });
+            $('#chart2').highcharts({
+                chart: {
+                    alignTicks: false
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    labels: {
+                        enabled: false
+                    },
+                    tickWidth: 0,
+                    title: {
+                        text: '3 days'
+                    }
+                },
+                yAxis: [{ // Primary yAxis
+                    gridLineWidth: 0,
+                    lineWidth: 1,
+                    tickWidth: 1,
+                    title: {
+                        text: 'market cap (million USD)',
+                        style: {
+                            color: color[2]
+                        }
+                    },
+                    labels: {
+                        style: {
+                            color: color[2]
+                        }
+                    }
+                }, { // Secondary yAxis
+                    gridLineWidth: 0,
+                    lineWidth: 1,
+                    tickWidth: 1,
+                    title: {
+                        text: '% GNO sold',
+                        style: {
+                            color: color[0]
+                        }
+                    },
+                    labels: {
+                        style: {
+                            color: color[0]
+                        }
+                    },
+                    opposite: true
+                }],
+                tooltip: {
+                    shared: true,
+                    borderColor: '#000000',
+                    followPointer: true
+                },
+                legend: {
+                    align: 'center',
+                    verticalAlign: 'bottom',
+                    floating: false,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                },
+                series: [{
+                    name: 'market cap (million USD)',
+                    type: 'spline',
+                    color: color[2],
+                    data: [],
+                    tooltip: {
+                        valueDecimals: 2
+                    },
+                    marker: {
+                        enabled: false
+                    }
+                }, {
+                    yAxis: 1,
+                    name: '% GNO sold',
+                    type: 'spline',
+                    color: color[0],
+                    data: token2,
+                    tooltip: {
+                        valueDecimals: 2
+                    },
+                    marker: {
+                        enabled: false
+                    }
+                }, {
+                    name: 'current pace (million USD)',
+                    type: 'spline',
+                    color: color[1],
+                    data: [],
+                    marker: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                }]
+            });
+            $('#chart').highcharts().showLoading();
+            $('#chart2').highcharts().showLoading();
+        });
+
+    </script>
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">(function(){})();</h1>
+        <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
+        <a href="https://github.com/slacknation/medium/tree/gh-pages/16" class="btn">View on GitHub</a>
+    </section>
+    <section class="main-content">
+        <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>
+        </a>16. Gnosis ICO</h3>
+        <div>stage: <span style="color:#159957;font-size:20px;" id="stage">...</span></div>
+        <div>blocks since ICO: <span style="color:#159957;font-size:20px;" id="timeNow">...</span></div>
+        <div>current funding pace: <span style="color:#159957;font-size:20px;" id="ethPerBlock">...</span> ETH per block</div>
+        <div>blocks left at this pace: <span style="color:#159957;font-size:20px;" id="paceEndX">...</span> <span id="paceEndXR"></span></div>
+        <div>end market cap at this pace: <span style="color:#159957;font-size:20px;" id="paceEndY">...</span> million USD</div>
+        <br />
+        <div id="chart2"></div>
+        <div id="chart"></div>
+        <footer class="site-footer">
+            <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        </footer>
+    </section>
+    <script>
+        //            (function (i, s, o, g, r, a, m) {
+        //                i['GoogleAnalyticsObject'] = r;
+        //                i[r] = i[r] || function () {
+        //                    (i[r].q = i[r].q || []).push(arguments)
+        //                }, i[r].l = 1 * new Date();
+        //                a = s.createElement(o),
+        //                        m = s.getElementsByTagName(o)[0];
+        //                a.async = 1;
+        //                a.src = g;
+        //                m.parentNode.insertBefore(a, m)
+        //            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        //            ga('create', 'UA-73445041-1', 'auto');
+        //            ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>

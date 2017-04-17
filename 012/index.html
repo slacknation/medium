@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Charts and Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/github-light.css" media="screen">
+    <style>
+        .button {
+            display: inline-block;
+            border: none;
+            color: #ffffff;
+            border-radius: 3px 3px 3px 3px;
+            -webkit-border-radius: 3px 3px 3px 3px;
+            -moz-border-radius: 3px 3px 3px 3px;
+            width: auto;
+            height: auto;
+            font-size: 16px;
+            padding: 10px 40px;
+            text-shadow: 0 1px 0 #FFFFFF;
+            background-color: #008CBA;
+        }
+
+        .button:hover,
+        .button:active {
+            border: none;
+            color: #FFFFFF;
+            background-color: #159957;
+        }
+
+        .tick:before {
+            content: "\2713";
+            color: #159957;
+        }
+
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/accounting.min.js"></script>
+    <script>
+        const refundAddress = '0xbf4ed7b27f1d666546e30d74d50d173d20bca754';
+        const daoAddress = '0xbb9bc244d798123fde783fcc1c72d3bb8c189413';
+        const refundAbi = [{
+            "constant": false,
+            "inputs": [],
+            "name": "withdraw",
+            "outputs": [],
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [],
+            "name": "mainDAO",
+            "outputs": [{
+                "name": "",
+                "type": "address"
+            }],
+            "type": "function"
+        }];
+        const daoAbi = [{
+            "constant": true,
+            "inputs": [{
+                "name": "_owner",
+                "type": "address"
+            }],
+            "name": "balanceOf",
+            "outputs": [{
+                "name": "balance",
+                "type": "uint256"
+            }],
+            "type": "function"
+        }, {
+            "constant": false,
+            "inputs": [{
+                "name": "_spender",
+                "type": "address"
+            }, {
+                "name": "_amount",
+                "type": "uint256"
+            }],
+            "name": "approve",
+            "outputs": [{
+                "name": "success",
+                "type": "bool"
+            }],
+            "type": "function"
+        }, {
+            "constant": true,
+            "inputs": [{
+                "name": "_owner",
+                "type": "address"
+            }, {
+                "name": "_spender",
+                "type": "address"
+            }],
+            "name": "allowance",
+            "outputs": [{
+                "name": "remaining",
+                "type": "uint256"
+            }],
+            "type": "function"
+        }];
+        jQuery(window).load(function() {
+            $('#openSite').html('2. Open this site in mist https://slacknation.github.io/medium/12/12.html');
+            $('#addAccount').html('3. Add only 1 account by clicking "no accounts set" at the top right');
+            $('#approveWith').html('4. <input type="button" class="button" value="Approve" onclick="approve();"> and wait for a new block');
+            $('#refundEther').html('5. <input type="button" class="button" value="Refund" onclick="refund();"> and wait for a new block for your ether');
+            $('#ex1').html('3. In order for this dapp to be aware of your account, you have to explicitly add it');
+            $('#ex2').html('4. This is a 0 eth tx and gives the refund contract permission to move your dao tokens');
+            $('#ex3').html('5. This is a 0 eth tx and results in the refund contract moving your dao to it and in turn giving you 1 eth for 100 dao tokens');
+
+            // Checks Web3 support
+            if (typeof web3 !== 'undefined' && typeof Web3 !== 'undefined') {
+                // If there's a web3 library loaded, then make your own web3
+                web3 = new Web3(web3.currentProvider);
+            } else if (typeof Web3 !== 'undefined') {
+                // If there isn't then set a provider
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+            } else if (typeof web3 == 'undefined' && typeof Web3 == 'undefined') {
+                // If there is neither then this isn't an ethereum browser
+                return;
+            }
+            $('#checkWeb3').addClass('tick');
+            $('#openSite').addClass('tick');
+            refundContract = web3.eth.contract(refundAbi);
+            refundInstance = refundContract.at(refundAddress);
+            daoContract = web3.eth.contract(daoAbi);
+            daoInstance = daoContract.at(daoAddress);
+            updateInfo();
+            web3.eth.filter('latest').watch(function(e, res) {
+                if (!e) {
+                    updateInfo();
+                }
+            });
+        });
+
+        function updateInfo() {
+            // check if accounts are present
+            if (!web3.eth.accounts || web3.eth.accounts.length == 0) {
+                $('#addAccount').removeClass('tick');
+            } else {
+                $('#addAccount').addClass('tick');
+                $('#ethBalance').html(accounting.formatNumber(web3.fromWei(web3.eth.getBalance(web3.eth.accounts[0]), 'ether'), 2, ','));
+                $('#daoBalance').html(accounting.formatNumber(web3.fromWei(daoInstance.balanceOf.call(web3.eth.accounts[0]), 'ether') * 100, 2, ','));
+                if (daoInstance.allowance.call(web3.eth.accounts[0], refundAddress).gte(web3.toWei(9000000, 'ether'))) {
+                    $('#approveWith').addClass('tick');
+                } else {
+                    $('#approveWith').removeClass('tick');
+                }
+                if ($('#approveWith').hasClass('tick')) {
+                    if (daoInstance.balanceOf.call(web3.eth.accounts[0]).toNumber() < 1) {
+                        $('#refundEther').addClass('tick');
+                    } else {
+                        $('#refundEther').removeClass('tick');
+                    }
+                } else {
+                    $('#refundEther').removeClass('tick');
+                }
+            }
+        }
+
+        function approve() {
+            if (refundInstance.mainDAO.call() === daoAddress) {
+                daoInstance.approve(refundAddress, web3.toWei(10000000, 'ether'), {
+                    from: web3.eth.accounts[0]
+                });
+            }
+        }
+
+        function refund() {
+            if (refundInstance.mainDAO.call() === daoAddress) {
+                refundInstance.withdraw({
+                    from: web3.eth.accounts[0]
+                });
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">(function(){})();</h1>
+        <h2 class="project-tagline">Blockchain, make me rich and I care not what you can be used for.</h2>
+        <a href="https://github.com/slacknation/medium/tree/gh-pages/12" class="btn">View on GitHub</a>
+        <!-- <a href="https://medium.com/@slacknation/" class="btn">View on Medium</a> -->
+    </section>
+    <section class="main-content">
+        <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>12. Refund DAO</h3>
+        <p></p>
+        <div>You have: <span style="color:#159957;font-size:20px;" id="ethBalance">...</span> ether and <span style="color:#159957;font-size:20px;" id="daoBalance">...</span> dao</div>
+        <p></p>
+        <div id="checkWeb3">1. Install mist (not the ethereum wallet) <a href="https://github.com/ethereum/mist/releases">https://github.com/ethereum/mist/releases</a></div>
+        <div id="openSite">You need to enable javascript</div>
+        <div id="addAccount"></div>
+        <p></p>
+        <div id="approveWith"></div>
+        <p></p>
+        <div id="refundEther"></div>
+        <p></p>
+        <div>* Use at your own risk, do not type in your password for a tx you do not want to send</div>
+        <h4><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Explanation:</h4>
+        <div id="ex1"></div>
+        <div id="ex2"></div>
+        <div id="ex3"></div>
+        <footer class="site-footer">
+            <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium/tree/gh-pages">slacknation</a> at gmail.com</span>
+            <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        </footer>
+    </section>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-73445041-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
