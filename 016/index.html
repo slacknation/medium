@@ -45,7 +45,7 @@
                 priceFactor: -1
             };
             var MyContract = web3.eth.contract(abi);
-            var contractInstance = MyContract.at('0x01bE2862387d46eF9A7c2145ee74961d62Aa4154');
+            var contractInstance = MyContract.at('0x1d0DcC8d8BcaFa8e8502BEaEeF6CBD49d3AFFCDC');
 
             function getSync() {
                 web3.eth.getBlockNumber(function(error, data) {
@@ -89,10 +89,12 @@
                                 if (data.toNumber() === 0) {
                                     contractVar.stage = 'AuctionDeployed';
                                 } else if (data.toNumber() === 1) {
-                                    contractVar.stage = 'AuctionStarted';
+                                    contractVar.stage = 'AuctionSetUp';
                                 } else if (data.toNumber() === 2) {
-                                    contractVar.stage = 'AuctionEnded';
+                                    contractVar.stage = 'AuctionStarted';
                                 } else if (data.toNumber() === 3) {
+                                    contractVar.stage = 'AuctionEnded';
+                                } else if (data.toNumber() === 4) {
                                     contractVar.stage = 'TradingStarted';
                                 }
                                 checkSync();
@@ -195,10 +197,17 @@
                 paceEndX = contractVar.ceiling / (contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock));
                 paceEndY = gnoeth(paceEndX) * ethusd * 10;
                 $('#stage').html(contractVar.stage);
-                $('#timeNow').html(contractVar.blockNumber - contractVar.startBlock);
+                var temp = contractVar.blockNumber - contractVar.startBlock;
+                $('#timeNow').html(temp + ' (' + (temp / 5900).toFixed(2) + ' days)');
                 $('#ethPerBlock').html((contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock)).toFixed(2));
-                $('#paceEndX').html((paceEndX - (contractVar.blockNumber - contractVar.startBlock)).toFixed(2));
-                $('#paceEndY').html(paceEndY.toFixed(2));
+                if (contractVar.stage === 'AuctionEnded' || contractVar.stage === 'TradingStarted') {
+                    $('#endPrice').html('end price (gnoeth): <span style="color:#159957;font-size:20px;">' + contractVar.finalPrice.toFixed(5) + '</span>');
+                    $('#endCap').html('');
+                } else {
+                    temp = paceEndX - (contractVar.blockNumber - contractVar.startBlock);
+                    $('#paceEndX').html(temp.toFixed(2) + ' (' + (temp / 5900).toFixed(2) + ' days)');
+                    $('#paceEndY').html(paceEndY.toFixed(2));
+                }
                 multiple = 1000;
                 for (var i = 0; i < 180; i++) {
                     marketCap.push([i * multiple, gnoeth(i * multiple) * ethusd * 10]);
@@ -312,7 +321,7 @@
                         enabled: false
                     }
                 }, {
-                    name: 'current pace (million USD)',
+                    name: 'funding pace (million USD)',
                     type: 'spline',
                     color: color[1],
                     data: [],
@@ -407,7 +416,7 @@
                         enabled: false
                     }
                 }, {
-                    name: 'current pace (million USD)',
+                    name: 'funding pace (million USD)',
                     type: 'spline',
                     color: color[1],
                     data: [],
@@ -437,31 +446,33 @@
         </a>16. Gnosis ICO</h3>
         <div>stage: <span style="color:#159957;font-size:20px;" id="stage">...</span></div>
         <div>blocks since ICO: <span style="color:#159957;font-size:20px;" id="timeNow">...</span></div>
-        <div>current funding pace: <span style="color:#159957;font-size:20px;" id="ethPerBlock">...</span> ETH per block</div>
-        <div>blocks left at this pace: <span style="color:#159957;font-size:20px;" id="paceEndX">...</span> <span id="paceEndXR"></span></div>
-        <div>end market cap at this pace: <span style="color:#159957;font-size:20px;" id="paceEndY">...</span> million USD</div>
+        <div>funding pace: <span style="color:#159957;font-size:20px;" id="ethPerBlock">...</span> ETH per block</div>
+        <div id="endPrice">blocks left at this pace: <span style="color:#159957;font-size:20px;" id="paceEndX">...</span></div>
+        <div id="endCap">end market cap at this pace: <span style="color:#159957;font-size:20px;" id="paceEndY">...</span> million USD</div>
+        <p>*chart is auto updated every 40 seconds</p>
         <br />
         <div id="chart2"></div>
         <div id="chart"></div>
+        <p>* data from etherscan.io, infura.io, coinmarketcap-nexuist.rhcloud.com</p>
         <footer class="site-footer">
             <span class="site-footer-owner">Maintained by <a href="https://github.com/slacknation/medium">slacknation</a> at gmail.com</span>
             <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
         </footer>
     </section>
     <script>
-        //            (function (i, s, o, g, r, a, m) {
-        //                i['GoogleAnalyticsObject'] = r;
-        //                i[r] = i[r] || function () {
-        //                    (i[r].q = i[r].q || []).push(arguments)
-        //                }, i[r].l = 1 * new Date();
-        //                a = s.createElement(o),
-        //                        m = s.getElementsByTagName(o)[0];
-        //                a.async = 1;
-        //                a.src = g;
-        //                m.parentNode.insertBefore(a, m)
-        //            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        //            ga('create', 'UA-73445041-1', 'auto');
-        //            ga('send', 'pageview');
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-73445041-1', 'auto');
+        ga('send', 'pageview');
 
     </script>
 </body>
