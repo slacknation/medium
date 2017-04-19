@@ -128,7 +128,8 @@
                         width: 0.3,
                         value: contractVar.blockNumber - contractVar.startBlock,
                         label: {
-                            text: '&nbsp;&nbsp;&nbsp;current block',
+                            text: '<br />current block',
+                            rotation: 0,
                             useHTML: true,
                         },
                         id: 'p2'
@@ -139,7 +140,8 @@
                         width: 0.3,
                         value: contractVar.blockNumber - contractVar.startBlock,
                         label: {
-                            text: '&nbsp;&nbsp;&nbsp;current block',
+                            text: '<br />current block',
+                            rotation: 0,
                             useHTML: true,
                         },
                         id: 'p2'
@@ -199,13 +201,20 @@
                 $('#stage').html(contractVar.stage);
                 var temp = contractVar.blockNumber - contractVar.startBlock;
                 $('#timeNow').html(temp + ' (' + (temp / 5900).toFixed(2) + ' days)');
+                $('#raised').html(contractVar.totalReceived.toFixed(2));
+                $('#raised2').html(contractVar.ceiling);
+                temp = gnoeth(contractVar.blockNumber - contractVar.startBlock);
+                $('#gnoeth').html(temp.toFixed(5));
+                $('#gnousd').html((temp * ethusd).toFixed(2));
                 $('#ethPerBlock').html((contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock)).toFixed(2));
                 if (contractVar.stage === 'AuctionEnded' || contractVar.stage === 'TradingStarted') {
                     $('#endPrice').html('end price (gnoeth): <span style="color:#159957;font-size:20px;">' + contractVar.finalPrice.toFixed(5) + '</span>');
                     $('#endCap').html('');
+                    $('#gnousdDiv').html('');
+                    $('#gnoethDiv').html('');
                 } else {
                     temp = paceEndX - (contractVar.blockNumber - contractVar.startBlock);
-                    $('#paceEndX').html(temp.toFixed(2) + ' (' + (temp / 5900).toFixed(2) + ' days)');
+                    $('#paceEndX').html(temp.toFixed(0) + ' (' + (temp / 5900).toFixed(2) + ' days)');
                     $('#paceEndY').html(paceEndY.toFixed(2));
                 }
                 multiple = 1000;
@@ -446,6 +455,9 @@
         </a>16. Gnosis ICO</h3>
         <div>stage: <span style="color:#159957;font-size:20px;" id="stage">...</span></div>
         <div>blocks since ICO: <span style="color:#159957;font-size:20px;" id="timeNow">...</span></div>
+        <div>raised: <span style="color:#159957;font-size:20px;" id="raised">...</span> of <span style="color:#159957;font-size:20px;" id="raised2">...</span> ETH</div>
+        <div id="gnousdDiv">gnousd: <span style="color:#159957;font-size:20px;" id="gnousd">...</span></div>
+        <div id="gnoethDiv">gnoeth: <span style="color:#159957;font-size:20px;" id="gnoeth">...</span></div>
         <div>funding pace: <span style="color:#159957;font-size:20px;" id="ethPerBlock">...</span> ETH per block</div>
         <div id="endPrice">blocks left at this pace: <span style="color:#159957;font-size:20px;" id="paceEndX">...</span></div>
         <div id="endCap">end market cap at this pace: <span style="color:#159957;font-size:20px;" id="paceEndY">...</span> million USD</div>
