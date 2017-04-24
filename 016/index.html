@@ -42,7 +42,8 @@
                 totalReceived: -1,
                 finalPrice: -1,
                 stage: -1,
-                priceFactor: -1
+                priceFactor: -1,
+                endBlock: 3593309
             };
             var MyContract = web3.eth.contract(abi);
             var contractInstance = MyContract.at('0x1d0DcC8d8BcaFa8e8502BEaEeF6CBD49d3AFFCDC');
@@ -51,7 +52,9 @@
                 web3.eth.getBlockNumber(function(error, data) {
                     if (!error) {
                         for (var key in contractVar) {
-                            contractVar[key] = -1;
+                            if (key !== 'endBlock') {
+                                contractVar[key] = -1;
+                            }
                         }
                         contractVar.blockNumber = data;
                         contractInstance.calcTokenPrice.call(contractVar.blockNumber, function(error, data) {
@@ -126,9 +129,9 @@
                     $('#chart').highcharts().xAxis[0].addPlotLine({
                         color: 'black',
                         width: 0.3,
-                        value: contractVar.blockNumber - contractVar.startBlock,
+                        value: contractVar.endBlock - contractVar.startBlock,
                         label: {
-                            text: '<br />current block',
+                            text: '<br />end block',
                             rotation: 0,
                             useHTML: true,
                         },
@@ -138,9 +141,9 @@
                     $('#chart2').highcharts().xAxis[0].addPlotLine({
                         color: 'black',
                         width: 0.3,
-                        value: contractVar.blockNumber - contractVar.startBlock,
+                        value: contractVar.endBlock - contractVar.startBlock,
                         label: {
-                            text: '<br />current block',
+                            text: '<br />end block',
                             rotation: 0,
                             useHTML: true,
                         },
@@ -188,6 +191,7 @@
                     });
                 }
             }
+
             function buildChart() {
                 marketCap = [];
                 token = [];
@@ -195,27 +199,27 @@
                 marketCap2 = [];
                 token2 = [];
                 pace2 = [];
-                paceEndX = contractVar.ceiling / (contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock));
+                paceEndX = contractVar.ceiling / (contractVar.totalReceived / (contractVar.endBlock - contractVar.startBlock));
                 paceEndY = gnoeth(paceEndX) * ethusd * 10;
                 $('#stage').html(contractVar.stage);
-                var temp = contractVar.blockNumber - contractVar.startBlock;
-                $('#timeNow').html(temp + ' (' + (temp / 5900).toFixed(2) + ' days)');
+                var temp = contractVar.endBlock - contractVar.startBlock;
+                $('#timeNow').html(temp);
                 $('#raised').html(contractVar.totalReceived.toFixed(2));
                 $('#raised2').html(contractVar.ceiling);
-                temp = gnoeth(contractVar.blockNumber - contractVar.startBlock);
+                temp = gnoeth(contractVar.endBlock - contractVar.startBlock);
                 $('#gnoeth').html(temp.toFixed(5));
                 $('#gnousd').html((temp * ethusd).toFixed(2));
-                $('#ethPerBlock').html((contractVar.totalReceived / (contractVar.blockNumber - contractVar.startBlock)).toFixed(2));
-                if (contractVar.stage === 'AuctionEnded' || contractVar.stage === 'TradingStarted') {
-                    $('#endPrice').html('end price (gnoeth): <span style="color:#159957;font-size:20px;">' + contractVar.finalPrice.toFixed(5) + '</span>');
-                    $('#endCap').html('');
-                    $('#gnousdDiv').html('');
-                    $('#gnoethDiv').html('');
-                } else {
-                    temp = paceEndX - (contractVar.blockNumber - contractVar.startBlock);
-                    $('#paceEndX').html(temp.toFixed(0) + ' (' + (temp / 5900).toFixed(2) + ' days)');
-                    $('#paceEndY').html(paceEndY.toFixed(2));
-                }
+                $('#ethPerBlock').html((contractVar.totalReceived / (contractVar.endBlock - contractVar.startBlock)).toFixed(2));
+                // if (contractVar.stage === 'AuctionEnded' || contractVar.stage === 'TradingStarted') {
+                $('#endPrice').html('end price (gnoeth): <span style="color:#159957;font-size:20px;">' + contractVar.finalPrice.toFixed(5) + '</span>');
+                $('#endCap').html('');
+                $('#gnousdDiv').html('');
+                $('#gnoethDiv').html('');
+                // } else {
+                //     temp = paceEndX - (contractVar.blockNumber - contractVar.startBlock);
+                //     $('#paceEndX').html(temp.toFixed(0) + ' (' + (temp / 5900).toFixed(2) + ' days)');
+                //     $('#paceEndY').html(paceEndY.toFixed(2));
+                // }
                 multiple = 1000;
                 for (var i = 0; i < 180; i++) {
                     marketCap.push([i * multiple, gnoeth(i * multiple) * ethusd * 10]);
