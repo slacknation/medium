@@ -212,7 +212,7 @@
                 $('#ethPerBlock').html((contractVar.totalReceived / (contractVar.endBlock - contractVar.startBlock)).toFixed(2));
                 // if (contractVar.stage === 'AuctionEnded' || contractVar.stage === 'TradingStarted') {
                 $('#endPrice').html('end price (gnoeth): <span style="color:#159957;font-size:20px;">' + contractVar.finalPrice.toFixed(5) + '</span>');
-                $('#endCap').html('');
+                $('#endCap').html('gno sold: <span style="color:#159957;font-size:20px;">' + (contractVar.ceiling / gnoeth(contractVar.endBlock - contractVar.startBlock) / 100000).toFixed(2)  + '</span> %');
                 $('#gnousdDiv').html('');
                 $('#gnoethDiv').html('');
                 // } else {
