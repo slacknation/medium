@@ -40,7 +40,7 @@
             var MyContract = web3.eth.contract(abi);
             var contractInstance = MyContract.at('0xBbc79794599b19274850492394004087cBf89710');
             var stage = ['not started', 'first hour no hidden cap', 'hidden cap to be revealed', 'hidden cap revealed', 'ended'];
-            var stageNum = -1;
+            var stageNum = 4;
             var start = 1497276000;
             var firstHour = start + 60 * 60;
             var endTime = 1498485600;
@@ -113,12 +113,12 @@
                     }
                 });
             }
+            if (new Date().getTime() / 1000 > firstHour) {
+                $('#projection').html('');
+            }
             getSync();
             setInterval(function() {
-                getSync();
-                if (new Date().getTime() / 1000 > firstHour) {
-                    $('#projection').html('');
-                }
+                getSync();               
             }, 10000);
             function blink(id) {
                 $(id).css('background-color', '#159957');
