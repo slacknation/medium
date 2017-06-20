@@ -64,7 +64,7 @@
                 });
                 contractInstanceR.txs.call(function(error, data) {
                     if (!error) {
-                        $('#unconfirmed').html(data.toNumber());
+                        $('#unconfirmed').html(data.toFormat(0));
                         if (!unconfirmed.equals(data)) {
                             unconfirmed = data;
                             blink('#unconfirmed');
