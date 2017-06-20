@@ -175,6 +175,8 @@
             function getethusd() {
               $.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
                   ethusd = data.USD;
+                  $('#raisedD').html(web3.fromWei(raisedT,'ether').times(ethusd).toFormat(2));
+                  blink('#raisedD');
               });
             }
             function blink(id) {
