@@ -96,16 +96,23 @@
                             raised = data;
                             blink('#raised');
                         }
-                        contractInstanceC.toCollect.call(data, function(error, dataC) {
-                            if (!error) {
-                              $('#curveM').html(web3.fromWei(dataC,'ether').toFormat(2));
-                              if (!curveM.equals(dataC)) {
-                                  curveM = dataC;
-                                  blink('#curveM');
+                        var temp = web3.toBigNumber(0);
+                        for (var i = 0; i < curves.length; i++) {
+                            if (curves[i].length > 0) {
+                              if (raised.lessThanOrEqualTo(curves[i][0])) {                                
+                                temp = curves[i][0].minus(raised).dividedBy(curves[i][1]);
+                                break;
                               }
+                            }else{
+                                break;
                             }
-                        });
-                        if (curves[curves.length - 1].length > 0 && curves[curves.length - 1][0].lessThanOrEqual(raised)) {
+                        }
+                        $('#curveM').html(web3.fromWei(temp,'ether').toFormat(2));
+                        if (!curveM.equals(temp)) {
+                            curveM = temp;
+                            blink('#curveM');
+                        }
+                        if (curves[curves.length - 1].length > 0 && curves[curves.length - 1][0].lessThanOrEqualTo(raised)) {
                             stageNum = 2;
                             $('#stage').html(stage[stageNum]);
                         }
