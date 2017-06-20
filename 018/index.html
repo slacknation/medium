@@ -134,7 +134,7 @@
                 });
                 contractInstanceC.currentIndex.call(function(error, data) {
                     if (!error) {
-                        $('#curve').html(web3.fromWei(data,'ether').toNumber());
+                        $('#curve').html(data.toNumber());
                         if (!currentCurve.equals(data)) {
                             currentCurve = data;
                             blink('#curve');
