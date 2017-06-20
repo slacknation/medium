@@ -101,6 +101,9 @@
                             if (curves[i].length > 0) {
                               if (raised.lessThanOrEqualTo(curves[i][0])) {                                
                                 temp = curves[i][0].minus(raised).dividedBy(curves[i][1]);
+                                if (temp.lessThanOrEqualTo(curves[i][2])) {
+                                    temp = curves[i][2];
+                                }
                                 break;
                               }
                             }else{
@@ -146,10 +149,13 @@
                                 if (data[1].greaterThan(0)) {
                                     curves[i][0] = data[1];
                                     curves[i][1] = data[2];
-                                    $('#cl' + i).html(web3.fromWei(data[1],'ether').toFormat(2));
+                                    curves[i][2] = data[3];
+                                    $('#cl' + i).html(web3.fromWei(data[1],'ether').toFormat(0));
                                     $('#cs' + i).html(data[2].toFormat(0));
+                                    $('#cm' + i).html(web3.fromWei(data[3],'ether').toFormat(0));
                                     blink('#cl' + i);
                                     blink('#cs' + i);
+                                    blink('#cm' + i);
                                 }
                               }
                           });
@@ -208,17 +214,17 @@
         <br />
         curves to limit funding per tx
         <table>
-          <tr><th>curve</th><th>limit (eth)</th><th>slope</th></tr>
-          <tr><td>0</td><td style="color:#159957;" id="cl0">?</td><td style="color:#159957;" id="cs0">?</td></tr>
-          <tr><td>1</td><td style="color:#159957;" id="cl1">?</td><td style="color:#159957;" id="cs1">?</td></tr>
-          <tr><td>2</td><td style="color:#159957;" id="cl2">?</td><td style="color:#159957;" id="cs2">?</td></tr>
-          <tr><td>3</td><td style="color:#159957;" id="cl3">?</td><td style="color:#159957;" id="cs3">?</td></tr>
-          <tr><td>4</td><td style="color:#159957;" id="cl4">?</td><td style="color:#159957;" id="cs4">?</td></tr>
-          <tr><td>5</td><td style="color:#159957;" id="cl5">?</td><td style="color:#159957;" id="cs5">?</td></tr>
-          <tr><td>6</td><td style="color:#159957;" id="cl6">?</td><td style="color:#159957;" id="cs6">?</td></tr>
-          <tr><td>7</td><td style="color:#159957;" id="cl7">?</td><td style="color:#159957;" id="cs7">?</td></tr>
-          <tr><td>8</td><td style="color:#159957;" id="cl8">?</td><td style="color:#159957;" id="cs8">?</td></tr>
-          <tr><td>9</td><td style="color:#159957;" id="cl9">?</td><td style="color:#159957;" id="cs9">?</td></tr>
+          <tr><th>curve</th><th>limit (eth)</th><th>slope</th><th>minimum (eth)</th></tr>
+          <tr><td>0</td><td style="color:#159957;" id="cl0">?</td><td style="color:#159957;" id="cs0">?</td></td><td style="color:#159957;" id="cm0">?</td></tr>
+          <tr><td>1</td><td style="color:#159957;" id="cl1">?</td><td style="color:#159957;" id="cs1">?</td></td><td style="color:#159957;" id="cm1">?</td></tr>
+          <tr><td>2</td><td style="color:#159957;" id="cl2">?</td><td style="color:#159957;" id="cs2">?</td></td><td style="color:#159957;" id="cm2">?</td></tr>
+          <tr><td>3</td><td style="color:#159957;" id="cl3">?</td><td style="color:#159957;" id="cs3">?</td></td><td style="color:#159957;" id="cm3">?</td></tr>
+          <tr><td>4</td><td style="color:#159957;" id="cl4">?</td><td style="color:#159957;" id="cs4">?</td></td><td style="color:#159957;" id="cm4">?</td></tr>
+          <tr><td>5</td><td style="color:#159957;" id="cl5">?</td><td style="color:#159957;" id="cs5">?</td></td><td style="color:#159957;" id="cm5">?</td></tr>
+          <tr><td>6</td><td style="color:#159957;" id="cl6">?</td><td style="color:#159957;" id="cs6">?</td></td><td style="color:#159957;" id="cm6">?</td></tr>
+          <tr><td>7</td><td style="color:#159957;" id="cl7">?</td><td style="color:#159957;" id="cs7">?</td></td><td style="color:#159957;" id="cm7">?</td></tr>
+          <tr><td>8</td><td style="color:#159957;" id="cl8">?</td><td style="color:#159957;" id="cs8">?</td></td><td style="color:#159957;" id="cm8">?</td></tr>
+          <tr><td>9</td><td style="color:#159957;" id="cl9">?</td><td style="color:#159957;" id="cs9">?</td></td><td style="color:#159957;" id="cm9">?</td></tr>
         </table>
         <br />
         <div>*data from infura.io and cryptocompare</div>
