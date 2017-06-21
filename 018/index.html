@@ -41,12 +41,6 @@
           <tr><td>1</td><td style="color:#159957;" id="cl1">?</td><td style="color:#159957;" id="cs1">?</td></td><td style="color:#159957;" id="cm1">?</td></tr>
           <tr><td>2</td><td style="color:#159957;" id="cl2">?</td><td style="color:#159957;" id="cs2">?</td></td><td style="color:#159957;" id="cm2">?</td></tr>
           <tr><td>3</td><td style="color:#159957;" id="cl3">?</td><td style="color:#159957;" id="cs3">?</td></td><td style="color:#159957;" id="cm3">?</td></tr>
-          <tr><td>4</td><td style="color:#159957;" id="cl4">?</td><td style="color:#159957;" id="cs4">?</td></td><td style="color:#159957;" id="cm4">?</td></tr>
-          <tr><td>5</td><td style="color:#159957;" id="cl5">?</td><td style="color:#159957;" id="cs5">?</td></td><td style="color:#159957;" id="cm5">?</td></tr>
-          <tr><td>6</td><td style="color:#159957;" id="cl6">?</td><td style="color:#159957;" id="cs6">?</td></td><td style="color:#159957;" id="cm6">?</td></tr>
-          <tr><td>7</td><td style="color:#159957;" id="cl7">?</td><td style="color:#159957;" id="cs7">?</td></td><td style="color:#159957;" id="cm7">?</td></tr>
-          <tr><td>8</td><td style="color:#159957;" id="cl8">?</td><td style="color:#159957;" id="cs8">?</td></td><td style="color:#159957;" id="cm8">?</td></tr>
-          <tr><td>9</td><td style="color:#159957;" id="cl9">?</td><td style="color:#159957;" id="cs9">?</td></td><td style="color:#159957;" id="cm9">?</td></tr>
         </table>
         <br />
         <div>*data from infura.io and cryptocompare</div>
@@ -77,7 +71,7 @@
             var contractInstanceR = MyContractR.at('0x7a1a8ac7796ed2e53ababfc547241f8c67b719a2');
 
             var stage = ['waiting for block 3,903,900', 'started', 'ended'];
-            var stageNum = 0;
+            var stageNum = 2;
             var start = 3903900;
             var cap = web3.toBigNumber(-1);
             var capG = web3.toBigNumber(-1);
@@ -86,7 +80,7 @@
             var raisedT = web3.toBigNumber(-1);
             var curveM = web3.toBigNumber(-1);
             var currentCurve = web3.toBigNumber(-1);
-            var curves = [[],[],[],[],[],[],[],[],[],[]];
+            var curves = [[],[],[],[]];
             var ethusd = 0;
             var unconfirmed = web3.toBigNumber(-1);
             var unconfirmedeth = web3.toBigNumber(-1);
