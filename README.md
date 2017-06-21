@@ -17,3 +17,4 @@ Go to the numbered folders for the raw chart data or http://slacknation.github.i
 1. [DAO holders at 1,919,999](http://slacknation.github.io/medium/015)
 1. [Gnosis ICO](http://slacknation.github.io/medium/016)
 1. [Bancor ICO](http://slacknation.github.io/medium/017)
+1. [Status ICO](http://slacknation.github.io/medium/018)
