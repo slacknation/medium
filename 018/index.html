@@ -26,7 +26,7 @@
         <div>total raised: <span style="color:#159957;font-size:20px;" id="raisedT">...</span> ETH ($ <span style="color:#159957;font-size:20px;" id="raisedD">...</span>)</div>
         <div>current curve: <span style="color:#159957;font-size:20px;" id="curve">...</span></div>
         <div>current max funding per tx: <span style="color:#159957;font-size:20px;" id="curveM">0.00</span> ETH = (limit - raised) / slope</div>
-        <div>unconfirmed tx to ico: <span style="color:#159957;font-size:20px;" id="unconfirmed">...</span> txs <span style="color:#159957;font-size:20px;" id="unconfirmedeth">...</span> ETH</div>
+        //<div>unconfirmed tx to ico: <span style="color:#159957;font-size:20px;" id="unconfirmed">...</span> txs <span style="color:#159957;font-size:20px;" id="unconfirmedeth">...</span> ETH</div>
         <div>price: <span style="color:#159957;font-size:20px;">1</span> ETH for <span style="color:#159957;font-size:20px;">10,000</span> SNT</div>
         <br />
         <div>recommended gas: <span style="color:#159957;font-size:20px;">200000</span></div>
@@ -67,8 +67,8 @@
             var contractInstance = MyContract.at('0x55d34b686aa8C04921397c5807DB9ECEdba00a4c');
             var MyContractC = web3.eth.contract(abiC);
             var contractInstanceC = MyContractC.at('0xc636e73Ff29fAEbCABA9E0C3f6833EaD179FFd5c');
-            var MyContractR = web4.eth.contract(abiR);
-            var contractInstanceR = MyContractR.at('0x7a1a8ac7796ed2e53ababfc547241f8c67b719a2');
+            //var MyContractR = web4.eth.contract(abiR);
+            //var contractInstanceR = MyContractR.at('0x7a1a8ac7796ed2e53ababfc547241f8c67b719a2');
 
             var stage = ['waiting for block 3,903,900', 'started', 'ended'];
             var stageNum = 2;
@@ -82,8 +82,8 @@
             var currentCurve = web3.toBigNumber(-1);
             var curves = [[],[],[],[]];
             var ethusd = 0;
-            var unconfirmed = web3.toBigNumber(-1);
-            var unconfirmedeth = web3.toBigNumber(-1);
+            //var unconfirmed = web3.toBigNumber(-1);
+            //var unconfirmedeth = web3.toBigNumber(-1);
 
             function getSync() {
                 $('#stage').html(stage[stageNum]);
@@ -104,24 +104,24 @@
                         }
                     }
                 });
-                contractInstanceR.txs.call(function(error, data) {
-                    if (!error) {
-                        $('#unconfirmed').html(data.toFormat(0));
-                        if (!unconfirmed.equals(data)) {
-                            unconfirmed = data;
-                            blink('#unconfirmed');
-                        }
-                    }
-                });
-                contractInstanceR.eth.call(function(error, data) {
-                    if (!error) {
-                        $('#unconfirmedeth').html(web3.fromWei(data,'ether').toFormat(2));
-                        if (!unconfirmedeth.equals(data)) {
-                            unconfirmedeth = data;
-                            blink('#unconfirmedeth');
-                        }
-                    }
-                });
+                //contractInstanceR.txs.call(function(error, data) {
+                //    if (!error) {
+                //        $('#unconfirmed').html(data.toFormat(0));
+                //        if (!unconfirmed.equals(data)) {
+                //            unconfirmed = data;
+                //            blink('#unconfirmed');
+                //        }
+                //    }
+                //});
+                //contractInstanceR.eth.call(function(error, data) {
+                //    if (!error) {
+                //        $('#unconfirmedeth').html(web3.fromWei(data,'ether').toFormat(2));
+                //        if (!unconfirmedeth.equals(data)) {
+                //            unconfirmedeth = data;
+                //            blink('#unconfirmedeth');
+                //        }
+                //    }
+                //});
                 contractInstance.totalGuaranteedCollected.call(function(error, data) {
                     if (!error) {
                         $('#raisedG').html(web3.fromWei(data,'ether').toFormat(2));
