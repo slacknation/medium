@@ -81,7 +81,7 @@
             var curveM = web3.toBigNumber(-1);
             var currentCurve = web3.toBigNumber(-1);
             var curves = [[],[],[],[]];
-            var ethusd = 0;
+            var ethusd = 333.46;
             //var unconfirmed = web3.toBigNumber(-1);
             //var unconfirmedeth = web3.toBigNumber(-1);
 
@@ -207,20 +207,20 @@
 
             }
             getSync();
-            getethusd();
+//             getethusd();
             setInterval(function() {
                 getSync();
             }, 15 * 1000);
-            setInterval(function() {
-                getethusd();
-            }, 5 * 60 * 1000);
-            function getethusd() {
-              $.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
-                  ethusd = data.USD;
-                  $('#raisedD').html(web3.fromWei(raisedT,'ether').times(ethusd).toFormat(2));
-                  blink('#raisedD');
-              });
-            }
+//             setInterval(function() {
+//                 getethusd();
+//             }, 5 * 60 * 1000);
+//             function getethusd() {
+//               $.get('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD', function(data) {
+//                   ethusd = data.USD;
+//                   $('#raisedD').html(web3.fromWei(raisedT,'ether').times(ethusd).toFormat(2));
+//                   blink('#raisedD');
+//               });
+//             }
             function blink(id) {
                 $(id).css('background-color', '#159957');
                 setTimeout(function () {
