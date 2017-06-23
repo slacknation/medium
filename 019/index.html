@@ -110,7 +110,7 @@
                       }
                     }
                 });
-                etherInstance.totalSupply.call(function(error, data) {
+                etherInstance.balanceOf.call(changer, function(error, data) {
                     if (!error) {
                       $('#ethR').html(web3.toBigNumber(web3.fromWei(data, 'ether')).toFormat(2));
                       if (!ethR.equals(data)) {
