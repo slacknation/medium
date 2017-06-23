@@ -18,3 +18,4 @@ Go to the numbered folders for the raw chart data or http://slacknation.github.i
 1. [Gnosis ICO](http://slacknation.github.io/medium/016)
 1. [Bancor ICO](http://slacknation.github.io/medium/017)
 1. [Status ICO](http://slacknation.github.io/medium/018)
+1. [Bancor changer BNT/ETH](http://slacknation.github.io/medium/019)
