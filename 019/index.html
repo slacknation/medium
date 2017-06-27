@@ -25,6 +25,7 @@
         <div>virtual ETH reserve: <span style="color:#159957;font-size:20px;" id="ethV">...</span></div>
         <div>ETH reserve: <span style="color:#159957;font-size:20px;" id="ethR">...</span></div>
         <div>reserve ratio: <span style="color:#159957;font-size:20px;" id="ratio">...</span></div>
+        <div>floor reserve: <span style="color:#159957;font-size:20px;" id="floor">...</span></div>
         <br />
         <table>
           buy BNT
@@ -74,12 +75,15 @@
             var bnt = '0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C';
             var bntInstance = MyContract2.at(bnt);
 
+            var floor = '0x7Ec6A713197FCBb4cFe7213800470b0940268549';
+
             var buy = web3.toBigNumber(0);
             var sell = web3.toBigNumber(0);
             var bntS = web3.toBigNumber(0);
             var ethV = web3.toBigNumber(0);
             var ethR = web3.toBigNumber(0);
             var ratio = web3.toBigNumber(0);
+            var floorR = web3.toBigNumber(0);
             var buyAmount = [1, 10, 100, 1000, 10000];
             var sellAmount = [100, 1000, 10000, 100000, 1000000];
             var storeBuy = [];
@@ -99,6 +103,15 @@
                     if (!error) {
                         $('#block').html(web3.toBigNumber(data).toFormat(0));
                         blink('#block');
+                    }
+                });
+                web3.eth.getBalance(floor, function(error, data) {
+                    if (!error) {
+                      $('#floor').html(web3.toBigNumber(web3.fromWei(data, 'ether')).toFormat(2));
+                      if (!floorR.equals(data)) {
+                          floorR = data;
+                          blink('#floor');
+                      }
                     }
                 });
                 bntInstance.totalSupply.call(function(error, data) {
@@ -121,7 +134,6 @@
                 });
                 changerInstance.reserves.call(ether, function(error, data) {
                     if (!error) {
-                      console.log(data);
                       $('#ethV').html(web3.toBigNumber(web3.fromWei(data[0], 'ether')).toFormat(2));
                       $('#ratio').html((data[1]).toNumber());
                       if (!ethV.equals(data[0])) {
@@ -168,7 +180,7 @@
             getSync();
             setInterval(function() {
                 getSync();
-            }, 20 * 1000);
+            }, 30 * 1000);
             function blink(id) {
                 $(id).css('background-color', '#159957');
                 setTimeout(function () {
