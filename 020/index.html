@@ -95,6 +95,9 @@
                 $(this).html(input[k]);
                 k++;
             });
+            for (var i = 0; i < document.getElementsByTagName('td').length; i++) {
+                $(document.getElementsByTagName('td')[i]).css('text-align', 'right');
+            }
             function firstSync() {
                 web3.eth.getBlockNumber(function(error, data) {
                     if (!error) {
