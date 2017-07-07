@@ -143,21 +143,6 @@
                         }
                       }
                   });
-                  eosInstance.dailyTotals.call(current+1, function(error, data) {
-                      if (!error) {
-                        document.getElementsByTagName('td')[(current+1)*5 + 2].innerHTML = '<span style="color:#159957;">' + web3.toBigNumber(web3.fromWei(data, 'ether')).toFormat(2) + '</span>';
-                        if (i === 0) {
-                          document.getElementsByTagName('td')[(current+1)*5 + 3].innerHTML = '<span style="color:#159957;">' + web3.toBigNumber(web3.fromWei(data, 'ether')).dividedBy(200000000).toFormat(6) + '</span>';
-                        } else {
-                          document.getElementsByTagName('td')[(current+1)*5 + 3].innerHTML = '<span style="color:#159957;">' + web3.toBigNumber(web3.fromWei(data, 'ether')).dividedBy(2000000).toFormat(6) + '</span>';
-                        }
-                        if (!nextEth.equals(data)) {
-                            nextEth = data;
-                            blink(document.getElementsByTagName('td')[(current+1)*5 + 2]);
-                            blink(document.getElementsByTagName('td')[(current+1)*5 + 3]);
-                        }
-                      }
-                  });
                 } else {
                   current = parseInt((Date.now()-start*1000)/1000/60/60/23 + 1);
                   eosInstance.dailyTotals.call(current-1, function(error, data) {
@@ -203,7 +188,7 @@
             firstSync();
             setInterval(function() {
                 getSync();
-            }, 5 * 60 * 1000);
+            }, 30 * 1000);
             function blink(id) {
                 $(id).css('background-color', '#159957');
                 setTimeout(function () {
