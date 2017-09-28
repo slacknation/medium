@@ -12,136 +12,6 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/highcharts.js"></script>
     <script src="../js/accounting.min.js"></script>
-    <script>
-        var chart;
-        var color = ['#00A388', '#E74C3C', '#3498DB', '#FF851B'];
-        document.addEventListener('DOMContentLoaded', function(event) {
-            Highcharts.setOptions({
-                global: {
-                    useUTC: false
-                },
-                lang: {
-                    thousandsSep: ','
-                }
-            });
-            d3.json('https://daofork-slacknation.rhcloud.com/getChart2', function(data) {
-                d3.json('https://daofork-slacknation.rhcloud.com/getChart3', function(data2) {
-                    updateInfo(data);
-                    var etcethPrice = [];
-                    var etcethHashrate = [];
-                    var etcethbtc = [];
-                    var etcethusd = [];
-                    var index = 0;
-                    for (var i = 0; i < data.length; i++) {
-                        if (data[i].etcHashrate > 0 && data[i].ethHashrate > 0) {
-                            etcethPrice.push([data[i].time, data[i].etcusd / data[i].ethusd * 100]);
-                            etcethHashrate.push([data[i].time, data[i].etcHashrate / data[i].ethHashrate * 100]);
-                        }
-                    }
-                    for (var i = 0; i < data2.length; i++) {
-                        if (index === 0) {
-                            if (data2[i].etcbtc > 0 && data2[i].ethbtc > 0 && data2[i].btcusd > 0) {
-                                index = i;
-                                etcethbtc.push([data2[i].time * 1000, 0]);
-                                etcethusd.push([data2[i].time * 1000, 0]);
-                            }
-                        } else {
-                            if (data2[i].etcbtc > 0 && data2[i].ethbtc > 0 && data2[i].btcusd > 0) {
-                                etcethbtc.push([data2[i].time * 1000, (((data2[i].etcbtc + data2[i].ethbtc) / (data2[index].etcbtc + data2[index].ethbtc)) - 1) * 100]);
-                                etcethusd.push([data2[i].time * 1000, (((data2[i].etcbtc + data2[i].ethbtc) * data2[i].btcusd) / ((data2[index].etcbtc + data2[index].ethbtc) * data2[index].btcusd) - 1) * 100]);
-                            }
-                        }
-                    }
-                    $('#chart').highcharts({
-                        chart: {
-                            alignTicks: false
-                        },
-                        title: {
-                            text: null
-                        },
-                        xAxis: {
-                            type: 'datetime'
-                        },
-                        yAxis: [{
-                            lineWidth: 1,
-                            tickWidth: 1,
-                            title: {
-                                text: '%',
-                            },
-                            gridLineWidth: 1,
-                            opposite: true
-                        }],
-                        tooltip: {
-                            shared: false,
-                            borderColor: '#000000',
-                            followPointer: true
-                        },
-                        legend: {
-                            align: 'center',
-                            verticalAlign: 'bottom',
-                            floating: false,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
-                        },
-                        series: [{
-                            name: 'etc/eth price',
-                            type: 'spline',
-                            color: color[0],
-                            data: etcethPrice,
-                            tooltip: {
-                                valueDecimals: 2
-                            },
-                            marker: {
-                                enabled: false
-                            }
-                        }, {
-                            name: 'etc/eth hashrate',
-                            type: 'spline',
-                            color: color[1],
-                            data: etcethHashrate,
-                            tooltip: {
-                                valueDecimals: 2
-                            },
-                            marker: {
-                                enabled: false
-                            }
-                        }, {
-                            name: 'etcbtc+ethbtc (% change)',
-                            type: 'spline',
-                            color: color[2],
-                            data: etcethbtc,
-                            tooltip: {
-                                valueDecimals: 4
-                            },
-                            marker: {
-                                enabled: false
-                            }
-                        }, {
-                            name: 'etcusd+ethusd (% change)',
-                            type: 'spline',
-                            color: color[3],
-                            data: etcethusd,
-                            tooltip: {
-                                valueDecimals: 2
-                            },
-                            marker: {
-                                enabled: false
-                            }
-                        }]
-                    });
-                });
-            });
-
-            function updateInfo(data) {
-                $('#etc').html(accounting.formatNumber(data[data.length - 1].etcusd, 2, ',', '.'));
-                $('#eth').html(accounting.formatNumber(data[data.length - 1].ethusd, 2, ',', '.'));
-                $('#etceth').html(accounting.formatNumber(data[data.length - 1].etcusd / data[data.length - 1].ethusd * 100, 2, ',', '.'));
-                $('#hashrateEtc').html(accounting.formatNumber(data[data.length - 1].etcHashrate, 0, ',', '.'));
-                $('#hashrateEth').html(accounting.formatNumber(data[data.length - 1].ethHashrate, 0, ',', '.'));
-                $('#hashrate').html(accounting.formatNumber(data[data.length - 1].etcHashrate / data[data.length - 1].ethHashrate * 100, 2, ',', '.'));
-            }
-        });
-
-    </script>
 </head>
 
 <body>
@@ -152,7 +22,7 @@
     </section>
     <section class="main-content">
         <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>13. ETH and ETC</h3>
-        <div>data is no longer updated as fork.ethstats.net is down</div>
+        <div>data is no longer updated</div>
         <div>ETC / ETH price (USD) = <span style="color:#159957;font-size:20px;" id="etc">...</span> / <span style="color:#159957;font-size:20px;" id="eth">...</span> = <span style="color:#159957;font-size:20px;" id="etceth">...</span> %</div>
         <div>ETC / ETH hashrate (GH/s) = <span style="color:#159957;font-size:20px;" id="hashrateEtc">...</span> / <span style="color:#159957;font-size:20px;" id="hashrateEth">...</span> = <span style="color:#159957;font-size:20px;" id="hashrate">...</span>            %</div>
         <div id="chart"></div>
